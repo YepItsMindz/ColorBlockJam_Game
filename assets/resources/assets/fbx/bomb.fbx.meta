@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "85238d83-3121-4f48-a022-775d1c35cd1a",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "85238d83-3121-4f48-a022-775d1c35cd1a@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 2802
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "85238d83-3121-4f48-a022-775d1c35cd1a@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6f3f1": {
+      "importer": "gltf-scene",
+      "uuid": "85238d83-3121-4f48-a022-775d1c35cd1a@6f3f1",
+      "displayName": "",
+      "id": "6f3f1",
+      "name": "bomb.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "85238d83-3121-4f48-a022-775d1c35cd1a@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "85238d83-3121-4f48-a022-775d1c35cd1a@e59fc"
+      ],
+      "scenes": [
+        "85238d83-3121-4f48-a022-775d1c35cd1a@6f3f1"
+      ]
+    }
+  }
+}

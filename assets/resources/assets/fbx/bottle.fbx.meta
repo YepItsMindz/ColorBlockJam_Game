@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "01ae7149-93a7-4ae1-b973-b7166e667788",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "01ae7149-93a7-4ae1-b973-b7166e667788@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 2352
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "01ae7149-93a7-4ae1-b973-b7166e667788@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "00218": {
+      "importer": "gltf-scene",
+      "uuid": "01ae7149-93a7-4ae1-b973-b7166e667788@00218",
+      "displayName": "",
+      "id": "00218",
+      "name": "bottle.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "01ae7149-93a7-4ae1-b973-b7166e667788@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "01ae7149-93a7-4ae1-b973-b7166e667788@e59fc"
+      ],
+      "scenes": [
+        "01ae7149-93a7-4ae1-b973-b7166e667788@00218"
+      ]
+    }
+  }
+}

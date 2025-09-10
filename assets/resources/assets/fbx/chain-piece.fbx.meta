@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "98caa16a-7fd3-4a72-b3be-fe3c8b835014",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "98caa16a-7fd3-4a72-b3be-fe3c8b835014@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 400
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "98caa16a-7fd3-4a72-b3be-fe3c8b835014@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "2fc71": {
+      "importer": "gltf-scene",
+      "uuid": "98caa16a-7fd3-4a72-b3be-fe3c8b835014@2fc71",
+      "displayName": "",
+      "id": "2fc71",
+      "name": "chain-piece.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "98caa16a-7fd3-4a72-b3be-fe3c8b835014@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "98caa16a-7fd3-4a72-b3be-fe3c8b835014@e59fc"
+      ],
+      "scenes": [
+        "98caa16a-7fd3-4a72-b3be-fe3c8b835014@2fc71"
+      ]
+    }
+  }
+}

@@ -1,0 +1,2476 @@
+{
+  "gridSize": {
+    "x": 8,
+    "y": 13
+  },
+  "hidedGridCoords": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 0,
+      "y": 1
+    },
+    {
+      "x": 0,
+      "y": 5
+    },
+    {
+      "x": 0,
+      "y": 6
+    },
+    {
+      "x": 1,
+      "y": 5
+    },
+    {
+      "x": 1,
+      "y": 6
+    },
+    {
+      "x": 2,
+      "y": 11
+    },
+    {
+      "x": 2,
+      "y": 12
+    },
+    {
+      "x": 3,
+      "y": 0
+    },
+    {
+      "x": 3,
+      "y": 1
+    },
+    {
+      "x": 3,
+      "y": 11
+    },
+    {
+      "x": 3,
+      "y": 12
+    },
+    {
+      "x": 4,
+      "y": 0
+    },
+    {
+      "x": 4,
+      "y": 1
+    },
+    {
+      "x": 4,
+      "y": 11
+    },
+    {
+      "x": 4,
+      "y": 12
+    },
+    {
+      "x": 5,
+      "y": 11
+    },
+    {
+      "x": 5,
+      "y": 12
+    },
+    {
+      "x": 6,
+      "y": 5
+    },
+    {
+      "x": 6,
+      "y": 6
+    },
+    {
+      "x": 7,
+      "y": 0
+    },
+    {
+      "x": 7,
+      "y": 1
+    },
+    {
+      "x": 7,
+      "y": 5
+    },
+    {
+      "x": 7,
+      "y": 6
+    }
+  ],
+  "gridColorDatas": [],
+  "levelCameraData": {
+    "position": {
+      "x": 0,
+      "y": -9,
+      "z": -41.5
+    },
+    "rotation": {
+      "x": 349.99997,
+      "y": 0,
+      "z": 0
+    },
+    "fov": 66
+  },
+  "levelDoorsData": {
+    "inverseMovingDoorDirection": 0,
+    "doors": [
+      {
+        "position": {
+          "x": -9,
+          "y": -7,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        },
+        "doorPartCount": 2,
+        "blockType": 8,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": 9,
+          "y": -7,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "doorPartCount": 2,
+        "blockType": 7,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": 4,
+          "y": -14,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "doorPartCount": 2,
+        "blockType": 3,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": -4,
+          "y": -14,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "doorPartCount": 2,
+        "blockType": 2,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": -6,
+          "y": 14,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 180
+        },
+        "doorPartCount": 2,
+        "blockType": 6,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": -9,
+          "y": 6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        },
+        "doorPartCount": 3,
+        "blockType": 5,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": 9,
+          "y": 6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "doorPartCount": 3,
+        "blockType": 4,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": 6,
+          "y": 14,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 180
+        },
+        "doorPartCount": 2,
+        "blockType": 9,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": -9,
+          "y": 2,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        },
+        "doorPartCount": 1,
+        "blockType": 1,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      },
+      {
+        "position": {
+          "x": 9,
+          "y": 2,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "doorPartCount": 1,
+        "blockType": 0,
+        "hasStar": 0,
+        "isSwitchDoor": 0,
+        "isSwitchDoorOff": 0,
+        "hasIce": 0,
+        "iceCount": 0,
+        "hasMovingDoorLock": 0,
+        "movingDoorOrder": 0,
+        "hasColorChanger": 0,
+        "hasColorSwitcher": 0,
+        "colorChangerBlockTypes": null,
+        "colorSwitcherBlockType": 0,
+        "hasLock": 0,
+        "lockCount": 0,
+        "hasSizeChanger": 0,
+        "changeSizes": null,
+        "currentSizeChangeIndex": 0,
+        "sizeChangeWayBackward": 0,
+        "toRight": 0,
+        "hasMovingDoorPartLock": 0,
+        "movingDoorPartLockIndexes": null,
+        "hasSizeAndColorChanger": 0,
+        "sizeAndColorChangeSizes": null,
+        "sizeAndColorCurrentSizeChangeIndex": 0,
+        "sizeAndColorSizeChangeWayBackward": 0,
+        "sizeAndColorToRight": 0,
+        "sizeAndColorColorSwitcherBlockType": 0
+      }
+    ]
+  },
+  "levelBlockadesData": {
+    "blockades": [
+      {
+        "position": {
+          "x": -8.500054,
+          "y": -13.499973,
+          "z": 0.000008022696
+        },
+        "rotation": {
+          "x": -0.00013148114,
+          "y": 269.99982,
+          "z": 90.00017
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.499946,
+          "y": -13.500027,
+          "z": 0.00006999979
+        },
+        "rotation": {
+          "x": 90,
+          "y": 179.99994,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.5,
+          "y": -11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000010245284,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.500054,
+          "y": 13.499977,
+          "z": 0.000011205673
+        },
+        "rotation": {
+          "x": 0.0001912453,
+          "y": 90.000206,
+          "z": 270.00018
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -8.499947,
+          "y": 13.500027,
+          "z": 0.00007247925
+        },
+        "rotation": {
+          "x": 270,
+          "y": 0.0004329794,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 9.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -8.5,
+          "y": 11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000049518872,
+          "y": 270,
+          "z": 89.99997
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -8.5,
+          "y": -11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000010245284,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.5,
+          "y": 11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000049518872,
+          "y": 270,
+          "z": 89.99997
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -7,
+          "y": -13.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 7,
+          "y": -13.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -1.5,
+          "y": -11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000010245284,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -1.5,
+          "y": -13.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 90,
+          "y": 179.99994,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 1.5,
+          "y": -11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000010245284,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 1.5,
+          "y": -13.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": -0.00013148114,
+          "y": 269.99982,
+          "z": 90.00017
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": -9.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180,
+          "z": 0
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -8.5,
+          "y": -4,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000010245284,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.5,
+          "y": -4,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000010245284,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 3,
+          "y": 13.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -3,
+          "y": 13.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -1.5,
+          "y": 11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000049518872,
+          "y": 270,
+          "z": 89.99997
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 1.5,
+          "y": 11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": -0.000049518872,
+          "y": 270,
+          "z": 89.99997
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -1.5,
+          "y": 13.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0.0001912453,
+          "y": 90.000206,
+          "z": 270.00018
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 1.5,
+          "y": 13.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 270,
+          "y": 0.0004329794,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -8.5,
+          "y": -2.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 270,
+          "y": 0.0004329794,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -6,
+          "y": -2.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 6,
+          "y": -2.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.5,
+          "y": -2.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0.0001912453,
+          "y": 90.000206,
+          "z": 270.00018
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -8.5,
+          "y": 0.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": -0.00013148114,
+          "y": 269.99982,
+          "z": 90.00017
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 8.5,
+          "y": 0.5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 90,
+          "y": 179.99994,
+          "z": 0
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 0,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 6,
+          "y": 0.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -6,
+          "y": 0.5,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 90,
+          "y": 180.00008,
+          "z": 0
+        },
+        "scale": {
+          "x": 2,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -4.5,
+          "y": -1,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 90
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 4.5,
+          "y": -1,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 270,
+          "z": 90
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 1
+        },
+        "blockType": 1,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -7,
+          "y": -11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 2
+        },
+        "blockType": 2,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 7,
+          "y": -11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 2
+        },
+        "blockType": 2,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": -3,
+          "y": 11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 2
+        },
+        "blockType": 2,
+        "blendValue": 0
+      },
+      {
+        "position": {
+          "x": 3,
+          "y": 11,
+          "z": 1.5
+        },
+        "rotation": {
+          "x": 0,
+          "y": 90,
+          "z": 270
+        },
+        "scale": {
+          "x": 1,
+          "y": 1,
+          "z": 2
+        },
+        "blockType": 2,
+        "blendValue": 0
+      }
+    ]
+  },
+  "levelBlockGroupsData": {
+    "blockGroupDatas": [
+      {
+        "position": {
+          "x": -6,
+          "y": 6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 8,
+        "blockType": 3,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 6,
+          "y": 6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 270
+        },
+        "blockGroupType": 8,
+        "blockType": 2,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 7,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 7,
+        "blockType": 3,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 8,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 8,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": [
+              {
+                "ropeIndex": 0,
+                "colorType": 0
+              },
+              {
+                "ropeIndex": 1,
+                "colorType": 1
+              },
+              {
+                "ropeIndex": 2,
+                "colorType": 2
+              },
+              {
+                "ropeIndex": 3,
+                "colorType": 4
+              }
+            ]
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 3,
+          "y": -3,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 1,
+        "blockType": 3,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -3,
+          "y": -3,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 1,
+        "blockType": 7,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -6,
+          "y": -5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 7,
+        "blockType": 6,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 6,
+          "y": -5,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 7,
+        "blockType": 8,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -6,
+          "y": 10,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 1,
+        "blockType": 7,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 6,
+          "y": 10,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 1,
+        "blockType": 1,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -5,
+          "y": 12,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 0,
+        "blockType": 0,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 7
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 5,
+          "y": 12,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 0,
+        "blockType": 7,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 5
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": -4,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 1,
+        "blockType": 9,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": -6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 1,
+        "blockType": 2,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 8
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 7,
+        "blockType": 6,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 8,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 8,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": [
+              {
+                "ropeIndex": 0,
+                "colorType": 3
+              },
+              {
+                "ropeIndex": 1,
+                "colorType": 5
+              },
+              {
+                "ropeIndex": 2,
+                "colorType": 7
+              },
+              {
+                "ropeIndex": 3,
+                "colorType": 8
+              }
+            ]
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -3,
+          "y": 6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 2,
+        "blockType": 4,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 1
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 3,
+          "y": 6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 2,
+        "blockType": 5,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 2
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 0,
+          "y": 4,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 1,
+        "blockType": 1,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 3
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 3,
+          "y": -6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 0,
+        "blockType": 9,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 1,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": 2,
+          "y": -9,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 5,
+        "blockType": 6,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 1,
+          "groupIndex": 0
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -2,
+          "y": -9,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 90
+        },
+        "blockGroupType": 5,
+        "blockType": 7,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 0,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 0
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 1,
+          "groupIndex": 1
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      },
+      {
+        "position": {
+          "x": -3,
+          "y": -6,
+          "z": 0
+        },
+        "rotation": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "blockGroupType": 0,
+        "blockType": 0,
+        "isOneWayMovementActive": 0,
+        "wayDirection": 0,
+        "blockGroupLevelElementData": {
+          "levelElementType": 7,
+          "iceCount": 1,
+          "bombCount": 0,
+          "hiddenColorCount": 0,
+          "lockCount": 0,
+          "timerBombDuration": 60,
+          "curtainIsClosed": 0,
+          "ropesData": {
+            "ropeDatas": []
+          },
+          "scissorsColorType": 4
+        },
+        "joinedGroupData": {
+          "isMemberOfJoinedGorup": 1,
+          "groupIndex": 1
+        },
+        "joinedLockGroupData": {
+          "isMemberOfJoinedGorup": 0,
+          "groupIndex": 0
+        },
+        "layerData": {
+          "hasLayer": 0,
+          "blockType": 0
+        },
+        "isBlocker": 0,
+        "isBlockerFixed": 0,
+        "isBlockerCounterActive": 0,
+        "blockerCounter": 0,
+        "isRainbow": 0,
+        "hasTimeCapsule": 0,
+        "timeCapsuleDuration": 0,
+        "hasColorSwitcher": 0,
+        "colorSwitcherBlockType": 0,
+        "hasColorSwaper": 0,
+        "colorSwaperBlockType": 0,
+        "hasPuzzlePiece": 0,
+        "puzzlePiecesData": {
+          "piecesDatas": []
+        }
+      }
+    ]
+  },
+  "levelJoinLockDatasList": [],
+  "levelCratesData": {
+    "levelCrateDatas": []
+  },
+  "levelMoveableCratesData": {
+    "levelMoveableCrateDatas": []
+  },
+  "levelPuzzleCratesData": {
+    "levelPuzzleCrateDatas": []
+  },
+  "levelSpecialEventsData": {
+    "blockHeistChangeBlockType": 7
+  }
+}

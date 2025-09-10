@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c0e5f19e-aa6d-492d-b50b-130825516c31",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "c0e5f19e-aa6d-492d-b50b-130825516c31@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 3762
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "c0e5f19e-aa6d-492d-b50b-130825516c31@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b0f85": {
+      "importer": "gltf-scene",
+      "uuid": "c0e5f19e-aa6d-492d-b50b-130825516c31@b0f85",
+      "displayName": "",
+      "id": "b0f85",
+      "name": "rocket.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "c0e5f19e-aa6d-492d-b50b-130825516c31@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "c0e5f19e-aa6d-492d-b50b-130825516c31@e59fc"
+      ],
+      "scenes": [
+        "c0e5f19e-aa6d-492d-b50b-130825516c31@b0f85"
+      ]
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 366
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "13dd3": {
+      "importer": "gltf-scene",
+      "uuid": "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a@13dd3",
+      "displayName": "",
+      "id": "13dd3",
+      "name": "cork.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a@e59fc"
+      ],
+      "scenes": [
+        "5d3bf80a-82cb-4bef-8f5e-1e5a619c721a@13dd3"
+      ]
+    }
+  }
+}

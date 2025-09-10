@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "405c555e-dbce-47df-ab3c-3e6e648486fd",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "405c555e-dbce-47df-ab3c-3e6e648486fd@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 1080
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "405c555e-dbce-47df-ab3c-3e6e648486fd@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "19e49": {
+      "importer": "gltf-scene",
+      "uuid": "405c555e-dbce-47df-ab3c-3e6e648486fd@19e49",
+      "displayName": "",
+      "id": "19e49",
+      "name": "cuff.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "405c555e-dbce-47df-ab3c-3e6e648486fd@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "405c555e-dbce-47df-ab3c-3e6e648486fd@e59fc"
+      ],
+      "scenes": [
+        "405c555e-dbce-47df-ab3c-3e6e648486fd@19e49"
+      ]
+    }
+  }
+}

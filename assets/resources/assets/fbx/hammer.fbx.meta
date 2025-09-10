@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "00b105d4-c623-41df-8913-b2026c77e3d0",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "00b105d4-c623-41df-8913-b2026c77e3d0@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 3336
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "00b105d4-c623-41df-8913-b2026c77e3d0@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8644a": {
+      "importer": "gltf-scene",
+      "uuid": "00b105d4-c623-41df-8913-b2026c77e3d0@8644a",
+      "displayName": "",
+      "id": "8644a",
+      "name": "hammer.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "00b105d4-c623-41df-8913-b2026c77e3d0@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "00b105d4-c623-41df-8913-b2026c77e3d0@e59fc"
+      ],
+      "scenes": [
+        "00b105d4-c623-41df-8913-b2026c77e3d0@8644a"
+      ]
+    }
+  }
+}

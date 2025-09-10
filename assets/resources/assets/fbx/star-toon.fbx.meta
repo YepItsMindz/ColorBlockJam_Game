@@ -1,0 +1,96 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "fb71e17a-40bc-46d3-8d34-37a7f56c16ba",
+  "files": [],
+  "subMetas": {
+    "a62fe": {
+      "importer": "gltf-mesh",
+      "uuid": "fb71e17a-40bc-46d3-8d34-37a7f56c16ba@a62fe",
+      "displayName": "",
+      "id": "a62fe",
+      "name": "Scene.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 340
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "fb71e17a-40bc-46d3-8d34-37a7f56c16ba@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d8bf7": {
+      "importer": "gltf-scene",
+      "uuid": "fb71e17a-40bc-46d3-8d34-37a7f56c16ba@d8bf7",
+      "displayName": "",
+      "id": "d8bf7",
+      "name": "star-toon.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "fb71e17a-40bc-46d3-8d34-37a7f56c16ba@a62fe"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "fb71e17a-40bc-46d3-8d34-37a7f56c16ba@e59fc"
+      ],
+      "scenes": [
+        "fb71e17a-40bc-46d3-8d34-37a7f56c16ba@d8bf7"
+      ]
+    }
+  }
+}
