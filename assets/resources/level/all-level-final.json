@@ -1,0 +1,3663 @@
+[
+    {
+        "levelName": "Level 1",
+        "levelIndex": 1,
+        "duration": 300,
+        "minDuration": 5,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 2",
+        "levelIndex": 2,
+        "duration": 300,
+        "minDuration": 5,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 3",
+        "levelIndex": 3,
+        "duration": 300,
+        "minDuration": 5,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 4",
+        "levelIndex": 4,
+        "duration": 300,
+        "minDuration": 10,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 5",
+        "levelIndex": 5,
+        "duration": 300,
+        "minDuration": 10,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 6",
+        "levelIndex": 6,
+        "duration": 300,
+        "minDuration": 10,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 8",
+        "levelIndex": 7,
+        "duration": 300,
+        "minDuration": 15,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 9",
+        "levelIndex": 8,
+        "duration": 300,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 7",
+        "levelIndex": 9,
+        "duration": 180,
+        "minDuration": 30,
+        "hardness": 0
+    },
+    {
+        "levelName": "New Level 4",
+        "levelIndex": 10,
+        "duration": 60,
+        "minDuration": 10,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 45",
+        "levelIndex": 11,
+        "duration": 100,
+        "minDuration": 45,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 12",
+        "levelIndex": 12,
+        "duration": 75,
+        "minDuration": 25,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 14",
+        "levelIndex": 13,
+        "duration": 150,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 9",
+        "levelIndex": 14,
+        "duration": 120,
+        "minDuration": 35,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 18",
+        "levelIndex": 15,
+        "duration": 100,
+        "minDuration": 45,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 25",
+        "levelIndex": 16,
+        "duration": 80,
+        "minDuration": 35,
+        "hardness": 0
+    },
+    {
+        "levelName": "New Level 29",
+        "levelIndex": 17,
+        "duration": 120,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 33",
+        "levelIndex": 18,
+        "duration": 120,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "New Level 26",
+        "levelIndex": 19,
+        "duration": 100,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 15",
+        "levelIndex": 20,
+        "duration": 140,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 36",
+        "levelIndex": 21,
+        "duration": 100,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 8",
+        "levelIndex": 22,
+        "duration": 90,
+        "minDuration": 30,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 19",
+        "levelIndex": 23,
+        "duration": 100,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 30",
+        "levelIndex": 24,
+        "duration": 150,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 27",
+        "levelIndex": 25,
+        "duration": 85,
+        "minDuration": 10,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 48",
+        "levelIndex": 26,
+        "duration": 100,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 28",
+        "levelIndex": 27,
+        "duration": 130,
+        "minDuration": 30,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 19",
+        "levelIndex": 28,
+        "duration": 120,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 5",
+        "levelIndex": 29,
+        "duration": 170,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix Derin 3",
+        "levelIndex": 30,
+        "duration": 200,
+        "minDuration": 160,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 32 new",
+        "levelIndex": 31,
+        "duration": 100,
+        "minDuration": 45,
+        "hardness": 2
+    },
+    {
+        "levelName": "Derin Level 18",
+        "levelIndex": 32,
+        "duration": 90,
+        "minDuration": 45,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 16",
+        "levelIndex": 33,
+        "duration": 80,
+        "minDuration": 35,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 32",
+        "levelIndex": 34,
+        "duration": 120,
+        "minDuration": 75,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 34",
+        "levelIndex": 35,
+        "duration": 60,
+        "minDuration": 10,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 12",
+        "levelIndex": 36,
+        "duration": 110,
+        "minDuration": 30,
+        "hardness": 0
+    },
+    {
+        "levelName": "New Level 34",
+        "levelIndex": 37,
+        "duration": 115,
+        "minDuration": 55,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 34 new",
+        "levelIndex": 38,
+        "duration": 170,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 11",
+        "levelIndex": 39,
+        "duration": 210,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix Derin 8",
+        "levelIndex": 40,
+        "duration": 240,
+        "minDuration": 125,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 28",
+        "levelIndex": 41,
+        "duration": 130,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix Derin 10",
+        "levelIndex": 42,
+        "duration": 150,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 15",
+        "levelIndex": 43,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix 25",
+        "levelIndex": 44,
+        "duration": 160,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 29",
+        "levelIndex": 45,
+        "duration": 180,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 0",
+        "levelIndex": 46,
+        "duration": 120,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Derin Level 26",
+        "levelIndex": 47,
+        "duration": 120,
+        "minDuration": 60,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix Derin 1",
+        "levelIndex": 48,
+        "duration": 200,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 4",
+        "levelIndex": 49,
+        "duration": 200,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 14",
+        "levelIndex": 50,
+        "duration": 200,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 17",
+        "levelIndex": 51,
+        "duration": 250,
+        "minDuration": 160,
+        "hardness": 2
+    },
+    {
+        "levelName": "Derin Level 35 combined",
+        "levelIndex": 52,
+        "duration": 120,
+        "minDuration": 25,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 36 combined",
+        "levelIndex": 53,
+        "duration": 120,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 37 combined",
+        "levelIndex": 54,
+        "duration": 120,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 40 combined",
+        "levelIndex": 55,
+        "duration": 150,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level Combined 5",
+        "levelIndex": 56,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level Combined 3",
+        "levelIndex": 57,
+        "duration": 90,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 6",
+        "levelIndex": 58,
+        "duration": 230,
+        "minDuration": 175,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 4",
+        "levelIndex": 59,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 31",
+        "levelIndex": 60,
+        "duration": 100,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 42 door",
+        "levelIndex": 61,
+        "duration": 90,
+        "minDuration": 35,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 43 door",
+        "levelIndex": 62,
+        "duration": 150,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 45 door",
+        "levelIndex": 63,
+        "duration": 135,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 50 door",
+        "levelIndex": 64,
+        "duration": 170,
+        "minDuration": 110,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level Door 2",
+        "levelIndex": 65,
+        "duration": 100,
+        "minDuration": 55,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix Derin 7",
+        "levelIndex": 66,
+        "duration": 150,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 49 door",
+        "levelIndex": 67,
+        "duration": 100,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 17",
+        "levelIndex": 68,
+        "duration": 120,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 18",
+        "levelIndex": 69,
+        "duration": 120,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Derin Level 51 bomb",
+        "levelIndex": 70,
+        "duration": 120,
+        "minDuration": 20,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 52 bomb",
+        "levelIndex": 71,
+        "duration": 130,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 55 bomb",
+        "levelIndex": 72,
+        "duration": 130,
+        "minDuration": 35,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 56 bomb",
+        "levelIndex": 73,
+        "duration": 130,
+        "minDuration": 35,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 57 bomb",
+        "levelIndex": 74,
+        "duration": 130,
+        "minDuration": 40,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 58 bomb",
+        "levelIndex": 75,
+        "duration": 130,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 41 combined",
+        "levelIndex": 76,
+        "duration": 100,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 13",
+        "levelIndex": 77,
+        "duration": 180,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 60 bomb",
+        "levelIndex": 78,
+        "duration": 130,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 9",
+        "levelIndex": 79,
+        "duration": 220,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 59 bomb",
+        "levelIndex": 80,
+        "duration": 130,
+        "minDuration": 65,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix Derin 20",
+        "levelIndex": 81,
+        "duration": 150,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 24",
+        "levelIndex": 82,
+        "duration": 180,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 23",
+        "levelIndex": 83,
+        "duration": 70,
+        "minDuration": 30,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 18",
+        "levelIndex": 84,
+        "duration": 275,
+        "minDuration": 135,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 188",
+        "levelIndex": 85,
+        "duration": 120,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 192",
+        "levelIndex": 86,
+        "duration": 90,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 187",
+        "levelIndex": 87,
+        "duration": 80,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 189",
+        "levelIndex": 88,
+        "duration": 170,
+        "minDuration": 135,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 190",
+        "levelIndex": 89,
+        "duration": 100,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 191",
+        "levelIndex": 90,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix Derin 21",
+        "levelIndex": 91,
+        "duration": 100,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 44 door",
+        "levelIndex": 92,
+        "duration": 60,
+        "minDuration": 45,
+        "hardness": 2
+    },
+    {
+        "levelName": "Derin Level 47 door",
+        "levelIndex": 93,
+        "duration": 110,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level Combined 4",
+        "levelIndex": 94,
+        "duration": 115,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 193",
+        "levelIndex": 95,
+        "duration": 130,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 23",
+        "levelIndex": 96,
+        "duration": 70,
+        "minDuration": 30,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 46 door",
+        "levelIndex": 97,
+        "duration": 75,
+        "minDuration": 35,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 194",
+        "levelIndex": 98,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 19",
+        "levelIndex": 99,
+        "duration": 60,
+        "minDuration": 35,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 22",
+        "levelIndex": 100,
+        "duration": 110,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 53 bomb",
+        "levelIndex": 101,
+        "duration": 115,
+        "minDuration": 35,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 195",
+        "levelIndex": 102,
+        "duration": 105,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level Door 4",
+        "levelIndex": 103,
+        "duration": 60,
+        "minDuration": 45,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 21",
+        "levelIndex": 104,
+        "duration": 210,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 54 bomb",
+        "levelIndex": 105,
+        "duration": 60,
+        "minDuration": 50,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 196",
+        "levelIndex": 106,
+        "duration": 95,
+        "minDuration": 70,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level Door 1",
+        "levelIndex": 107,
+        "duration": 45,
+        "minDuration": 20,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 38 combined",
+        "levelIndex": 108,
+        "duration": 100,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 197",
+        "levelIndex": 109,
+        "duration": 160,
+        "minDuration": 105,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 114",
+        "levelIndex": 110,
+        "duration": 100,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 61 combined",
+        "levelIndex": 111,
+        "duration": 45,
+        "minDuration": 25,
+        "hardness": 0
+    },
+    {
+        "levelName": "Derin Level 33 new",
+        "levelIndex": 112,
+        "duration": 140,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 198",
+        "levelIndex": 113,
+        "duration": 100,
+        "minDuration": 70,
+        "hardness": 1
+    },
+    {
+        "levelName": "Derin Level 48 door",
+        "levelIndex": 114,
+        "duration": 135,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 10",
+        "levelIndex": 115,
+        "duration": 60,
+        "minDuration": 40,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 9",
+        "levelIndex": 116,
+        "duration": 170,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 200",
+        "levelIndex": 117,
+        "duration": 240,
+        "minDuration": 155,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix 1",
+        "levelIndex": 118,
+        "duration": 160,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 199",
+        "levelIndex": 119,
+        "duration": 125,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 228",
+        "levelIndex": 120,
+        "duration": 75,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 175",
+        "levelIndex": 121,
+        "duration": 140,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 176",
+        "levelIndex": 122,
+        "duration": 125,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 177",
+        "levelIndex": 123,
+        "duration": 130,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 3",
+        "levelIndex": 124,
+        "duration": 120,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 5",
+        "levelIndex": 125,
+        "duration": 80,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 118",
+        "levelIndex": 126,
+        "duration": 130,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 178",
+        "levelIndex": 127,
+        "duration": 95,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 2",
+        "levelIndex": 128,
+        "duration": 150,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 201",
+        "levelIndex": 129,
+        "duration": 135,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 7",
+        "levelIndex": 130,
+        "duration": 120,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 181",
+        "levelIndex": 131,
+        "duration": 250,
+        "minDuration": 170,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 179",
+        "levelIndex": 132,
+        "duration": 80,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 8",
+        "levelIndex": 133,
+        "duration": 110,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level Door 3",
+        "levelIndex": 134,
+        "duration": 145,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 16",
+        "levelIndex": 135,
+        "duration": 120,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 180",
+        "levelIndex": 136,
+        "duration": 150,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix 12",
+        "levelIndex": 137,
+        "duration": 145,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level mix Derin 16",
+        "levelIndex": 138,
+        "duration": 55,
+        "minDuration": 45,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 182",
+        "levelIndex": 139,
+        "duration": 85,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 115",
+        "levelIndex": 140,
+        "duration": 90,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 117",
+        "levelIndex": 141,
+        "duration": 120,
+        "minDuration": 70,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 185",
+        "levelIndex": 142,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 116",
+        "levelIndex": 143,
+        "duration": 95,
+        "minDuration": 50,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 119",
+        "levelIndex": 144,
+        "duration": 90,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 120",
+        "levelIndex": 145,
+        "duration": 100,
+        "minDuration": 60,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 216",
+        "levelIndex": 146,
+        "duration": 95,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 183",
+        "levelIndex": 147,
+        "duration": 140,
+        "minDuration": 70,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 186",
+        "levelIndex": 148,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 127",
+        "levelIndex": 149,
+        "duration": 110,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 122",
+        "levelIndex": 150,
+        "duration": 130,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 124",
+        "levelIndex": 151,
+        "duration": 110,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 123",
+        "levelIndex": 152,
+        "duration": 135,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 209",
+        "levelIndex": 153,
+        "duration": 80,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 130",
+        "levelIndex": 154,
+        "duration": 85,
+        "minDuration": 50,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 211",
+        "levelIndex": 155,
+        "duration": 115,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 128",
+        "levelIndex": 156,
+        "duration": 125,
+        "minDuration": 75,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 125",
+        "levelIndex": 157,
+        "duration": 120,
+        "minDuration": 90,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 210",
+        "levelIndex": 158,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 212",
+        "levelIndex": 159,
+        "duration": 130,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 131",
+        "levelIndex": 160,
+        "duration": 120,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 213",
+        "levelIndex": 161,
+        "duration": 100,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 126",
+        "levelIndex": 162,
+        "duration": 105,
+        "minDuration": 60,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 129",
+        "levelIndex": 163,
+        "duration": 120,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 214",
+        "levelIndex": 164,
+        "duration": 130,
+        "minDuration": 110,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 132",
+        "levelIndex": 165,
+        "duration": 120,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 218",
+        "levelIndex": 166,
+        "duration": 130,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 133",
+        "levelIndex": 167,
+        "duration": 100,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 215",
+        "levelIndex": 168,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 134",
+        "levelIndex": 169,
+        "duration": 115,
+        "minDuration": 75,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 247",
+        "levelIndex": 170,
+        "duration": 65,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 261",
+        "levelIndex": 171,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 248",
+        "levelIndex": 172,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 251",
+        "levelIndex": 173,
+        "duration": 190,
+        "minDuration": 130,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 321",
+        "levelIndex": 174,
+        "duration": 150,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 250",
+        "levelIndex": 175,
+        "duration": 95,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 135",
+        "levelIndex": 176,
+        "duration": 90,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 169",
+        "levelIndex": 177,
+        "duration": 165,
+        "minDuration": 145,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 253",
+        "levelIndex": 178,
+        "duration": 100,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 252",
+        "levelIndex": 179,
+        "duration": 140,
+        "minDuration": 120,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 74",
+        "levelIndex": 180,
+        "duration": 120,
+        "minDuration": 45,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 202",
+        "levelIndex": 181,
+        "duration": 110,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 217",
+        "levelIndex": 182,
+        "duration": 115,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 262",
+        "levelIndex": 183,
+        "duration": 155,
+        "minDuration": 120,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 138",
+        "levelIndex": 184,
+        "duration": 140,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 255",
+        "levelIndex": 185,
+        "duration": 180,
+        "minDuration": 135,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 256",
+        "levelIndex": 186,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 149",
+        "levelIndex": 187,
+        "duration": 125,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 219",
+        "levelIndex": 188,
+        "duration": 120,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 153",
+        "levelIndex": 189,
+        "duration": 75,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 257",
+        "levelIndex": 190,
+        "duration": 110,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 203",
+        "levelIndex": 191,
+        "duration": 215,
+        "minDuration": 135,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 220",
+        "levelIndex": 192,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 258",
+        "levelIndex": 193,
+        "duration": 150,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 140",
+        "levelIndex": 194,
+        "duration": 120,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 156",
+        "levelIndex": 195,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 320",
+        "levelIndex": 196,
+        "duration": 210,
+        "minDuration": 160,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 221",
+        "levelIndex": 197,
+        "duration": 130,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 139",
+        "levelIndex": 198,
+        "duration": 70,
+        "minDuration": 55,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix 15",
+        "levelIndex": 199,
+        "duration": 120,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 249",
+        "levelIndex": 200,
+        "duration": 100,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 154",
+        "levelIndex": 201,
+        "duration": 115,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 222",
+        "levelIndex": 202,
+        "duration": 150,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 141",
+        "levelIndex": 203,
+        "duration": 105,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 260",
+        "levelIndex": 204,
+        "duration": 145,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 254",
+        "levelIndex": 205,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 142",
+        "levelIndex": 206,
+        "duration": 110,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 223",
+        "levelIndex": 207,
+        "duration": 80,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 204",
+        "levelIndex": 208,
+        "duration": 110,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 308",
+        "levelIndex": 209,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "New Level 33",
+        "levelIndex": 210,
+        "duration": 110,
+        "minDuration": 80,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 205",
+        "levelIndex": 211,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 240",
+        "levelIndex": 212,
+        "duration": 110,
+        "minDuration": 90,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 304",
+        "levelIndex": 213,
+        "duration": 110,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix 6",
+        "levelIndex": 214,
+        "duration": 105,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 311",
+        "levelIndex": 215,
+        "duration": 105,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 302",
+        "levelIndex": 216,
+        "duration": 85,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 225",
+        "levelIndex": 217,
+        "duration": 115,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 309",
+        "levelIndex": 218,
+        "duration": 155,
+        "minDuration": 120,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 263",
+        "levelIndex": 219,
+        "duration": 135,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 284",
+        "levelIndex": 220,
+        "duration": 110,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 276",
+        "levelIndex": 221,
+        "duration": 105,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 274",
+        "levelIndex": 222,
+        "duration": 90,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 272",
+        "levelIndex": 223,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 264",
+        "levelIndex": 224,
+        "duration": 130,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 145",
+        "levelIndex": 225,
+        "duration": 110,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 270",
+        "levelIndex": 226,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 279",
+        "levelIndex": 227,
+        "duration": 113,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 230",
+        "levelIndex": 228,
+        "duration": 140,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 273",
+        "levelIndex": 229,
+        "duration": 150,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 278",
+        "levelIndex": 230,
+        "duration": 125,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 146",
+        "levelIndex": 231,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 269",
+        "levelIndex": 232,
+        "duration": 130,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 147",
+        "levelIndex": 233,
+        "duration": 105,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 298",
+        "levelIndex": 234,
+        "duration": 115,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 244",
+        "levelIndex": 235,
+        "duration": 100,
+        "minDuration": 70,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix Derin 12",
+        "levelIndex": 236,
+        "duration": 130,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 241",
+        "levelIndex": 237,
+        "duration": 95,
+        "minDuration": 80,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 148",
+        "levelIndex": 238,
+        "duration": 180,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 306",
+        "levelIndex": 239,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 303",
+        "levelIndex": 240,
+        "duration": 130,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 275",
+        "levelIndex": 241,
+        "duration": 155,
+        "minDuration": 125,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 173",
+        "levelIndex": 242,
+        "duration": 130,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 226",
+        "levelIndex": 243,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 271",
+        "levelIndex": 244,
+        "duration": 165,
+        "minDuration": 135,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 206",
+        "levelIndex": 245,
+        "duration": 100,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 239",
+        "levelIndex": 246,
+        "duration": 90,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 291",
+        "levelIndex": 247,
+        "duration": 230,
+        "minDuration": 185,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 157",
+        "levelIndex": 248,
+        "duration": 135,
+        "minDuration": 105,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 227",
+        "levelIndex": 249,
+        "duration": 110,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 152",
+        "levelIndex": 250,
+        "duration": 140,
+        "minDuration": 120,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 318",
+        "levelIndex": 251,
+        "duration": 75,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 277",
+        "levelIndex": 252,
+        "duration": 135,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 158",
+        "levelIndex": 253,
+        "duration": 175,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 238",
+        "levelIndex": 254,
+        "duration": 140,
+        "minDuration": 105,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 285",
+        "levelIndex": 255,
+        "duration": 105,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 161",
+        "levelIndex": 256,
+        "duration": 135,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 281",
+        "levelIndex": 257,
+        "duration": 165,
+        "minDuration": 135,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 164",
+        "levelIndex": 258,
+        "duration": 200,
+        "minDuration": 150,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 229",
+        "levelIndex": 259,
+        "duration": 150,
+        "minDuration": 120,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 280",
+        "levelIndex": 260,
+        "duration": 105,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 265",
+        "levelIndex": 261,
+        "duration": 175,
+        "minDuration": 135,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 167",
+        "levelIndex": 262,
+        "duration": 90,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 233",
+        "levelIndex": 263,
+        "duration": 140,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 168",
+        "levelIndex": 264,
+        "duration": 190,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 283",
+        "levelIndex": 265,
+        "duration": 150,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 232",
+        "levelIndex": 266,
+        "duration": 135,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 166",
+        "levelIndex": 267,
+        "duration": 100,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 267",
+        "levelIndex": 268,
+        "duration": 135,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 282",
+        "levelIndex": 269,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 352",
+        "levelIndex": 270,
+        "duration": 150,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 365",
+        "levelIndex": 271,
+        "duration": 150,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 342",
+        "levelIndex": 272,
+        "duration": 100,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 385",
+        "levelIndex": 273,
+        "duration": 150,
+        "minDuration": 115,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 170",
+        "levelIndex": 274,
+        "duration": 100,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 353",
+        "levelIndex": 275,
+        "duration": 200,
+        "minDuration": 55,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 375",
+        "levelIndex": 276,
+        "duration": 125,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 236",
+        "levelIndex": 277,
+        "duration": 125,
+        "minDuration": 60,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 171",
+        "levelIndex": 278,
+        "duration": 215,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 383",
+        "levelIndex": 279,
+        "duration": 140,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 355",
+        "levelIndex": 280,
+        "duration": 130,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 163",
+        "levelIndex": 281,
+        "duration": 100,
+        "minDuration": 90,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 361",
+        "levelIndex": 282,
+        "duration": 95,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 143",
+        "levelIndex": 283,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 174",
+        "levelIndex": 284,
+        "duration": 115,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 394",
+        "levelIndex": 285,
+        "duration": 115,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 319",
+        "levelIndex": 286,
+        "duration": 150,
+        "minDuration": 135,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 268",
+        "levelIndex": 287,
+        "duration": 215,
+        "minDuration": 180,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 357",
+        "levelIndex": 288,
+        "duration": 135,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 172",
+        "levelIndex": 289,
+        "duration": 120,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 184",
+        "levelIndex": 290,
+        "duration": 160,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 356",
+        "levelIndex": 291,
+        "duration": 100,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 296",
+        "levelIndex": 292,
+        "duration": 125,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 245",
+        "levelIndex": 293,
+        "duration": 175,
+        "minDuration": 120,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 377",
+        "levelIndex": 294,
+        "duration": 120,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 224",
+        "levelIndex": 295,
+        "duration": 145,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 387",
+        "levelIndex": 296,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 242",
+        "levelIndex": 297,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 314",
+        "levelIndex": 298,
+        "duration": 100,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 266",
+        "levelIndex": 299,
+        "duration": 170,
+        "minDuration": 120,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 231",
+        "levelIndex": 300,
+        "duration": 80,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 388",
+        "levelIndex": 301,
+        "duration": 130,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 162",
+        "levelIndex": 302,
+        "duration": 160,
+        "minDuration": 65,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 389",
+        "levelIndex": 303,
+        "duration": 130,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 288",
+        "levelIndex": 304,
+        "duration": 115,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 165",
+        "levelIndex": 305,
+        "duration": 150,
+        "minDuration": 120,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 307",
+        "levelIndex": 306,
+        "duration": 95,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 237",
+        "levelIndex": 307,
+        "duration": 90,
+        "minDuration": 65,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 235",
+        "levelIndex": 308,
+        "duration": 165,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 367",
+        "levelIndex": 309,
+        "duration": 115,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 289",
+        "levelIndex": 310,
+        "duration": 135,
+        "minDuration": 105,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 393",
+        "levelIndex": 311,
+        "duration": 120,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 293",
+        "levelIndex": 312,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 137",
+        "levelIndex": 313,
+        "duration": 135,
+        "minDuration": 80,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 395",
+        "levelIndex": 314,
+        "duration": 115,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 360",
+        "levelIndex": 315,
+        "duration": 105,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 301",
+        "levelIndex": 316,
+        "duration": 110,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 366",
+        "levelIndex": 317,
+        "duration": 110,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 364",
+        "levelIndex": 318,
+        "duration": 180,
+        "minDuration": 115,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 243",
+        "levelIndex": 319,
+        "duration": 65,
+        "minDuration": 50,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 340",
+        "levelIndex": 320,
+        "duration": 115,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 344",
+        "levelIndex": 321,
+        "duration": 140,
+        "minDuration": 110,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 339",
+        "levelIndex": 322,
+        "duration": 110,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 348",
+        "levelIndex": 323,
+        "duration": 125,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 333",
+        "levelIndex": 324,
+        "duration": 165,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 345",
+        "levelIndex": 325,
+        "duration": 125,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 335",
+        "levelIndex": 326,
+        "duration": 130,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 354",
+        "levelIndex": 327,
+        "duration": 110,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 390",
+        "levelIndex": 328,
+        "duration": 110,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 373",
+        "levelIndex": 329,
+        "duration": 165,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 207",
+        "levelIndex": 330,
+        "duration": 120,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 346",
+        "levelIndex": 331,
+        "duration": 200,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 290",
+        "levelIndex": 332,
+        "duration": 120,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 246",
+        "levelIndex": 333,
+        "duration": 120,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 294",
+        "levelIndex": 334,
+        "duration": 110,
+        "minDuration": 80,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 334",
+        "levelIndex": 335,
+        "duration": 120,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 208",
+        "levelIndex": 336,
+        "duration": 80,
+        "minDuration": 65,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 341",
+        "levelIndex": 337,
+        "duration": 105,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 358",
+        "levelIndex": 338,
+        "duration": 135,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 328",
+        "levelIndex": 339,
+        "duration": 100,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 363",
+        "levelIndex": 340,
+        "duration": 120,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level mix 20",
+        "levelIndex": 341,
+        "duration": 130,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 297",
+        "levelIndex": 342,
+        "duration": 105,
+        "minDuration": 85,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 380",
+        "levelIndex": 343,
+        "duration": 115,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 259",
+        "levelIndex": 344,
+        "duration": 180,
+        "minDuration": 150,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 327",
+        "levelIndex": 345,
+        "duration": 160,
+        "minDuration": 135,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 322",
+        "levelIndex": 346,
+        "duration": 125,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level mix 11",
+        "levelIndex": 347,
+        "duration": 100,
+        "minDuration": 60,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 331",
+        "levelIndex": 348,
+        "duration": 120,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 234",
+        "levelIndex": 349,
+        "duration": 140,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 325",
+        "levelIndex": 350,
+        "duration": 180,
+        "minDuration": 70,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 386",
+        "levelIndex": 351,
+        "duration": 135,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 337",
+        "levelIndex": 352,
+        "duration": 105,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 326",
+        "levelIndex": 353,
+        "duration": 170,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 378",
+        "levelIndex": 354,
+        "duration": 125,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 336",
+        "levelIndex": 355,
+        "duration": 105,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 317",
+        "levelIndex": 356,
+        "duration": 120,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 368",
+        "levelIndex": 357,
+        "duration": 125,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 332",
+        "levelIndex": 358,
+        "duration": 160,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 316",
+        "levelIndex": 359,
+        "duration": 115,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 287",
+        "levelIndex": 360,
+        "duration": 95,
+        "minDuration": 65,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 159",
+        "levelIndex": 361,
+        "duration": 125,
+        "minDuration": 55,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 359",
+        "levelIndex": 362,
+        "duration": 120,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 396",
+        "levelIndex": 363,
+        "duration": 105,
+        "minDuration": 60,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 329",
+        "levelIndex": 364,
+        "duration": 95,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 362",
+        "levelIndex": 365,
+        "duration": 80,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 324",
+        "levelIndex": 366,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 379",
+        "levelIndex": 367,
+        "duration": 80,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 349",
+        "levelIndex": 368,
+        "duration": 120,
+        "minDuration": 75,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 295",
+        "levelIndex": 369,
+        "duration": 120,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 323",
+        "levelIndex": 370,
+        "duration": 120,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 313",
+        "levelIndex": 371,
+        "duration": 135,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 384",
+        "levelIndex": 372,
+        "duration": 105,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 391",
+        "levelIndex": 373,
+        "duration": 110,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 310",
+        "levelIndex": 374,
+        "duration": 155,
+        "minDuration": 125,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 299",
+        "levelIndex": 375,
+        "duration": 155,
+        "minDuration": 145,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 369",
+        "levelIndex": 376,
+        "duration": 100,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 155",
+        "levelIndex": 377,
+        "duration": 215,
+        "minDuration": 135,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 347",
+        "levelIndex": 378,
+        "duration": 110,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 151",
+        "levelIndex": 379,
+        "duration": 135,
+        "minDuration": 75,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 312",
+        "levelIndex": 380,
+        "duration": 110,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 374",
+        "levelIndex": 381,
+        "duration": 130,
+        "minDuration": 115,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 300",
+        "levelIndex": 382,
+        "duration": 170,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 343",
+        "levelIndex": 383,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 382",
+        "levelIndex": 384,
+        "duration": 130,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 330",
+        "levelIndex": 385,
+        "duration": 160,
+        "minDuration": 150,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 315",
+        "levelIndex": 386,
+        "duration": 100,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 150",
+        "levelIndex": 387,
+        "duration": 200,
+        "minDuration": 155,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 350",
+        "levelIndex": 388,
+        "duration": 130,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 305",
+        "levelIndex": 389,
+        "duration": 135,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 381",
+        "levelIndex": 390,
+        "duration": 180,
+        "minDuration": 135,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 372",
+        "levelIndex": 391,
+        "duration": 125,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 292",
+        "levelIndex": 392,
+        "duration": 135,
+        "minDuration": 95,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 144",
+        "levelIndex": 393,
+        "duration": 120,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 371",
+        "levelIndex": 394,
+        "duration": 125,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 286",
+        "levelIndex": 395,
+        "duration": 115,
+        "minDuration": 95,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 392",
+        "levelIndex": 396,
+        "duration": 110,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 160",
+        "levelIndex": 397,
+        "duration": 120,
+        "minDuration": 80,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 376",
+        "levelIndex": 398,
+        "duration": 90,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 370",
+        "levelIndex": 399,
+        "duration": 110,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 338",
+        "levelIndex": 400,
+        "duration": 120,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 397",
+        "levelIndex": 401,
+        "duration": 110,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 351",
+        "levelIndex": 402,
+        "duration": 170,
+        "minDuration": 125,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 433",
+        "levelIndex": 403,
+        "duration": 65,
+        "minDuration": 65,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 437",
+        "levelIndex": 404,
+        "duration": 85,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 434",
+        "levelIndex": 405,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 411",
+        "levelIndex": 406,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 444",
+        "levelIndex": 407,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 400",
+        "levelIndex": 408,
+        "duration": 130,
+        "minDuration": 130,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 417",
+        "levelIndex": 409,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 430",
+        "levelIndex": 410,
+        "duration": 230,
+        "minDuration": 230,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 416",
+        "levelIndex": 411,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 402",
+        "levelIndex": 412,
+        "duration": 130,
+        "minDuration": 130,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 424",
+        "levelIndex": 413,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 412",
+        "levelIndex": 414,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 413",
+        "levelIndex": 415,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 426",
+        "levelIndex": 416,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 398",
+        "levelIndex": 417,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 439",
+        "levelIndex": 418,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 455",
+        "levelIndex": 419,
+        "duration": 145,
+        "minDuration": 145,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 401",
+        "levelIndex": 420,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 418",
+        "levelIndex": 421,
+        "duration": 135,
+        "minDuration": 135,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 440",
+        "levelIndex": 422,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 441",
+        "levelIndex": 423,
+        "duration": 150,
+        "minDuration": 150,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 442",
+        "levelIndex": 424,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 427",
+        "levelIndex": 425,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 399",
+        "levelIndex": 426,
+        "duration": 155,
+        "minDuration": 155,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 414",
+        "levelIndex": 427,
+        "duration": 135,
+        "minDuration": 135,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 404",
+        "levelIndex": 428,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 435",
+        "levelIndex": 429,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 419",
+        "levelIndex": 430,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 420",
+        "levelIndex": 431,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 408",
+        "levelIndex": 432,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 428",
+        "levelIndex": 433,
+        "duration": 165,
+        "minDuration": 165,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 425",
+        "levelIndex": 434,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 421",
+        "levelIndex": 435,
+        "duration": 85,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 429",
+        "levelIndex": 436,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 446",
+        "levelIndex": 437,
+        "duration": 145,
+        "minDuration": 145,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 431",
+        "levelIndex": 438,
+        "duration": 95,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 405",
+        "levelIndex": 439,
+        "duration": 135,
+        "minDuration": 135,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 443",
+        "levelIndex": 440,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 423",
+        "levelIndex": 441,
+        "duration": 85,
+        "minDuration": 85,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 432",
+        "levelIndex": 442,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 407",
+        "levelIndex": 443,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 436",
+        "levelIndex": 444,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 438",
+        "levelIndex": 445,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 448",
+        "levelIndex": 446,
+        "duration": 135,
+        "minDuration": 135,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 406",
+        "levelIndex": 447,
+        "duration": 80,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 445",
+        "levelIndex": 448,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 403",
+        "levelIndex": 449,
+        "duration": 145,
+        "minDuration": 145,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 447",
+        "levelIndex": 450,
+        "duration": 75,
+        "minDuration": 75,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 449",
+        "levelIndex": 451,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 450",
+        "levelIndex": 452,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 415",
+        "levelIndex": 453,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 452",
+        "levelIndex": 454,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 409",
+        "levelIndex": 455,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 454",
+        "levelIndex": 456,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 451",
+        "levelIndex": 457,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 410",
+        "levelIndex": 458,
+        "duration": 140,
+        "minDuration": 140,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 457",
+        "levelIndex": 459,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 422",
+        "levelIndex": 460,
+        "duration": 85,
+        "minDuration": 85,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 458",
+        "levelIndex": 461,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 459",
+        "levelIndex": 462,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 460",
+        "levelIndex": 463,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 456",
+        "levelIndex": 464,
+        "duration": 140,
+        "minDuration": 140,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 461",
+        "levelIndex": 465,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 462",
+        "levelIndex": 466,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 463",
+        "levelIndex": 467,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 453",
+        "levelIndex": 468,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 464",
+        "levelIndex": 469,
+        "duration": 95,
+        "minDuration": 95,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 466",
+        "levelIndex": 470,
+        "duration": 80,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 467",
+        "levelIndex": 471,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 465",
+        "levelIndex": 472,
+        "duration": 130,
+        "minDuration": 130,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 468",
+        "levelIndex": 473,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 469",
+        "levelIndex": 474,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 471",
+        "levelIndex": 475,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 474",
+        "levelIndex": 476,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 472",
+        "levelIndex": 477,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 473",
+        "levelIndex": 478,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 470",
+        "levelIndex": 479,
+        "duration": 135,
+        "minDuration": 135,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 475",
+        "levelIndex": 480,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 478",
+        "levelIndex": 481,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 509",
+        "levelIndex": 482,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 494",
+        "levelIndex": 483,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 484",
+        "levelIndex": 484,
+        "duration": 130,
+        "minDuration": 130,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 505",
+        "levelIndex": 485,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 513",
+        "levelIndex": 486,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 481",
+        "levelIndex": 487,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 485",
+        "levelIndex": 488,
+        "duration": 130,
+        "minDuration": 130,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 516",
+        "levelIndex": 489,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 511",
+        "levelIndex": 490,
+        "duration": 155,
+        "minDuration": 155,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 502",
+        "levelIndex": 491,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 486",
+        "levelIndex": 492,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 501",
+        "levelIndex": 493,
+        "duration": 150,
+        "minDuration": 150,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 480",
+        "levelIndex": 494,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 490",
+        "levelIndex": 495,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 508",
+        "levelIndex": 496,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 496",
+        "levelIndex": 497,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 489",
+        "levelIndex": 498,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 476",
+        "levelIndex": 499,
+        "duration": 150,
+        "minDuration": 150,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 497",
+        "levelIndex": 500,
+        "duration": 90,
+        "minDuration": 90,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 477",
+        "levelIndex": 501,
+        "duration": 125,
+        "minDuration": 125,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 487",
+        "levelIndex": 502,
+        "duration": 175,
+        "minDuration": 175,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 506",
+        "levelIndex": 503,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 503",
+        "levelIndex": 504,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 479",
+        "levelIndex": 505,
+        "duration": 160,
+        "minDuration": 160,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 507",
+        "levelIndex": 506,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 488",
+        "levelIndex": 507,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 493",
+        "levelIndex": 508,
+        "duration": 160,
+        "minDuration": 160,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 510",
+        "levelIndex": 509,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 512",
+        "levelIndex": 510,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 491",
+        "levelIndex": 511,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 483",
+        "levelIndex": 512,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 514",
+        "levelIndex": 513,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 492",
+        "levelIndex": 514,
+        "duration": 165,
+        "minDuration": 165,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 495",
+        "levelIndex": 515,
+        "duration": 110,
+        "minDuration": 110,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 498",
+        "levelIndex": 516,
+        "duration": 120,
+        "minDuration": 120,
+        "hardness": 1
+    },
+    {
+        "levelName": "Level 504",
+        "levelIndex": 517,
+        "duration": 100,
+        "minDuration": 100,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 482",
+        "levelIndex": 518,
+        "duration": 80,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 500",
+        "levelIndex": 519,
+        "duration": 160,
+        "minDuration": 160,
+        "hardness": 2
+    },
+    {
+        "levelName": "Level 515",
+        "levelIndex": 520,
+        "duration": 115,
+        "minDuration": 115,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 499",
+        "levelIndex": 521,
+        "duration": 155,
+        "minDuration": 155,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 517",
+        "levelIndex": 522,
+        "duration": 80,
+        "minDuration": 80,
+        "hardness": 0
+    },
+    {
+        "levelName": "Level 518",
+        "levelIndex": 523,
+        "duration": 105,
+        "minDuration": 105,
+        "hardness": 0
+    }
+]

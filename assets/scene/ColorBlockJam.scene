@@ -166,7 +166,7 @@
   {
     "__type__": "cc.Node",
     "_name": "Main Camera",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "__editorExtras__": {},
     "_parent": {
       "__id__": 1
@@ -182,15 +182,15 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 0,
-      "z": 20
+      "y": -1.652,
+      "z": 28.512
     },
     "_lrot": {
       "__type__": "cc.Quat",
-      "x": 0,
+      "x": 0.014773674644701851,
       "y": 0,
       "z": 0,
-      "w": 1
+      "w": 0.9998908633133381
     },
     "_lscale": {
       "__type__": "cc.Vec3",
@@ -202,7 +202,7 @@
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 1.693,
       "y": 0,
       "z": 0
     },
@@ -280,7 +280,7 @@
       "__type__": "cc.Quat",
       "x": 0,
       "y": 0,
-      "z": 0,
+      "z": 2.1714907649794668e-11,
       "w": 1
     },
     "_lscale": {
@@ -295,7 +295,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 0
+      "z": 2.48834512169916e-9
     },
     "_id": "47Uw3UkStKlo2uOkLzJfTi"
   },
@@ -309,10 +309,73 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "legoFlatPrefab": {
-      "__uuid__": "82e0b6f3-a3b0-47ff-ab22-1a8b832b9108@d2247",
-      "__expectedType__": "cc.Prefab"
-    },
+    "BlockGroup": [
+      {
+        "__uuid__": "e92ffe59-e41a-41a0-b590-bccd73e872b4",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "db56437b-e3ff-430e-bbcf-ba4f223dc07a",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "c743d19c-384a-443f-9bc3-1c05e8227774",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "648e023d-283f-417a-a5b4-4a410fac8efc",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "648e023d-283f-417a-a5b4-4a410fac8efc",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "1de7eaae-8fad-4ceb-8a33-2e1f895e1cf3",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "858a924e-f7c6-4bda-875e-e820177ae874",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "f7ea1eeb-327c-44d0-9c9d-21f734526957",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "172b06a9-b3d6-477b-a4fe-b307159abe51",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "b116b3fc-d52e-46fe-8420-47ba604b6e38",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "b116b3fc-d52e-46fe-8420-47ba604b6e38",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "59612ca5-2325-41e2-b0e6-db74f0aaed92",
+        "__expectedType__": "cc.Prefab"
+      }
+    ],
+    "Blockades": [
+      {
+        "__uuid__": "3fe18ca3-cf7c-4dc6-a4ad-c80d1cbf23cf",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "1326a284-d6bd-446c-8040-7bcb98699cfe",
+        "__expectedType__": "cc.Prefab"
+      },
+      null,
+      {
+        "__uuid__": "e1dc642c-1ce2-4a6f-888f-b7c2c2a7b20a",
+        "__expectedType__": "cc.Prefab"
+      },
+      null,
+      null
+    ],
     "_id": "53nN6W+pRHcLwN2qkr7oMI"
   },
   {
@@ -335,7 +398,7 @@
       "__type__": "cc.Vec3",
       "x": -0.014,
       "y": 0.004,
-      "z": 0
+      "z": -1.574
     },
     "_lrot": {
       "__type__": "cc.Quat",
