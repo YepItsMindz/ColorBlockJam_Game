@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "3fe18ca3-cf7c-4dc6-a4ad-c80d1cbf23cf",
+  "uuid": "36209a30-9187-440d-9cc0-838815da087d",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "base-side"
+    "syncNodeName": "Gate_3"
   }
 }

@@ -14,46 +14,22 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            86,
-                            0,
-                            22
-                        ]
+                        "items": [86, 0, 22]
                     },
                     {
-                        "items": [
-                            121,
-                            121,
-                            0
-                        ]
+                        "items": [121, 121, 0]
                     },
                     {
-                        "items": [
-                            40,
-                            40,
-                            0
-                        ]
+                        "items": [40, 40, 0]
                     },
                     {
-                        "items": [
-                            53,
-                            53,
-                            44
-                        ]
+                        "items": [53, 53, 44]
                     },
                     {
-                        "items": [
-                            120,
-                            0,
-                            108
-                        ]
+                        "items": [120, 0, 108]
                     },
                     {
-                        "items": [
-                            0,
-                            77,
-                            77
-                        ]
+                        "items": [0, 77, 77]
                     }
                 ]
             },
@@ -67,46 +43,22 @@
                 "isLock": 1,
                 "itemsLayer": [
                     {
-                        "items": [
-                            86,
-                            47,
-                            0
-                        ]
+                        "items": [86, 47, 0]
                     },
                     {
-                        "items": [
-                            84,
-                            84,
-                            0
-                        ]
+                        "items": [84, 84, 0]
                     },
                     {
-                        "items": [
-                            0,
-                            71,
-                            71
-                        ]
+                        "items": [0, 71, 71]
                     },
                     {
-                        "items": [
-                            0,
-                            106,
-                            106
-                        ]
+                        "items": [0, 106, 106]
                     },
                     {
-                        "items": [
-                            0,
-                            90,
-                            108
-                        ]
+                        "items": [0, 90, 108]
                     },
                     {
-                        "items": [
-                            13,
-                            0,
-                            0
-                        ]
+                        "items": [13, 0, 0]
                     }
                 ]
             },
@@ -120,39 +72,19 @@
                 "isLock": 1,
                 "itemsLayer": [
                     {
-                        "items": [
-                            78,
-                            78,
-                            0
-                        ]
+                        "items": [78, 78, 0]
                     },
                     {
-                        "items": [
-                            0,
-                            83,
-                            83
-                        ]
+                        "items": [0, 83, 83]
                     },
                     {
-                        "items": [
-                            0,
-                            35,
-                            35
-                        ]
+                        "items": [0, 35, 35]
                     },
                     {
-                        "items": [
-                            125,
-                            125,
-                            0
-                        ]
+                        "items": [125, 125, 0]
                     },
                     {
-                        "items": [
-                            64,
-                            64,
-                            128
-                        ]
+                        "items": [64, 64, 128]
                     }
                 ]
             },
@@ -166,46 +98,22 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            46,
-                            131,
-                            131
-                        ]
+                        "items": [46, 131, 131]
                     },
                     {
-                        "items": [
-                            43,
-                            130,
-                            130
-                        ]
+                        "items": [43, 130, 130]
                     },
                     {
-                        "items": [
-                            46,
-                            46,
-                            0
-                        ]
+                        "items": [46, 46, 0]
                     },
                     {
-                        "items": [
-                            0,
-                            67,
-                            67
-                        ]
+                        "items": [0, 67, 67]
                     },
                     {
-                        "items": [
-                            120,
-                            90,
-                            63
-                        ]
+                        "items": [120, 90, 63]
                     },
                     {
-                        "items": [
-                            59,
-                            48,
-                            59
-                        ]
+                        "items": [59, 48, 59]
                     }
                 ]
             },
@@ -219,32 +127,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            0,
-                            104,
-                            104
-                        ]
+                        "items": [0, 104, 104]
                     },
                     {
-                        "items": [
-                            0,
-                            107,
-                            107
-                        ]
+                        "items": [0, 107, 107]
                     },
                     {
-                        "items": [
-                            80,
-                            80,
-                            0
-                        ]
+                        "items": [80, 80, 0]
                     },
                     {
-                        "items": [
-                            0,
-                            3,
-                            3
-                        ]
+                        "items": [0, 3, 3]
                     }
                 ]
             },
@@ -258,46 +150,22 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            129,
-                            129,
-                            0
-                        ]
+                        "items": [129, 129, 0]
                     },
                     {
-                        "items": [
-                            126,
-                            126,
-                            0
-                        ]
+                        "items": [126, 126, 0]
                     },
                     {
-                        "items": [
-                            0,
-                            23,
-                            23
-                        ]
+                        "items": [0, 23, 23]
                     },
                     {
-                        "items": [
-                            0,
-                            71,
-                            90
-                        ]
+                        "items": [0, 71, 90]
                     },
                     {
-                        "items": [
-                            37,
-                            37,
-                            12
-                        ]
+                        "items": [37, 37, 12]
                     },
                     {
-                        "items": [
-                            91,
-                            18,
-                            0
-                        ]
+                        "items": [91, 18, 0]
                     }
                 ]
             },
@@ -311,29 +179,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            42
-                        ]
+                        "items": [42]
                     },
                     {
-                        "items": [
-                            42
-                        ]
+                        "items": [42]
                     },
                     {
-                        "items": [
-                            30
-                        ]
+                        "items": [30]
                     },
                     {
-                        "items": [
-                            103
-                        ]
+                        "items": [103]
                     },
                     {
-                        "items": [
-                            116
-                        ]
+                        "items": [116]
                     }
                 ]
             },
@@ -347,29 +205,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            33
-                        ]
+                        "items": [33]
                     },
                     {
-                        "items": [
-                            22
-                        ]
+                        "items": [22]
                     },
                     {
-                        "items": [
-                            126
-                        ]
+                        "items": [126]
                     },
                     {
-                        "items": [
-                            2
-                        ]
+                        "items": [2]
                     },
                     {
-                        "items": [
-                            128
-                        ]
+                        "items": [128]
                     }
                 ]
             },
@@ -383,29 +231,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            105
-                        ]
+                        "items": [105]
                     },
                     {
-                        "items": [
-                            118
-                        ]
+                        "items": [118]
                     },
                     {
-                        "items": [
-                            30
-                        ]
+                        "items": [30]
                     },
                     {
-                        "items": [
-                            4
-                        ]
+                        "items": [4]
                     },
                     {
-                        "items": [
-                            128
-                        ]
+                        "items": [128]
                     }
                 ]
             },
@@ -419,24 +257,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            131
-                        ]
+                        "items": [131]
                     },
                     {
-                        "items": [
-                            50
-                        ]
+                        "items": [50]
                     },
                     {
-                        "items": [
-                            25
-                        ]
+                        "items": [25]
                     },
                     {
-                        "items": [
-                            99
-                        ]
+                        "items": [99]
                     }
                 ]
             },
@@ -450,24 +280,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            78
-                        ]
+                        "items": [78]
                     },
                     {
-                        "items": [
-                            47
-                        ]
+                        "items": [47]
                     },
                     {
-                        "items": [
-                            1
-                        ]
+                        "items": [1]
                     },
                     {
-                        "items": [
-                            106
-                        ]
+                        "items": [106]
                     }
                 ]
             },
@@ -481,24 +303,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            41
-                        ]
+                        "items": [41]
                     },
                     {
-                        "items": [
-                            107
-                        ]
+                        "items": [107]
                     },
                     {
-                        "items": [
-                            23
-                        ]
+                        "items": [23]
                     },
                     {
-                        "items": [
-                            94
-                        ]
+                        "items": [94]
                     }
                 ]
             },
@@ -512,29 +326,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            20
-                        ]
+                        "items": [20]
                     },
                     {
-                        "items": [
-                            130
-                        ]
+                        "items": [130]
                     },
                     {
-                        "items": [
-                            81
-                        ]
+                        "items": [81]
                     },
                     {
-                        "items": [
-                            18
-                        ]
+                        "items": [18]
                     },
                     {
-                        "items": [
-                            116
-                        ]
+                        "items": [116]
                     }
                 ]
             },
@@ -548,29 +352,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            20
-                        ]
+                        "items": [20]
                     },
                     {
-                        "items": [
-                            50
-                        ]
+                        "items": [50]
                     },
                     {
-                        "items": [
-                            81
-                        ]
+                        "items": [81]
                     },
                     {
-                        "items": [
-                            3
-                        ]
+                        "items": [3]
                     },
                     {
-                        "items": [
-                            48
-                        ]
+                        "items": [48]
                     }
                 ]
             },
@@ -584,24 +378,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            22
-                        ]
+                        "items": [22]
                     },
                     {
-                        "items": [
-                            47
-                        ]
+                        "items": [47]
                     },
                     {
-                        "items": [
-                            42
-                        ]
+                        "items": [42]
                     },
                     {
-                        "items": [
-                            67
-                        ]
+                        "items": [67]
                     }
                 ]
             },
@@ -615,34 +401,22 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            17
-                        ]
+                        "items": [17]
                     },
                     {
-                        "items": [
-                            75
-                        ]
+                        "items": [75]
                     },
                     {
-                        "items": [
-                            25
-                        ]
+                        "items": [25]
                     },
                     {
-                        "items": [
-                            103
-                        ]
+                        "items": [103]
                     },
                     {
-                        "items": [
-                            61
-                        ]
+                        "items": [61]
                     },
                     {
-                        "items": [
-                            61
-                        ]
+                        "items": [61]
                     }
                 ]
             },
@@ -656,39 +430,25 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            57
-                        ]
+                        "items": [57]
                     },
                     {
-                        "items": [
-                            49
-                        ]
+                        "items": [49]
                     },
                     {
-                        "items": [
-                            98
-                        ]
+                        "items": [98]
                     },
                     {
-                        "items": [
-                            1
-                        ]
+                        "items": [1]
                     },
                     {
-                        "items": [
-                            123
-                        ]
+                        "items": [123]
                     },
                     {
-                        "items": [
-                            18
-                        ]
+                        "items": [18]
                     },
                     {
-                        "items": [
-                            13
-                        ]
+                        "items": [13]
                     }
                 ]
             },
@@ -702,39 +462,25 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            57
-                        ]
+                        "items": [57]
                     },
                     {
-                        "items": [
-                            49
-                        ]
+                        "items": [49]
                     },
                     {
-                        "items": [
-                            98
-                        ]
+                        "items": [98]
                     },
                     {
-                        "items": [
-                            1
-                        ]
+                        "items": [1]
                     },
                     {
-                        "items": [
-                            120
-                        ]
+                        "items": [120]
                     },
                     {
-                        "items": [
-                            91
-                        ]
+                        "items": [91]
                     },
                     {
-                        "items": [
-                            59
-                        ]
+                        "items": [59]
                     }
                 ]
             },
@@ -748,39 +494,25 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            49
-                        ]
+                        "items": [49]
                     },
                     {
-                        "items": [
-                            98
-                        ]
+                        "items": [98]
                     },
                     {
-                        "items": [
-                            114
-                        ]
+                        "items": [114]
                     },
                     {
-                        "items": [
-                            99
-                        ]
+                        "items": [99]
                     },
                     {
-                        "items": [
-                            4
-                        ]
+                        "items": [4]
                     },
                     {
-                        "items": [
-                            77
-                        ]
+                        "items": [77]
                     },
                     {
-                        "items": [
-                            13
-                        ]
+                        "items": [13]
                     }
                 ]
             },
@@ -794,39 +526,25 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            57
-                        ]
+                        "items": [57]
                     },
                     {
-                        "items": [
-                            17
-                        ]
+                        "items": [17]
                     },
                     {
-                        "items": [
-                            114
-                        ]
+                        "items": [114]
                     },
                     {
-                        "items": [
-                            99
-                        ]
+                        "items": [99]
                     },
                     {
-                        "items": [
-                            4
-                        ]
+                        "items": [4]
                     },
                     {
-                        "items": [
-                            91
-                        ]
+                        "items": [91]
                     },
                     {
-                        "items": [
-                            61
-                        ]
+                        "items": [61]
                     }
                 ]
             },
@@ -840,25 +558,13 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            0,
-                            100,
-                            100
-                        ]
+                        "items": [0, 100, 100]
                     },
                     {
-                        "items": [
-                            58,
-                            58,
-                            0
-                        ]
+                        "items": [58, 58, 0]
                     },
                     {
-                        "items": [
-                            0,
-                            43,
-                            43
-                        ]
+                        "items": [0, 43, 43]
                     }
                 ]
             },
@@ -872,39 +578,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            41,
-                            33,
-                            33
-                        ]
+                        "items": [41, 33, 33]
                     },
                     {
-                        "items": [
-                            41,
-                            58,
-                            0
-                        ]
+                        "items": [41, 58, 0]
                     },
                     {
-                        "items": [
-                            85,
-                            85,
-                            30
-                        ]
+                        "items": [85, 85, 30]
                     },
                     {
-                        "items": [
-                            108,
-                            2,
-                            2
-                        ]
+                        "items": [108, 2, 2]
                     },
                     {
-                        "items": [
-                            0,
-                            123,
-                            123
-                        ]
+                        "items": [0, 123, 123]
                     }
                 ]
             },
@@ -918,24 +604,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            17
-                        ]
+                        "items": [17]
                     },
                     {
-                        "items": [
-                            75
-                        ]
+                        "items": [75]
                     },
                     {
-                        "items": [
-                            5
-                        ]
+                        "items": [5]
                     },
                     {
-                        "items": [
-                            103
-                        ]
+                        "items": [103]
                     }
                 ]
             },
@@ -949,29 +627,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            100
-                        ]
+                        "items": [100]
                     },
                     {
-                        "items": [
-                            86
-                        ]
+                        "items": [86]
                     },
                     {
-                        "items": [
-                            44
-                        ]
+                        "items": [44]
                     },
                     {
-                        "items": [
-                            5
-                        ]
+                        "items": [5]
                     },
                     {
-                        "items": [
-                            64
-                        ]
+                        "items": [64]
                     }
                 ]
             },
@@ -985,24 +653,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            70
-                        ]
+                        "items": [70]
                     },
                     {
-                        "items": [
-                            84
-                        ]
+                        "items": [84]
                     },
                     {
-                        "items": [
-                            63
-                        ]
+                        "items": [63]
                     },
                     {
-                        "items": [
-                            12
-                        ]
+                        "items": [12]
                     }
                 ]
             },
@@ -1016,24 +676,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            70
-                        ]
+                        "items": [70]
                     },
                     {
-                        "items": [
-                            44
-                        ]
+                        "items": [44]
                     },
                     {
-                        "items": [
-                            25
-                        ]
+                        "items": [25]
                     },
                     {
-                        "items": [
-                            53
-                        ]
+                        "items": [53]
                     }
                 ]
             },
@@ -1047,29 +699,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            20
-                        ]
+                        "items": [20]
                     },
                     {
-                        "items": [
-                            75
-                        ]
+                        "items": [75]
                     },
                     {
-                        "items": [
-                            80
-                        ]
+                        "items": [80]
                     },
                     {
-                        "items": [
-                            5
-                        ]
+                        "items": [5]
                     },
                     {
-                        "items": [
-                            48
-                        ]
+                        "items": [48]
                     }
                 ]
             },
@@ -1083,29 +725,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            105
-                        ]
+                        "items": [105]
                     },
                     {
-                        "items": [
-                            83
-                        ]
+                        "items": [83]
                     },
                     {
-                        "items": [
-                            63
-                        ]
+                        "items": [63]
                     },
                     {
-                        "items": [
-                            125
-                        ]
+                        "items": [125]
                     },
                     {
-                        "items": [
-                            37
-                        ]
+                        "items": [37]
                     }
                 ]
             },
@@ -1119,24 +751,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            104
-                        ]
+                        "items": [104]
                     },
                     {
-                        "items": [
-                            118
-                        ]
+                        "items": [118]
                     },
                     {
-                        "items": [
-                            40
-                        ]
+                        "items": [40]
                     },
                     {
-                        "items": [
-                            94
-                        ]
+                        "items": [94]
                     }
                 ]
             },
@@ -1150,24 +774,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            70
-                        ]
+                        "items": [70]
                     },
                     {
-                        "items": [
-                            118
-                        ]
+                        "items": [118]
                     },
                     {
-                        "items": [
-                            114
-                        ]
+                        "items": [114]
                     },
                     {
-                        "items": [
-                            94
-                        ]
+                        "items": [94]
                     }
                 ]
             },
@@ -1181,29 +797,19 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            105
-                        ]
+                        "items": [105]
                     },
                     {
-                        "items": [
-                            121
-                        ]
+                        "items": [121]
                     },
                     {
-                        "items": [
-                            35
-                        ]
+                        "items": [35]
                     },
                     {
-                        "items": [
-                            12
-                        ]
+                        "items": [12]
                     },
                     {
-                        "items": [
-                            116
-                        ]
+                        "items": [116]
                     }
                 ]
             },
@@ -1217,24 +823,16 @@
                 "isLock": 0,
                 "itemsLayer": [
                     {
-                        "items": [
-                            129
-                        ]
+                        "items": [129]
                     },
                     {
-                        "items": [
-                            50
-                        ]
+                        "items": [50]
                     },
                     {
-                        "items": [
-                            85
-                        ]
+                        "items": [85]
                     },
                     {
-                        "items": [
-                            81
-                        ]
+                        "items": [81]
                     }
                 ]
             }

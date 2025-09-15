@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "91936b93-8519-466a-a1cc-843193fe227e",
+  "uuid": "0fa5d260-d1f1-4414-a50f-ad8ff2811b42",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Blockade_Color_Size"
+    "syncNodeName": "Gate_2_Block"
   }
 }

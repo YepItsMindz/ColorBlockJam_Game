@@ -26,13 +26,16 @@
         "__id__": 7
       },
       {
-        "__id__": 9
+        "__id__": 10
+      },
+      {
+        "__id__": 13
       }
     ],
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 12
+      "__id__": 15
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -63,7 +66,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 13
+      "__id__": 16
     },
     "_id": "ae1f5804-e3c2-4aad-85be-91fa54859d27"
   },
@@ -267,6 +270,9 @@
     "_components": [
       {
         "__id__": 8
+      },
+      {
+        "__id__": 9
       }
     ],
     "_prefab": null,
@@ -365,18 +371,53 @@
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "1326a284-d6bd-446c-8040-7bcb98699cfe",
+        "__uuid__": "f5b27741-a7dc-49d6-a42a-3af897500eb2",
         "__expectedType__": "cc.Prefab"
       },
+      {
+        "__uuid__": "15724bd8-87cf-47ce-aa87-9e82be7715b2",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "77acd536-f64b-42bc-b776-2cab944c0997",
+        "__expectedType__": "cc.Prefab"
+      }
+    ],
+    "Door": [
       null,
       {
-        "__uuid__": "e1dc642c-1ce2-4a6f-888f-b7c2c2a7b20a",
+        "__uuid__": "fbcbb545-dccb-43c4-8834-54c2f7d2674c",
         "__expectedType__": "cc.Prefab"
       },
-      null,
-      null
+      {
+        "__uuid__": "8ebc180a-045e-4ab8-9871-7d9f721beab0",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "36209a30-9187-440d-9cc0-838815da087d",
+        "__expectedType__": "cc.Prefab"
+      }
     ],
+    "Grid": {
+      "__uuid__": "0959903d-0526-40fe-9c42-7c23222e37fd",
+      "__expectedType__": "cc.Prefab"
+    },
     "_id": "53nN6W+pRHcLwN2qkr7oMI"
+  },
+  {
+    "__type__": "e2a77I7tVhItKBYzJA/i4b0",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "camera": {
+      "__id__": 6
+    },
+    "_id": "42B4YvzGxCP5Vj1C6/DKIk"
   },
   {
     "__type__": "cc.Node",
@@ -390,7 +431,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 10
+        "__id__": 11
       }
     ],
     "_prefab": null,
@@ -398,7 +439,7 @@
       "__type__": "cc.Vec3",
       "x": -0.014,
       "y": 0.004,
-      "z": -1.574
+      "z": -4.462
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -429,7 +470,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 9
+      "__id__": 10
     },
     "_enabled": true,
     "__prefab": null,
@@ -441,7 +482,7 @@
     ],
     "_visFlags": 0,
     "bakeSettings": {
-      "__id__": 11
+      "__id__": 12
     },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@a804a",
@@ -479,6 +520,89 @@
     "_bakeToReflectionProbe": true
   },
   {
+    "__type__": "cc.Node",
+    "_name": "SpriteRenderer",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": false,
+    "_components": [
+      {
+        "__id__": 14
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": -1.479
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1000,
+      "y": 1000,
+      "z": 1.702
+    },
+    "_mobility": 0,
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "56dOOxmhNCPY/huoecSWUJ"
+  },
+  {
+    "__type__": "cc.SpriteRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 13
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_materials": [
+      {
+        "__uuid__": "ade8a15a-dcca-4b3c-84c6-f6476ac875bb",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "_visFlags": 0,
+    "_spriteFrame": {
+      "__uuid__": "7d8f9b89-4fd1-4c9f-a3ab-38ec7cded7ca@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_mode": 0,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_flipX": false,
+    "_flipY": false,
+    "_size": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_id": "507a61ctFIba0xKBZOaiF6"
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": null,
     "asset": null,
@@ -489,28 +613,28 @@
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 14
-    },
-    "shadows": {
-      "__id__": 15
-    },
-    "_skybox": {
-      "__id__": 16
-    },
-    "fog": {
       "__id__": 17
     },
-    "octree": {
+    "shadows": {
       "__id__": 18
     },
-    "skin": {
+    "_skybox": {
       "__id__": 19
     },
-    "lightProbeInfo": {
+    "fog": {
       "__id__": 20
     },
-    "postSettings": {
+    "octree": {
       "__id__": 21
+    },
+    "skin": {
+      "__id__": 22
+    },
+    "lightProbeInfo": {
+      "__id__": 23
+    },
+    "postSettings": {
+      "__id__": 24
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false

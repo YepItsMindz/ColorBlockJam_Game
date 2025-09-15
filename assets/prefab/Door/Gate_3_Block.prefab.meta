@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "91078715-9626-4107-bfc3-d71737dfbd3c",
+  "uuid": "5180f70c-e340-48ba-b2e4-436a6dbe919f",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Blockade_Frame"
+    "syncNodeName": "Gate_3_Block"
   }
 }

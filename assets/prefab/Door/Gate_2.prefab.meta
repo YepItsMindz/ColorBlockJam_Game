@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "1326a284-d6bd-446c-8040-7bcb98699cfe",
+  "uuid": "8ebc180a-045e-4ab8-9871-7d9f721beab0",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Blockade_1"
+    "syncNodeName": "Gate_2"
   }
 }

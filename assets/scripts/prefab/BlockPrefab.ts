@@ -3,20 +3,14 @@ const { ccclass, property } = _decorator;
 
 @ccclass('BlockPrefab')
 export class BlockPrefab extends Component {
-    start() {
-
-    }
+    start() {}
 
     @property(MeshRenderer)
     meshRenderer: MeshRenderer = null;
 
-    setMesh(mesh : Mesh) {
+    setMesh(mesh: Mesh) {
         this.meshRenderer.mesh = mesh;
     }
 
-    update(deltaTime: number) {
-        
-    }
+    update(deltaTime: number) {}
 }
-
-

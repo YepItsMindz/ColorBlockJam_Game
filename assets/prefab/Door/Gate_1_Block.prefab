@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "Blockade_3",
+    "_name": "Gate_1_Block",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Blockade_3",
+    "_name": "Gate_1_Block",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -29,9 +29,9 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -0.9796233177185059,
-      "y": -0.7999402284622192,
-      "z": 0.8854855298995972
+      "x": 0,
+      "y": -0.855,
+      "z": -3.224
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -70,7 +70,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "b3720ef5-0ef3-4855-8a0c-77ad4d9022dd@e59fc",
+        "__uuid__": "455d593e-e28e-4e96-859c-1168e3e4f5da@e59fc",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -79,7 +79,7 @@
       "__id__": 4
     },
     "_mesh": {
-      "__uuid__": "b3720ef5-0ef3-4855-8a0c-77ad4d9022dd@3620d",
+      "__uuid__": "455d593e-e28e-4e96-859c-1168e3e4f5da@6ec10",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -95,7 +95,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "5aOwHSCYRVWbFBzwYC5Efh"
+    "fileId": "25msljwhdbXJUPP/YkzS2W"
   },
   {
     "__type__": "cc.ModelBakeSettings",
@@ -125,7 +125,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "9dlYYmG1hTZa2Ydqxjqz79",
+    "fileId": "20sXurFg1bJ6QwzAGpTtrJ",
     "targetOverrides": null
   }
 ]

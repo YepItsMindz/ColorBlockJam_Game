@@ -1,21 +1,47 @@
-import { _decorator, Component, instantiate, JsonAsset, Mesh, Node, Prefab, resources, Vec3 } from 'cc';
+import {
+    _decorator,
+    Component,
+    instantiate,
+    JsonAsset,
+    Node,
+    PhysicsSystem,
+    Prefab,
+    resources,
+} from 'cc';
 const { ccclass, property } = _decorator;
-
-
 
 @ccclass('GameManager')
 export class GameManager extends Component {
-    @property([Prefab]) 
+    @property([Prefab])
     BlockGroup: Prefab[] = [];
 
     @property([Prefab])
     Blockades: Prefab[] = [];
 
+    @property([Prefab])
+    Door: Prefab[] = [];
 
+    @property(Prefab)
+    Grid: Prefab = null;
 
-	start() {
-        this.loadLevel(1)
-	}
+    start() {
+        this.loadLevel(3);
+    }
+
+    instantiateAndSetup(
+        pf: Prefab | null,
+        position: { x: number; y: number; z: number },
+        rotation: { x: number; y: number; z: number },
+        scale?: { x: number; y: number; z: number }
+    ): Node | null {
+        if (!pf) return null;
+        const node = instantiate(pf);
+        node.setPosition(position.x, position.y, position.z);
+        node.setRotationFromEuler(rotation.x, rotation.y + 180, rotation.z);
+        if (scale) node.setScale(scale.x, scale.y, scale.z);
+        this.node.addChild(node);
+        return node;
+    }
 
     getBlockGroupByIndex(index: number): Prefab | null {
         if (index >= 0 && index < this.BlockGroup.length) {
@@ -31,38 +57,84 @@ export class GameManager extends Component {
         return null;
     }
 
-	loadLevel(index : number) {
-		const name = `Level ${index}`;
-		resources.load(`level/${name}`, (err: Error, jsonAsset : JsonAsset) => {
-			if (!err) {
-                let map = jsonAsset.json.levelBlockGroupsData.blockGroupDatas;
-                map.forEach(block => {
+    getDoorByIndex(index: number): Prefab | null {
+        if (index >= 0 && index < this.Door.length) {
+            return this.Door[index];
+        }
+        return null;
+    }
+
+    loadLevel(index: number) {
+        const name = `Level ${index}`;
+        resources.load(`level/${name}`, (err: Error, jsonAsset: JsonAsset) => {
+            if (!err) {
+                let map = jsonAsset.json;
+                map = jsonAsset.json.levelBlockGroupsData.blockGroupDatas;
+                map.forEach((block) => {
                     const pf = this.getBlockGroupByIndex(block.blockGroupType);
+                    if (!pf) return;
+
                     const legoClone = instantiate(pf);
                     legoClone.setPosition(block.position.x, block.position.y, block.position.z);
-                    const bl = legoClone.getChildByName("Block");
-                    if (block.blockGroupType == 5 || block.blockGroupType == 11){
-                        block.rotation.y += 180
-                    } 
-                    bl.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
+                    const bl = legoClone.getChildByName('Block');
+                    if (block.blockGroupType === 5 || block.blockGroupType === 11) {
+                        block.rotation.y += 180;
+                    }
+                    if (bl) {
+                        bl.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
+                    } else {
+                        // Fallback: rotate the root if child not found
+                        legoClone.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
+                    }
                     this.node.addChild(legoClone);
-                })  
+                });
 
                 map = jsonAsset.json.levelBlockadesData.blockades;
-                map.forEach(blockades => {
+                map.forEach((blockades) => {
                     const pf = this.getBlockadesByIndex(blockades.blockType);
-                    const blockadesClone = instantiate(pf);
-                    blockadesClone.setPosition(blockades.position.x, blockades.position.y, blockades.position.z);
-                    blockadesClone.setRotationFromEuler(blockades.rotation.x, blockades.rotation.y + 180, blockades.rotation.z);
-                    this.node.addChild(blockadesClone);
-                })  
+                    if (!pf) return;
+                    console.log(blockades.blockType);
+
+                    if (blockades.rotation.x < 90) {
+                        blockades.rotation.z += 180;
+                        blockades.rotation.x += 180;
+                    }
+
+                    this.instantiateAndSetup(pf, blockades.position, blockades.rotation, blockades.scale);
+                });
+
+                map = jsonAsset.json.levelDoorsData.doors;
+                map.forEach((door) => {
+                    const pf = this.getDoorByIndex(door.doorPartCount);
+                    if (!pf) return;
+
+                    if (Math.round(door.rotation.z) === 90 || Math.round(door.rotation.z) === 270) {
+                        door.rotation.z += 180;
+                    }
+
+                    this.instantiateAndSetup(pf, door.position, door.rotation);
+                });
+
+                this.createMapFromGrid(jsonAsset.json.gridSize.x, jsonAsset.json.gridSize.y);
             }
-		});
-	}
+        });
+    }
 
-	update(deltaTime: number) {
-		
-	}
+    createMapFromGrid(x: number, y: number) {
+        const cols = (x - 1) / 2;
+        const rows = (y - 1) / 2;
+        const size = 2;
+        for (let i = 0; i < x; i++) 
+        {
+            for (let j = 0; j < y; j++)
+            {
+                const node = instantiate(this.Grid);
+                node.setPosition((i-cols) * size, (j-rows) * size, 0);
+                this.node.addChild(node);
+            }
+        }
+
+    }
+
+    update(deltaTime: number) {}
 }
-
-
