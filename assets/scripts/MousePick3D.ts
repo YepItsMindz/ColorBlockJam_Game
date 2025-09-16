@@ -1,54 +1,55 @@
-import { _decorator, Component, input, Input, EventMouse, Camera, geometry, PhysicsSystem, Node, PhysicsRayResult, PhysicsSystem2D, EPhysics2DDrawFlags } from 'cc';
+import { _decorator, Component, input, Input, EventMouse, Camera, Vec2, Vec3, PhysicsSystem2D, Graphics, Color, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('MousePick3D')
-export class MousePick3D extends Component {
+@ccclass('MousePick2DPlane')
+export class MousePick2DPlane extends Component {
     @property(Camera)
-    camera: Camera = null!;   // Gán camera trong Inspector
+    camera: Camera = null!;   // Camera 3D trong scene
 
-    private isHovering: boolean = false;
+    @property(Graphics)
+    gfx: Graphics = null!;    // Graphics node trong Canvas
+
+    private hoveringNode: Node | null = null;
 
     start() {
-        PhysicsSystem2D.instance.debugDrawFlags =
-            EPhysics2DDrawFlags.Aabb |
-            EPhysics2DDrawFlags.Pair |
-            EPhysics2DDrawFlags.CenterOfMass |
-            EPhysics2DDrawFlags.Shape |
-            EPhysics2DDrawFlags.Joint;
-         PhysicsSystem.instance.debugDrawFlags = 1;
         input.on(Input.EventType.MOUSE_MOVE, this.onMouseMove, this);
     }
 
     onMouseMove(event: EventMouse) {
-        console.log("isWorking")
+        // 1. Lấy tọa độ chuột màn hình
         const screenPos = event.getLocation();
+        console.log(screenPos)
 
-        // Tạo ray từ camera ra thế giới
-        const ray = new geometry.Ray();
-        this.camera.screenPointToRay(screenPos.x, screenPos.y, ray);
+        // 2. Chuyển sang world (z = 0 để chiếu xuống mặt phẳng XY)
+        const worldPos = this.camera.screenToWorld(new Vec3(screenPos.x, screenPos.y, 0));
 
-        // Raycast tất cả collider
-        if (PhysicsSystem.instance.raycast(ray)) {
-            const results: PhysicsRayResult[] = PhysicsSystem.instance.raycastResults;
-            
-            // Kiểm tra xem có collider nào là của node này không
-            const hit = results.find(r => r.collider.node === this.node);
+        // 3. Tạo ray vuông góc XY (song song trục Z)
+        const start2D = new Vec2(worldPos.x, worldPos.y);
+        const end2D   = new Vec2(worldPos.x, worldPos.y); // x,y giữ nguyên → thẳng Z
 
-            if (hit) {
-                if (!this.isHovering) {
-                    this.isHovering = true;
-                    console.log("Mouse ENTER 3D object:", this.node.name);
+        // 4. Raycast 2D
+        const results = PhysicsSystem2D.instance.raycast(start2D, end2D);
+
+        // 5. Vẽ debug
+        this.gfx.clear();
+        this.gfx.fillColor = Color.YELLOW;
+        this.gfx.circle(start2D.x, start2D.y, 6);
+        this.gfx.fill();
+
+        if (results.length > 0) {
+            const hitNode = results[0].collider.node;
+
+            if (this.hoveringNode !== hitNode) {
+                if (this.hoveringNode) {
+                    console.log("Mouse LEAVE:", this.hoveringNode.name);
                 }
-            } else {
-                if (this.isHovering) {
-                    this.isHovering = false;
-                    console.log("Mouse LEAVE 3D object:", this.node.name);
-                }
+                this.hoveringNode = hitNode;
+                console.log("Mouse ENTER:", hitNode.name);
             }
         } else {
-            if (this.isHovering) {
-                this.isHovering = false;
-                console.log("Mouse LEAVE 3D object:", this.node.name);
+            if (this.hoveringNode) {
+                console.log("Mouse LEAVE:", this.hoveringNode.name);
+                this.hoveringNode = null;
             }
         }
     }

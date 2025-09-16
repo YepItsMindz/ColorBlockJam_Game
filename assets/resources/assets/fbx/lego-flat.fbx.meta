@@ -452,6 +452,8 @@
       "scenes": [
         "82e0b6f3-a3b0-47ff-ab22-1a8b832b9108@d2247"
       ]
-    }
+    },
+    "dumpMaterials": false,
+    "materialDumpDir": "db://assets/resources/assets/marerial"
   }
 }

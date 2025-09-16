@@ -3,12 +3,16 @@ import {
     Component,
     instantiate,
     JsonAsset,
+    Material,
+    MeshRenderer,
     Node,
     PhysicsSystem,
     Prefab,
     resources,
 } from 'cc';
 const { ccclass, property } = _decorator;
+
+export const GRID_SIZE = 2;
 
 @ccclass('GameManager')
 export class GameManager extends Component {
@@ -24,8 +28,11 @@ export class GameManager extends Component {
     @property(Prefab)
     Grid: Prefab = null;
 
+    @property([Material])
+    Materials: Material[] = [];
+
     start() {
-        this.loadLevel(3);
+        this.loadLevel(8);
     }
 
     instantiateAndSetup(
@@ -64,12 +71,18 @@ export class GameManager extends Component {
         return null;
     }
 
+    getMaterialByIndex(index: number) : Material | null {
+        if (index >= 0 && index < this.Materials.length) {
+            return this.Materials[index];
+        }
+        return null;
+    }
+
     loadLevel(index: number) {
         const name = `Level ${index}`;
         resources.load(`level/${name}`, (err: Error, jsonAsset: JsonAsset) => {
             if (!err) {
-                let map = jsonAsset.json;
-                map = jsonAsset.json.levelBlockGroupsData.blockGroupDatas;
+                let map = jsonAsset.json.levelBlockGroupsData.blockGroupDatas;
                 map.forEach((block) => {
                     const pf = this.getBlockGroupByIndex(block.blockGroupType);
                     if (!pf) return;
@@ -77,15 +90,13 @@ export class GameManager extends Component {
                     const legoClone = instantiate(pf);
                     legoClone.setPosition(block.position.x, block.position.y, block.position.z);
                     const bl = legoClone.getChildByName('Block');
+                    
                     if (block.blockGroupType === 5 || block.blockGroupType === 11) {
                         block.rotation.y += 180;
                     }
-                    if (bl) {
-                        bl.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
-                    } else {
-                        // Fallback: rotate the root if child not found
-                        legoClone.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
-                    }
+                    legoClone.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
+                    legoClone.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
+                    bl.getComponent(MeshRenderer).material = this.getMaterialByIndex(block.blockType);
                     this.node.addChild(legoClone);
                 });
 
@@ -111,8 +122,8 @@ export class GameManager extends Component {
                     if (Math.round(door.rotation.z) === 90 || Math.round(door.rotation.z) === 270) {
                         door.rotation.z += 180;
                     }
-
-                    this.instantiateAndSetup(pf, door.position, door.rotation);
+                    const db = this.instantiateAndSetup(pf, door.position, door.rotation);
+                    db.getChildByName('Block').getComponent(MeshRenderer).material = this.getMaterialByIndex(door.blockType);
                 });
 
                 this.createMapFromGrid(jsonAsset.json.gridSize.x, jsonAsset.json.gridSize.y);
@@ -123,7 +134,7 @@ export class GameManager extends Component {
     createMapFromGrid(x: number, y: number) {
         const cols = (x - 1) / 2;
         const rows = (y - 1) / 2;
-        const size = 2;
+        const size = GRID_SIZE;
         for (let i = 0; i < x; i++) 
         {
             for (let j = 0; j < y; j++)

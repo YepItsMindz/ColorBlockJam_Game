@@ -1,0 +1,84 @@
+{
+  "__type__": "cc.Material",
+  "_name": "",
+  "_objFlags": 0,
+  "__editorExtras__": {},
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+    "__expectedType__": "cc.EffectAsset"
+  },
+  "_techIdx": 0,
+  "_defines": [
+    {},
+    {},
+    {},
+    {}
+  ],
+  "_states": [
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    },
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    },
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    },
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    }
+  ],
+  "_props": [
+    {
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 212,
+        "g": 171,
+        "b": 46,
+        "a": 255
+      },
+      "emissive": {
+        "__type__": "cc.Color",
+        "r": 97,
+        "g": 82,
+        "b": 49,
+        "a": 255
+      },
+      "specularColor": {
+        "__type__": "cc.Color",
+        "r": 65,
+        "g": 65,
+        "b": 65,
+        "a": 0
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}
