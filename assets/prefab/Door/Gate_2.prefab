@@ -120,7 +120,11 @@
     },
     "_materials": [
       {
-        "__uuid__": "455d593e-e28e-4e96-859c-1168e3e4f5da@e59fc",
+        "__uuid__": "e7ea8a05-3c92-49ec-9dc0-c049ed16fb87@aa4a3",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "99b641b8-09e9-46c8-ab02-5bf25bedb0cd",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -129,7 +133,7 @@
       "__id__": 5
     },
     "_mesh": {
-      "__uuid__": "455d593e-e28e-4e96-859c-1168e3e4f5da@3620d",
+      "__uuid__": "e7ea8a05-3c92-49ec-9dc0-c049ed16fb87@6ec10",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -238,7 +242,7 @@
     "propertyPath": [
       "_name"
     ],
-    "value": "Gate_2_Block"
+    "value": "Block_Under"
   },
   {
     "__type__": "cc.TargetInfo",

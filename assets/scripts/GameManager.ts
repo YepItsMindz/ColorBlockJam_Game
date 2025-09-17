@@ -1,6 +1,11 @@
 import {
     _decorator,
     Component,
+    EditBox,
+    EventKeyboard,
+    Input,
+    KeyCode,
+    input,
     instantiate,
     JsonAsset,
     Material,
@@ -31,8 +36,37 @@ export class GameManager extends Component {
     @property([Material])
     Materials: Material[] = [];
 
+    @property(EditBox)
+    Edit: EditBox = null;
+
     start() {
-        this.loadLevel(8);
+        this.loadLevel(1);
+        if (this.Edit) {
+            this.Edit.node.on('editing-return', this.loadLevelFromEdit, this);
+        }
+    }
+
+    loadLevelFromEdit() {
+        if (!this.Edit) return;
+
+        const text = this.Edit.string ? this.Edit.string.trim() : '';
+        const n = Number(text);
+        if (!Number.isFinite(n) || n <= 0) {
+            console.warn(`Invalid level number: '${text}'`);
+            return;
+        }
+
+        const children = this.node.children.slice();
+        for (const child of children) {
+            if (child === this.node) continue;
+            const editBoxComponent = child.getComponentInChildren ? child.getComponentInChildren(EditBox) : null;
+            if (editBoxComponent) continue;
+
+            child.removeFromParent();
+            child.destroy();
+        }
+
+        this.loadLevel(Math.round(n));
     }
 
     instantiateAndSetup(
@@ -90,13 +124,22 @@ export class GameManager extends Component {
                     const legoClone = instantiate(pf);
                     legoClone.setPosition(block.position.x, block.position.y, block.position.z);
                     const bl = legoClone.getChildByName('Block');
-                    
+
                     if (block.blockGroupType === 5 || block.blockGroupType === 11) {
                         block.rotation.y += 180;
                     }
+
                     legoClone.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
-                    legoClone.setRotationFromEuler(block.rotation.x, block.rotation.y + 180, block.rotation.z);
-                    bl.getComponent(MeshRenderer).material = this.getMaterialByIndex(block.blockType);
+
+                    const mat = this.getMaterialByIndex(block.blockType);
+                    if (bl) {
+                        const mr = bl.getComponent(MeshRenderer);
+                        if (mr && mat) mr.material = mat;
+                    } else {
+                        const mr = legoClone.getComponent(MeshRenderer);
+                        if (mr && mat) mr.material = mat;
+                    }
+
                     this.node.addChild(legoClone);
                 });
 
@@ -104,7 +147,6 @@ export class GameManager extends Component {
                 map.forEach((blockades) => {
                     const pf = this.getBlockadesByIndex(blockades.blockType);
                     if (!pf) return;
-                    console.log(blockades.blockType);
 
                     if (blockades.rotation.x < 90) {
                         blockades.rotation.z += 180;
@@ -123,28 +165,38 @@ export class GameManager extends Component {
                         door.rotation.z += 180;
                     }
                     const db = this.instantiateAndSetup(pf, door.position, door.rotation);
-                    db.getChildByName('Block').getComponent(MeshRenderer).material = this.getMaterialByIndex(door.blockType);
+                    if (!db) return;
+
+                    const mat = this.getMaterialByIndex(door.blockType);
+                    const child = db.getChildByName('Block');
+                    const childUnder = db.getChildByName('Block_Under');
+                  
+                    let mr = child.getComponent(MeshRenderer);
+                    if (mr && mat) mr.material = mat;
+                    mr = childUnder.getComponent(MeshRenderer);
+                    if (mr && mat) mr.material = mat;
+                    
                 });
 
-                this.createMapFromGrid(jsonAsset.json.gridSize.x, jsonAsset.json.gridSize.y);
+                this.createMapFromGrid(jsonAsset.json.gridSize, jsonAsset.json.hidedGridCoords);
             }
         });
     }
 
-    createMapFromGrid(x: number, y: number) {
-        const cols = (x - 1) / 2;
-        const rows = (y - 1) / 2;
+    createMapFromGrid(grid : {x: number, y: number}, hidedCoords?: Array<{ x: number, y: number }>) {
+        const cols = (grid.x - 1) / 2;
+        const rows = (grid.y - 1) / 2;
         const size = GRID_SIZE;
-        for (let i = 0; i < x; i++) 
-        {
-            for (let j = 0; j < y; j++)
-            {
+        for (let i = 0; i < grid.x; i++) {
+            for (let j = 0; j < grid.y; j++) {
+                const hide = hidedCoords.some((c) => c.x === i && c.y === j);
+                if (hide) continue;
+
                 const node = instantiate(this.Grid);
-                node.setPosition((i-cols) * size, (j-rows) * size, 0);
+                node.setPosition((i - cols) * size, (j - rows) * size, 0);
                 this.node.addChild(node);
             }
         }
-
     }
 
     update(deltaTime: number) {}

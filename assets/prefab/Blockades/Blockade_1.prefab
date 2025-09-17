@@ -117,7 +117,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "b3720ef5-0ef3-4855-8a0c-77ad4d9022dd@e59fc",
+        "__uuid__": "e2e94d3f-5cc3-497a-ae9c-b2ce257f2e3b",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -173,8 +173,6 @@
       "__id__": 0
     },
     "fileId": "d0qakVALlAcLI4A1kCDpiU",
-    "instance": null,
-    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {

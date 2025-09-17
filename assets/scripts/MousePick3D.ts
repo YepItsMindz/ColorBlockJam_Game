@@ -1,56 +1,63 @@
-import { _decorator, Component, input, Input, EventMouse, Camera, Vec2, Vec3, PhysicsSystem2D, Graphics, Color, Node } from 'cc';
+import { _decorator, Component, Camera, input, Input, EventMouse, PhysicsSystem, Vec3, geometry, RigidBody } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('MousePick2DPlane')
-export class MousePick2DPlane extends Component {
+@ccclass('MouseJoint3D')
+export class MouseJoint3D extends Component {
+
     @property(Camera)
-    camera: Camera = null!;   // Camera 3D trong scene
+    camera: Camera = null!;
 
-    @property(Graphics)
-    gfx: Graphics = null!;    // Graphics node trong Canvas
-
-    private hoveringNode: Node | null = null;
+    private selectedBody: RigidBody | null = null;
+    private selectedNode: any = null;
+    private fixedZ = 0;
+    private offset: Vec3 = new Vec3();
 
     start() {
+        input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
         input.on(Input.EventType.MOUSE_MOVE, this.onMouseMove, this);
+        input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
+    }
+
+    onMouseDown(event: EventMouse) {
+        const ray = this.camera.screenPointToRay(event.getLocationX(), event.getLocationY());
+        if (PhysicsSystem.instance.raycastClosest(ray)) {
+            const hit = PhysicsSystem.instance.raycastClosestResult;
+            this.selectedBody = hit.collider.getComponent(RigidBody);
+            console.log('MouseDown picked:', hit.collider && hit.collider.node ? hit.collider.node.name : hit.collider, this.selectedBody ? 'rigidbody attached' : 'no rigidbody');
+            
+            this.selectedNode = hit.collider.node;
+            this.fixedZ = this.selectedNode.worldPosition.z;
+             this.offset.set(
+                hit.hitPoint.x - this.selectedNode.worldPosition.x,
+                hit.hitPoint.y - this.selectedNode.worldPosition.y,
+                0
+            );
+            
+        }
     }
 
     onMouseMove(event: EventMouse) {
-        // 1. Lấy tọa độ chuột màn hình
-        const screenPos = event.getLocation();
-        console.log(screenPos)
+        if (!this.selectedNode) return;
 
-        // 2. Chuyển sang world (z = 0 để chiếu xuống mặt phẳng XY)
-        const worldPos = this.camera.screenToWorld(new Vec3(screenPos.x, screenPos.y, 0));
+        const ray = this.camera.screenPointToRay(event.getLocationX(), event.getLocationY());
 
-        // 3. Tạo ray vuông góc XY (song song trục Z)
-        const start2D = new Vec2(worldPos.x, worldPos.y);
-        const end2D   = new Vec2(worldPos.x, worldPos.y); // x,y giữ nguyên → thẳng Z
-
-        // 4. Raycast 2D
-        const results = PhysicsSystem2D.instance.raycast(start2D, end2D);
-
-        // 5. Vẽ debug
-        this.gfx.clear();
-        this.gfx.fillColor = Color.YELLOW;
-        this.gfx.circle(start2D.x, start2D.y, 6);
-        this.gfx.fill();
-
-        if (results.length > 0) {
-            const hitNode = results[0].collider.node;
-
-            if (this.hoveringNode !== hitNode) {
-                if (this.hoveringNode) {
-                    console.log("Mouse LEAVE:", this.hoveringNode.name);
-                }
-                this.hoveringNode = hitNode;
-                console.log("Mouse ENTER:", hitNode.name);
-            }
-        } else {
-            if (this.hoveringNode) {
-                console.log("Mouse LEAVE:", this.hoveringNode.name);
-                this.hoveringNode = null;
-            }
+        // Giao ray với mặt phẳng z = fixedZ
+        const t = (this.fixedZ - ray.o.z) / ray.d.z;
+        if (t > 0) {
+            const hitPoint = new Vec3(
+                ray.o.x + ray.d.x * t,
+                ray.o.y + ray.d.y * t,
+                this.fixedZ
+            );
+            console.log(hitPoint);
+            const newPos = new Vec3();
+            Vec3.subtract(newPos, hitPoint, this.offset);
+            this.selectedNode.setWorldPosition(newPos);
         }
+    }
+
+    onMouseUp() {
+        console.log('MouseUp - clearing selection', this.selectedBody ? this.selectedBody.node.name : '(none)');
+        this.selectedNode = null;
     }
 }

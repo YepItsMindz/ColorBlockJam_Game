@@ -119,14 +119,21 @@
       "__id__": 4
     },
     "_materials": [
-      null
+      {
+        "__uuid__": "e21b980f-33d2-4303-b46c-6d1f0a7af2c6",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "99b641b8-09e9-46c8-ab02-5bf25bedb0cd",
+        "__expectedType__": "cc.Material"
+      }
     ],
     "_visFlags": 0,
     "bakeSettings": {
       "__id__": 5
     },
     "_mesh": {
-      "__uuid__": "455d593e-e28e-4e96-859c-1168e3e4f5da@99d6c",
+      "__uuid__": "e7ea8a05-3c92-49ec-9dc0-c049ed16fb87@99d6c",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -235,7 +242,7 @@
     "propertyPath": [
       "_name"
     ],
-    "value": "Gate_1_Block"
+    "value": "Block_Under"
   },
   {
     "__type__": "cc.TargetInfo",

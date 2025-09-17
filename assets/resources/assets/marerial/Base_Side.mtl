@@ -57,16 +57,16 @@
     {
       "mainColor": {
         "__type__": "cc.Color",
-        "r": 0,
-        "g": 166,
-        "b": 0,
+        "r": 54,
+        "g": 65,
+        "b": 89,
         "a": 255
       },
       "emissive": {
         "__type__": "cc.Color",
-        "r": 34,
-        "g": 95,
-        "b": 40,
+        "r": 41,
+        "g": 41,
+        "b": 41,
         "a": 255
       },
       "specularColor": {
