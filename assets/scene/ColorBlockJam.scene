@@ -660,7 +660,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 814.5454545454546,
+    "_orthoHeight": 855.4773869346734,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -1123,11 +1123,14 @@
     "node": {
       "__id__": 7
     },
-    "_enabled": true,
+    "_enabled": false,
     "__prefab": null,
     "camera": {
       "__id__": 6
     },
+    "frequencyHz": 5,
+    "stiffness": 1,
+    "damping": 1,
     "_id": "5fc4+AEidOXbbCOpRTA+WG"
   },
   {
