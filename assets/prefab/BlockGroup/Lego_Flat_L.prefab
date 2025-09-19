@@ -138,7 +138,10 @@
       "__id__": 4
     },
     "_materials": [
-      null
+      {
+        "__uuid__": "82e0b6f3-a3b0-47ff-ab22-1a8b832b9108@e59fc",
+        "__expectedType__": "cc.Material"
+      }
     ],
     "_visFlags": 0,
     "bakeSettings": {
@@ -584,7 +587,7 @@
     "__prefab": {
       "__id__": 24
     },
-    "_group": 1,
+    "_group": 2,
     "_type": 2,
     "_mass": 1,
     "_allowSleep": true,
@@ -631,7 +634,7 @@
     },
     "_size": {
       "__type__": "cc.Vec3",
-      "x": 2,
+      "x": 1.9,
       "y": 6,
       "z": 2
     },
@@ -682,7 +685,6 @@
       "__id__": 0
     },
     "fileId": "fbjsk9zU5aH4iAad0crjaL",
-    "instance": null,
-    "targetOverrides": null
+    "instance": null
   }
 ]

@@ -1,97 +1,121 @@
-import { _decorator, Component, Camera, input, Input, EventMouse, PhysicsSystem, Vec3, geometry, RigidBody, EventTouch, v3 } from 'cc';
+import { _decorator, Component, Camera, input, Input, EventMouse, PhysicsSystem, Vec3, RigidBody, ERigidBodyType } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('MouseJoint3D')
 export class MouseJoint3D extends Component {
+
     @property(Camera)
     camera: Camera = null!;
 
     @property
-    frequencyHz: number = 5;
+    speed : number = 0;
 
     @property
-    stiffness: number = 10;
-    
-    @property
-    damping: number = 1;
+    stiffness : number = 0;
 
+    @property 
+    damping : number = 0;
 
     private selectedBody: RigidBody | null = null;
-    private targetPos: Vec3 = new Vec3();
-    private canDrag: boolean = true;
-
+    private selectedNode: any = null;
+    private fixedZ = 0;
+    private offset: Vec3 = new Vec3();
+    private targetPos: Vec3 | null = null;
 
     start() {
-        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
-        input.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
-        input.on(Input.EventType.TOUCH_END, this.onTouchUp, this);
-        input.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
-
+        input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+        input.on(Input.EventType.MOUSE_MOVE, this.onMouseMove, this);
+        input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
     }
 
-    onTouchStart(event: EventTouch | EventMouse) {
+    onMouseDown(event: EventMouse) {
+        
         const ray = this.camera.screenPointToRay(event.getLocationX(), event.getLocationY());
         if (PhysicsSystem.instance.raycastClosest(ray)) {
             const hit = PhysicsSystem.instance.raycastClosestResult;
             this.selectedBody = hit.collider.getComponent(RigidBody);
-            this.selectedBody.setAngularVelocity(new Vec3());
-            this.selectedBody.type = RigidBody.Type.DYNAMIC;
-            this.selectedBody.useGravity = false;
-            console.log('MouseDown picked:', hit.collider && hit.collider.node ? hit.collider.node.name : hit.collider, this.selectedBody ? 'rigidbody attached' : 'no rigidbody');
+            if (!this.selectedBody) return;
+
+            if (this.selectedBody && this.selectedBody.group === 4) {
+                this.selectedBody = null; // nhóm Obstacle, không cho kéo
+                return;
+            }
+
+            if (this.selectedBody) {
+                this.selectedBody.type = ERigidBodyType.DYNAMIC;
+                this.selectedBody.useGravity = false;
+                this.selectedBody.angularFactor = new Vec3(0, 0, 0);
+            }
+
+            this.selectedNode = hit.collider.node;
+            this.fixedZ = this.selectedNode.worldPosition.z;
+
+            // offset từ hitpoint tới tâm node
+            this.offset.set(
+                hit.hitPoint.x - this.selectedNode.worldPosition.x,
+                hit.hitPoint.y - this.selectedNode.worldPosition.y,
+                0
+            );
+
+            this.targetPos = new Vec3(this.selectedNode.worldPosition);
         }
     }
 
-    onTouchMove(event: EventTouch | EventMouse) {
-        if (!this.canDrag || !this.selectedBody) return;
+    onMouseMove(event: EventMouse) {
+        if (!this.selectedNode || !this.selectedBody) return;
 
-        const screenPos = event.getUILocation();
-        const worldPos = screenPos;//this.camera.screenToWorld(new Vec3(screenPos.x, screenPos.y, 0));
-        this.updateTargetPos(new Vec3(worldPos.x, worldPos.y));
-    }
+        const ray = this.camera.screenPointToRay(event.getLocationX(), event.getLocationY());
+        const t = (this.fixedZ - ray.o.z) / ray.d.z;
 
-    updateTargetPos(world: Vec3) {
-        //const current = this.selectedBody!.node.worldPosition;
-        this.targetPos.set(world.x, world.y);
-    }
+        if (t > 0) {
+            const hitPoint = new Vec3(
+                ray.o.x + ray.d.x * t,
+                ray.o.y + ray.d.y * t,
+                this.fixedZ
+            );
 
-    onTouchUp() {
-        this.selectedBody = null;
-    }
-
-    onTouchCancel() {
+            // Cập nhật targetPos thay vì applyForce trực tiếp
+            this.targetPos = new Vec3();
+            Vec3.subtract(this.targetPos, hitPoint, this.offset);
+        }
     }
 
     update(dt: number) {
-        if (!this.canDrag || !this.selectedBody) return;
-        
+        if (!this.selectedBody || !this.targetPos) return;
 
-        const bodyPos = this.selectedBody.node.worldPosition;
-        const posA = new Vec3(bodyPos.x, bodyPos.y);
-        const forceDir = this.targetPos.clone().subtract(posA);
+        const currentPos = this.selectedBody.node.worldPosition;
+        const dir = new Vec3();
+        Vec3.subtract(dir, this.targetPos, currentPos);
+        const dist = dir.length();
 
-        const distance = forceDir.length();
-        if (distance < 5) {
-            this.selectedBody.setLinearVelocity(new Vec3(0,0,0));
-            this.selectedBody.node.setWorldPosition(this.targetPos.x, this.targetPos.y, 0);
+        if (dist < 0.001) {
+            // gần target thì snap
+            this.selectedBody.setLinearVelocity(Vec3.ZERO);
+            this.selectedBody.node.setWorldPosition(this.targetPos);
         } else {
-            forceDir.normalize();
-            let velocity = new Vec3(0,0,0);
-            this.selectedBody.getLinearVelocity(velocity);
-            // const dampingForce = velocity.multiplyScalar(this.damping);
-            // const springForce = forceDir.multiplyScalar(this.stiffness * distance).subtract(dampingForce);
+            dir.normalize();
+            dir.multiplyScalar(this.speed);
 
-            // Mass of body
-            const mass = this.selectedBody.mass;
-            // Angular frequency
-            const omega = 2 * Math.PI * this.frequencyHz;
-            // Effective stiffness and damping
-            const stiffness = mass * omega * omega;
-            const damping = 2 * mass * this.damping * omega;
-            const dampingForce = velocity.multiplyScalar(damping)
-            const springForce = forceDir.multiplyScalar(stiffness).subtract(dampingForce);
+            const force = dir.multiplyScalar(dist * this.stiffness);
 
-            this.selectedBody.applyForce(springForce);
+            const vel = new Vec3();
+            this.selectedBody.getLinearVelocity(vel);
+            const dampingForce = vel.multiplyScalar(-this.damping);
+
+            force.add(dampingForce);
+
+            this.selectedBody.applyForce(force);
         }
+    }
 
+    onMouseUp() {
+        if (this.selectedBody) {
+            this.selectedBody.setLinearVelocity(Vec3.ZERO);
+            this.selectedBody.setAngularVelocity(Vec3.ZERO);
+            this.selectedBody.type = ERigidBodyType.STATIC;
+            this.selectedBody = null;
+        }
+        this.selectedNode = null;
+        this.targetPos = null;
     }
 }

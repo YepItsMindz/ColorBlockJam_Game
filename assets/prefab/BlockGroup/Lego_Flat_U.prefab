@@ -201,6 +201,8 @@
       "__id__": 0
     },
     "fileId": "00zCjWa8lIyoC4qe5N3PFj",
+    "instance": null,
+    "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
   },
   {
@@ -685,7 +687,7 @@
     "__prefab": {
       "__id__": 28
     },
-    "_group": 1,
+    "_group": 2,
     "_type": 2,
     "_mass": 1,
     "_allowSleep": true,
@@ -815,6 +817,7 @@
       "__id__": 0
     },
     "fileId": "7amX+Zpm5a9r72MchCj4gl",
-    "instance": null
+    "instance": null,
+    "targetOverrides": null
   }
 ]
