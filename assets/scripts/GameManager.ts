@@ -39,6 +39,8 @@ export class GameManager extends Component {
     @property(EditBox)
     Edit: EditBox = null;
 
+    public gridSize : {x : number, y: number} = null;
+
     start() {
         this.loadLevel(1);
         if (this.Edit) {
@@ -146,7 +148,7 @@ export class GameManager extends Component {
                 map = jsonAsset.json.levelBlockadesData.blockades;
                 map.forEach((blockades) => {
                     const pf = this.getBlockadesByIndex(blockades.blockType);
-                    if (!pf) return;
+                    if (!pf) return; 
 
                     if (blockades.rotation.x < 90) {
                         blockades.rotation.z += 180;
@@ -178,6 +180,8 @@ export class GameManager extends Component {
                     
                 });
 
+                this.gridSize = jsonAsset.json.gridSize;
+                console.log(this.gridSize.x);
                 this.createMapFromGrid(jsonAsset.json.gridSize, jsonAsset.json.hidedGridCoords);
             }
         });

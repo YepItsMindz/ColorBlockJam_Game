@@ -1,5 +1,8 @@
-import { _decorator, Component, Camera, input, Input, EventMouse, PhysicsSystem, Vec3, RigidBody, ERigidBodyType } from 'cc';
+import { _decorator, Component, Camera, input, Input, EventMouse, PhysicsSystem, Vec3, RigidBody, ERigidBodyType, tween, Node } from 'cc';
+import { GameManager } from './GameManager';
 const { ccclass, property } = _decorator;
+
+export const GRID_SIZE = 2;
 
 @ccclass('MouseJoint3D')
 export class MouseJoint3D extends Component {
@@ -16,11 +19,14 @@ export class MouseJoint3D extends Component {
     @property 
     damping : number = 0;
 
+    @property(GameManager)
+    gm : GameManager;
+
     private selectedBody: RigidBody | null = null;
-    private selectedNode: any = null;
-    private fixedZ = 0;
+    private selectedNode: Node = null;
     private offset: Vec3 = new Vec3();
     private targetPos: Vec3 | null = null;
+    private fixedZ = 0;
 
     start() {
         input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
@@ -36,13 +42,13 @@ export class MouseJoint3D extends Component {
             this.selectedBody = hit.collider.getComponent(RigidBody);
             if (!this.selectedBody) return;
 
-            if (this.selectedBody && this.selectedBody.group === 4) {
-                this.selectedBody = null; // nhóm Obstacle, không cho kéo
+            if (this.selectedBody.group === 4 || this.selectedBody.group === 1) {
+                this.selectedBody = null; // nhóm Obstacle, Gate không cho kéo
                 return;
             }
 
             if (this.selectedBody) {
-                this.selectedBody.type = ERigidBodyType.DYNAMIC;
+                this.selectedBody.type = RigidBody.Type.DYNAMIC;
                 this.selectedBody.useGravity = false;
                 this.selectedBody.angularFactor = new Vec3(0, 0, 0);
             }
@@ -51,11 +57,9 @@ export class MouseJoint3D extends Component {
             this.fixedZ = this.selectedNode.worldPosition.z;
 
             // offset từ hitpoint tới tâm node
-            this.offset.set(
-                hit.hitPoint.x - this.selectedNode.worldPosition.x,
-                hit.hitPoint.y - this.selectedNode.worldPosition.y,
-                0
-            );
+            const localHit = new Vec3();
+            this.selectedNode.inverseTransformPoint(localHit, hit.hitPoint);
+            this.offset.set(localHit.x, localHit.y, 0);
 
             this.targetPos = new Vec3(this.selectedNode.worldPosition);
         }
@@ -83,7 +87,7 @@ export class MouseJoint3D extends Component {
     update(dt: number) {
         if (!this.selectedBody || !this.targetPos) return;
 
-        const currentPos = this.selectedBody.node.worldPosition;
+        const currentPos = this.selectedNode.getWorldPosition();
         const dir = new Vec3();
         Vec3.subtract(dir, this.targetPos, currentPos);
         const dist = dir.length();
@@ -106,16 +110,40 @@ export class MouseJoint3D extends Component {
 
             this.selectedBody.applyForce(force);
         }
+        
     }
 
     onMouseUp() {
         if (this.selectedBody) {
+            this.snapBlockToGrid(this.selectedNode);
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.setAngularVelocity(Vec3.ZERO);
             this.selectedBody.type = ERigidBodyType.STATIC;
-            this.selectedBody = null;
         }
         this.selectedNode = null;
+        this.selectedBody = null;
         this.targetPos = null;
+    }
+
+    snapBlockToGrid(block) {
+        const worldPos : Vec3 = block.getWorldPosition();
+        let gx = Math.round(worldPos.x / GRID_SIZE);
+        let gy = Math.round(worldPos.y / GRID_SIZE);
+
+        const w = this.gm.gridSize.y;
+        const h = this.gm.gridSize.x;
+
+        if (w % 2 === 0) {
+            if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+            else gx += 0.5;
+        }
+
+        if (h % 2 === 0) {
+            if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+            else gy += 0.5;
+        }
+
+        const targetPos = new Vec3(gx * GRID_SIZE, gy * GRID_SIZE, worldPos.z);
+        block.setWorldPosition(targetPos);
     }
 }
