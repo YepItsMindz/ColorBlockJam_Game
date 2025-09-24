@@ -1,26 +1,41 @@
-import { _decorator, Component, Camera, input, Input, EventMouse, PhysicsSystem, Vec3, RigidBody, ERigidBodyType, tween, Node } from 'cc';
+import {
+    _decorator,
+    Component,
+    Camera,
+    input,
+    Input,
+    EventMouse,
+    PhysicsSystem,
+    Vec3,
+    RigidBody,
+    ERigidBodyType,
+    tween,
+    Node,
+    Collider,
+    geometry,
+} from 'cc';
 import { GameManager } from './GameManager';
+const { AABB } = geometry;
 const { ccclass, property } = _decorator;
 
 export const GRID_SIZE = 2;
 
 @ccclass('MouseJoint3D')
 export class MouseJoint3D extends Component {
-
     @property(Camera)
     camera: Camera = null!;
 
     @property
-    speed : number = 0;
+    speed: number = 0;
 
     @property
-    stiffness : number = 0;
+    stiffness: number = 0;
 
-    @property 
-    damping : number = 0;
+    @property
+    damping: number = 0;
 
     @property(GameManager)
-    gm : GameManager;
+    gm: GameManager;
 
     private selectedBody: RigidBody | null = null;
     private selectedNode: Node = null;
@@ -35,21 +50,27 @@ export class MouseJoint3D extends Component {
     }
 
     onMouseDown(event: EventMouse) {
-        
-        const ray = this.camera.screenPointToRay(event.getLocationX(), event.getLocationY());
+        const ray = this.camera.screenPointToRay(
+            event.getLocationX(),
+            event.getLocationY()
+        );
         if (PhysicsSystem.instance.raycastClosest(ray)) {
             const hit = PhysicsSystem.instance.raycastClosestResult;
             this.selectedBody = hit.collider.getComponent(RigidBody);
             if (!this.selectedBody) return;
 
-            if (this.selectedBody.group === 4 || this.selectedBody.group === 1) {
+            if (
+                this.selectedBody.group === 4 ||
+                this.selectedBody.group === 1
+            ) {
                 this.selectedBody = null; // nhóm Obstacle, Gate không cho kéo
                 return;
             }
 
             if (this.selectedBody) {
-                this.selectedBody.type = RigidBody.Type.DYNAMIC;
-                this.selectedBody.useGravity = false;
+                // this.selectedBody.type = RigidBody.Type.DYNAMIC;
+                // this.selectedBody.useGravity = false;
+                this.selectedBody.linearFactor = new Vec3(1, 1, 0);
                 this.selectedBody.angularFactor = new Vec3(0, 0, 0);
             }
 
@@ -57,9 +78,12 @@ export class MouseJoint3D extends Component {
             this.fixedZ = this.selectedNode.worldPosition.z;
 
             // offset từ hitpoint tới tâm node
-            const localHit = new Vec3();
-            this.selectedNode.inverseTransformPoint(localHit, hit.hitPoint);
-            this.offset.set(localHit.x, localHit.y, 0);
+            this.offset = new Vec3();
+            Vec3.subtract(
+                this.offset,
+                hit.hitPoint,
+                this.selectedNode.worldPosition
+            );
 
             this.targetPos = new Vec3(this.selectedNode.worldPosition);
         }
@@ -68,7 +92,10 @@ export class MouseJoint3D extends Component {
     onMouseMove(event: EventMouse) {
         if (!this.selectedNode || !this.selectedBody) return;
 
-        const ray = this.camera.screenPointToRay(event.getLocationX(), event.getLocationY());
+        const ray = this.camera.screenPointToRay(
+            event.getLocationX(),
+            event.getLocationY()
+        );
         const t = (this.fixedZ - ray.o.z) / ray.d.z;
 
         if (t > 0) {
@@ -110,40 +137,92 @@ export class MouseJoint3D extends Component {
 
             this.selectedBody.applyForce(force);
         }
-        
     }
 
     onMouseUp() {
         if (this.selectedBody) {
             this.snapBlockToGrid(this.selectedNode);
+            this.selectedBody.linearFactor = new Vec3(0, 0, 0);
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.setAngularVelocity(Vec3.ZERO);
-            this.selectedBody.type = ERigidBodyType.STATIC;
+            // this.selectedBody.type = ERigidBodyType.STATIC;
         }
         this.selectedNode = null;
         this.selectedBody = null;
         this.targetPos = null;
     }
 
-    snapBlockToGrid(block) {
-        const worldPos : Vec3 = block.getWorldPosition();
+    snapBlockToGrid(block: Node) {
+        const worldPos: Vec3 = block.getWorldPosition();
         let gx = Math.round(worldPos.x / GRID_SIZE);
         let gy = Math.round(worldPos.y / GRID_SIZE);
 
-        const w = this.gm.gridSize.y;
-        const h = this.gm.gridSize.x;
+        const parts = block.name.split('_');
+        const blockType = parts[parts.length - 1];
 
-        if (w % 2 === 0) {
-            if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
-            else gx += 0.5;
+        const h = this.gm.gridSize.y;
+        const w = this.gm.gridSize.x;
+
+        if (blockType == 'Square' || blockType == 'ShortL') {
+            if (w % 2 === 1) {
+                if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+                else gx += 0.5;
+            }
+
+            if (h % 2 === 1) {
+                if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+                else gy += 0.5;
+            }
         }
 
-        if (h % 2 === 0) {
-            if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
-            else gy += 0.5;
+        if (blockType == 'Three') {
+            if (w % 2 === 0) {
+                if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+                else gx += 0.5;
+            }
+
+            if (h % 2 === 0) {
+                if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+                else gy += 0.5;
+            }
         }
 
-        const targetPos = new Vec3(gx * GRID_SIZE, gy * GRID_SIZE, worldPos.z);
+        if (blockType == 'L') {
+            if (block.eulerAngles.z < 45) {
+                if (w % 2 === 1) {
+                    if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+                    else gx += 0.5;
+                }
+
+                if (h % 2 === 0) {
+                    if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+                    else gy += 0.5;
+                }
+            }
+        }
+
+        if (blockType == 'Two') {
+            if (block.eulerAngles.z < 45) {
+                if (w % 2 === 0) {
+                    if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+                    else gx += 0.5;
+                }
+                if (h % 2 === 1) {
+                    if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+                    else gy += 0.5;
+                }
+            } else {
+                if (w % 2 === 1) {
+                    if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+                    else gx += 0.5;
+                }
+                if (h % 2 === 0) {
+                    if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+                    else gy += 0.5;
+                }
+            }
+        }
+        const targetPos = new Vec3(gx * GRID_SIZE, gy * GRID_SIZE, this.fixedZ);
         block.setWorldPosition(targetPos);
     }
 }
