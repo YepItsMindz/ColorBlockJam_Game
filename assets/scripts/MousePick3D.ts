@@ -15,6 +15,9 @@ import {
     geometry,
 } from 'cc';
 import { GameManager } from './GameManager';
+import { BlockPrefab } from './prefab/BlockPrefab';
+import { ColorType } from './GameConstant';
+import { GatePrefab } from './prefab/GatePrefab';
 const { AABB } = geometry;
 const { ccclass, property } = _decorator;
 
@@ -57,6 +60,7 @@ export class MouseJoint3D extends Component {
         if (PhysicsSystem.instance.raycastClosest(ray)) {
             const hit = PhysicsSystem.instance.raycastClosestResult;
             this.selectedBody = hit.collider.getComponent(RigidBody);
+            console.log(this.selectedBody.node.name);
             if (!this.selectedBody) return;
 
             if (
@@ -64,6 +68,17 @@ export class MouseJoint3D extends Component {
                 this.selectedBody.group === 1
             ) {
                 this.selectedBody = null; // nhóm Obstacle, Gate không cho kéo
+                return;
+            }
+
+            // Kiểm tra nếu block đã đi qua cổng thì không cho kéo nữa
+            const blockPrefab = hit.collider.node.getComponent(BlockPrefab);
+            if (blockPrefab && blockPrefab.hasPassedThroughGate) {
+                console.log(
+                    'Block has passed through gate and cannot be moved anymore!'
+                );
+                this.selectedBody = null;
+                this.selectedNode = null;
                 return;
             }
 
@@ -84,13 +99,23 @@ export class MouseJoint3D extends Component {
                 hit.hitPoint,
                 this.selectedNode.worldPosition
             );
-
+            console.log(
+                ColorType[this.selectedNode.getComponent(BlockPrefab).color]
+            );
             this.targetPos = new Vec3(this.selectedNode.worldPosition);
         }
     }
 
     onMouseMove(event: EventMouse) {
         if (!this.selectedNode || !this.selectedBody) return;
+
+        // Kiểm tra lại nếu block đã đi qua cổng
+        const blockPrefab = this.selectedNode.getComponent(BlockPrefab);
+        if (blockPrefab && blockPrefab.hasPassedThroughGate) {
+            this.selectedBody = null;
+            this.selectedNode = null;
+            return;
+        }
 
         const ray = this.camera.screenPointToRay(
             event.getLocationX(),
@@ -175,7 +200,7 @@ export class MouseJoint3D extends Component {
             }
         }
 
-        if (blockType == 'Three') {
+        if (blockType == 'Three' || blockType == 'Plus' || blockType == 'One') {
             if (w % 2 === 0) {
                 if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
                 else gx += 0.5;
@@ -187,8 +212,11 @@ export class MouseJoint3D extends Component {
             }
         }
 
-        if (blockType == 'L') {
-            if (block.eulerAngles.z < 45) {
+        if (blockType == 'L' || blockType == 'U' || blockType == 'ReverseL') {
+            if (
+                Math.round(block.eulerAngles.z) == 0 ||
+                Math.round(block.eulerAngles.z) == 180
+            ) {
                 if (w % 2 === 1) {
                     if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
                     else gx += 0.5;
@@ -198,15 +226,34 @@ export class MouseJoint3D extends Component {
                     if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
                     else gy += 0.5;
                 }
-            }
-        }
-
-        if (blockType == 'Two') {
-            if (block.eulerAngles.z < 45) {
+            } else {
                 if (w % 2 === 0) {
                     if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
                     else gx += 0.5;
                 }
+
+                if (h % 2 === 1) {
+                    if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
+                    else gy += 0.5;
+                }
+            }
+        }
+
+        if (
+            blockType == 'Two' ||
+            blockType == 'ShortT' ||
+            blockType == 'Z' ||
+            blockType == 'ReverseZ'
+        ) {
+            if (
+                Math.round(block.eulerAngles.z) == 0 ||
+                Math.round(block.eulerAngles.z) == 180
+            ) {
+                if (w % 2 === 0) {
+                    if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
+                    else gx += 0.5;
+                }
+
                 if (h % 2 === 1) {
                     if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
                     else gy += 0.5;
@@ -216,12 +263,14 @@ export class MouseJoint3D extends Component {
                     if (gx * GRID_SIZE > worldPos.x) gx -= 0.5;
                     else gx += 0.5;
                 }
+
                 if (h % 2 === 0) {
                     if (gy * GRID_SIZE > worldPos.y) gy -= 0.5;
                     else gy += 0.5;
                 }
             }
         }
+
         const targetPos = new Vec3(gx * GRID_SIZE, gy * GRID_SIZE, this.fixedZ);
         block.setWorldPosition(targetPos);
     }

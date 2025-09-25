@@ -15,6 +15,8 @@ import {
     Prefab,
     resources,
 } from 'cc';
+import { BlockPrefab } from './prefab/BlockPrefab';
+import { GatePrefab } from './prefab/GatePrefab';
 const { ccclass, property } = _decorator;
 
 export const GRID_SIZE = 2;
@@ -39,7 +41,6 @@ export class GameManager extends Component {
     @property(EditBox)
     Edit: EditBox = null;
 
-    public isCreate: boolean[] = [];
     public gridSize: { x: number; y: number } = null;
 
     start() {
@@ -121,19 +122,13 @@ export class GameManager extends Component {
         const name = `Level ${index}`;
         resources.load(`level/${name}`, (err: Error, jsonAsset: JsonAsset) => {
             if (!err) {
-                let map = jsonAsset.json.levelBlockGroupsData.blockGroupDatas;
+                let clone = JSON.parse(JSON.stringify(jsonAsset.json));
+                let map = clone.levelBlockGroupsData.blockGroupDatas;
                 map.forEach((block) => {
                     const pf = this.getBlockGroupByIndex(block.blockGroupType);
                     if (!pf) return;
 
                     const legoClone = instantiate(pf);
-                    legoClone.setPosition(
-                        block.position.x,
-                        block.position.y,
-                        block.position.z
-                    );
-                    const bl = legoClone.getChildByName('Block');
-
                     if (
                         block.blockGroupType === 5 ||
                         block.blockGroupType === 11
@@ -141,25 +136,19 @@ export class GameManager extends Component {
                         block.rotation.y += 180;
                     }
 
-                    legoClone.setRotationFromEuler(
-                        block.rotation.x,
-                        block.rotation.y + 180,
-                        block.rotation.z
-                    );
-
-                    const mat = this.getMaterialByIndex(block.blockType);
-                    if (bl) {
-                        const mr = bl.getComponent(MeshRenderer);
-                        if (mr && mat) mr.material = mat;
-                    } else {
-                        const mr = legoClone.getComponent(MeshRenderer);
-                        if (mr && mat) mr.material = mat;
-                    }
-
+                    legoClone
+                        .getComponent(BlockPrefab)
+                        .initializeBlock(
+                            block.position,
+                            block.rotation,
+                            block.blockGroupType,
+                            block.blockType,
+                            this.getMaterialByIndex(block.blockType)
+                        );
                     this.node.addChild(legoClone);
                 });
 
-                map = jsonAsset.json.levelBlockadesData.blockades;
+                map = clone.levelBlockadesData.blockades;
                 map.forEach((blockades) => {
                     const pf = this.getBlockadesByIndex(blockades.blockType);
                     if (!pf) return;
@@ -177,41 +166,30 @@ export class GameManager extends Component {
                     );
                 });
 
-                map = jsonAsset.json.levelDoorsData.doors;
+                map = clone.levelDoorsData.doors;
                 map.forEach((door) => {
                     const pf = this.getDoorByIndex(door.doorPartCount);
                     if (!pf) return;
-                    let rotz = door.rotation;
+
+                    const gate = instantiate(pf);
                     if (
-                        (Math.round(door.rotation.z) === 90 ||
-                            Math.round(door.rotation.z) === 270) &&
-                        !this.isCreate[index]
+                        Math.round(door.rotation.z) === 90 ||
+                        Math.round(door.rotation.z) === 270
                     ) {
-                        rotz.z += 180;
+                        door.rotation.z += 180;
                     }
-                    const db = this.instantiateAndSetup(
-                        pf,
+                    gate.getComponent(GatePrefab).initializeBlock(
                         door.position,
-                        rotz
+                        door.rotation,
+                        door.doorPartCount,
+                        door.blockType,
+                        this.getMaterialByIndex(door.blockType)
                     );
-                    if (!db) return;
-
-                    const mat = this.getMaterialByIndex(door.blockType);
-                    const child = db.getChildByName('Block');
-                    const childUnder = db.getChildByName('Block_Under');
-
-                    let mr = child.getComponent(MeshRenderer);
-                    if (mr && mat) mr.material = mat;
-                    mr = childUnder.getComponent(MeshRenderer);
-                    if (mr && mat) mr.material = mat;
+                    this.node.addChild(gate);
                 });
 
-                this.gridSize = jsonAsset.json.gridSize;
-                this.createMapFromGrid(
-                    jsonAsset.json.gridSize,
-                    jsonAsset.json.hidedGridCoords
-                );
-                this.isCreate[index] = true;
+                this.gridSize = clone.gridSize;
+                this.createMapFromGrid(clone.gridSize, clone.hidedGridCoords);
             }
         });
     }

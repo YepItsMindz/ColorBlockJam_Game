@@ -329,7 +329,7 @@
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "648e023d-283f-417a-a5b4-4a410fac8efc",
+        "__uuid__": "5bbe99a3-07ab-4ed6-bd3d-8926ed144417",
         "__expectedType__": "cc.Prefab"
       },
       {
@@ -353,7 +353,7 @@
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "b116b3fc-d52e-46fe-8420-47ba604b6e38",
+        "__uuid__": "aa7b7ed0-388f-4bf9-83a3-2c5b4bee7dac",
         "__expectedType__": "cc.Prefab"
       },
       {
@@ -442,8 +442,7 @@
       {
         "__uuid__": "ad67ef32-ac72-4989-baea-352a539c175a",
         "__expectedType__": "cc.Material"
-      },
-      null
+      }
     ],
     "Edit": {
       "__id__": 9
@@ -660,7 +659,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 372.9847494553377,
+    "_orthoHeight": 664.8543689320388,
     "_near": 1,
     "_far": 2000,
     "_color": {
