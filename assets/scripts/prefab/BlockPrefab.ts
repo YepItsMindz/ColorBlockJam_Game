@@ -10,6 +10,8 @@ import {
     Vec3,
     tween,
     RigidBody,
+    geometry,
+    BoxCollider,
 } from 'cc';
 import { ColorType } from '../GameConstant';
 import { GatePrefab } from './GatePrefab';
@@ -17,7 +19,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass('BlockPrefab')
 export class BlockPrefab extends Component {
-    public color: ColorType;
+    public color: ColorType = null;
     public blockGroupType: number = null;
     public hasPassedThroughGate: boolean = false;
 
@@ -39,22 +41,25 @@ export class BlockPrefab extends Component {
         }
     }
 
-    onCollisionEnter(event: ICollisionEvent) {
+    onCollisionEnter(event: ICollisionEvent) {}
+
+    onCollisionStay(event: ICollisionEvent) {
+        //console.log('Đang va chạm với', event.otherCollider.node.name);
         const gateCmp = event.otherCollider.node.getComponent(GatePrefab);
         if (gateCmp) {
             console.log(
                 `Gate color: ${ColorType[gateCmp.color]}, Block color: ${ColorType[this.color]}`
             );
-
+            const blockAABB = this.getCombinedAABB();
+            console.log(blockAABB.halfExtents.x, blockAABB.halfExtents.y);
             // Kiểm tra nếu màu giống nhau
-            if (gateCmp.color === this.color) {
+            if (
+                gateCmp.color === this.color &&
+                this.canPassThrough(gateCmp.node)
+            ) {
                 this.passThroughGate(gateCmp.node, gateCmp);
             }
         }
-    }
-
-    onCollisionStay(event: ICollisionEvent) {
-        //console.log('Đang va chạm với', event.otherCollider.node.name);
     }
 
     onCollisionExit(event: ICollisionEvent) {
@@ -100,6 +105,49 @@ export class BlockPrefab extends Component {
         // Set block type
         this.setBlockGroupType(blockGroupType);
         this.setColorType(blockType);
+    }
+
+    getCombinedAABB(): geometry.AABB | null {
+        // Mỗi Collider riêng lẻ đều có worldBounds của nó. Để lấy AABB của node -> Merge các AABB của từng collider
+        const colliders = this.node.getComponents(BoxCollider);
+        console.log(colliders);
+        if (colliders.length === 0) return null;
+
+        // Clone AABB đầu tiên
+        const totalAABB = colliders[0].worldBounds.clone();
+
+        // Gộp dần các AABB khác
+        for (let i = 1; i < colliders.length; i++) {
+            geometry.AABB.merge(totalAABB, totalAABB, colliders[i].worldBounds);
+        }
+
+        return totalAABB;
+    }
+
+    canPassThrough(gate: Node): boolean {
+        const blockAABB = this.getCombinedAABB();
+        const gateAABB = gate.getComponent(GatePrefab).getCombinedAABB();
+
+        if (!blockAABB || !gateAABB) return false;
+        console.log(blockAABB.halfExtents.x, blockAABB.halfExtents.y);
+
+        if (gate.getComponent(GatePrefab).doorDir === 0) {
+            // Gate mở ngang
+            const alignedY =
+                blockAABB.center.y + blockAABB.halfExtents.y <=
+                    gateAABB.center.y + gateAABB.halfExtents.y &&
+                blockAABB.center.y - blockAABB.halfExtents.y >=
+                    gateAABB.center.y - gateAABB.halfExtents.y;
+            return alignedY;
+        } else {
+            // Gate mở dọc
+            const alignedX =
+                blockAABB.center.x + blockAABB.halfExtents.x <=
+                    gateAABB.center.x + gateAABB.halfExtents.x &&
+                blockAABB.center.x - blockAABB.halfExtents.x >=
+                    gateAABB.center.x - gateAABB.halfExtents.x;
+            return alignedX;
+        }
     }
 
     passThroughGate(gateNode: Node, gatePrefab: GatePrefab) {

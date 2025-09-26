@@ -1,7 +1,9 @@
 import {
     _decorator,
+    BoxCollider,
     Collider,
     Component,
+    geometry,
     ICollisionEvent,
     Material,
     MeshRenderer,
@@ -22,6 +24,11 @@ export class GatePrefab extends Component {
 
     setDoorPartCount(index: number) {
         this.doorPartCount = index;
+    }
+
+    getCombinedAABB(): geometry.AABB {
+        const collider = this.node.getComponent(BoxCollider);
+        return collider.worldBounds as geometry.AABB;
     }
 
     setDoorDir(index: number) {}
@@ -64,7 +71,8 @@ export class GatePrefab extends Component {
         // Set position
         this.node.setPosition(position.x, position.y, position.z);
         // Set rotation
-        if (Math.round(rotation.z) == 90 || Math.round(rotation.z) == 270)
+        console.log(this.node, rotation.z);
+        if (Math.round(rotation.z) == 450 || Math.round(rotation.z) == 270)
             this.doorDir = 0;
         else this.doorDir = 1;
 
