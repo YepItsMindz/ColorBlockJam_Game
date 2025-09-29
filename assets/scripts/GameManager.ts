@@ -42,6 +42,8 @@ export class GameManager extends Component {
     Edit: EditBox = null;
 
     public gridSize: { x: number; y: number } = null;
+    public gateNode: Node[] = [];
+    public blockNode: Node[] = [];
 
     start() {
         this.loadLevel(1);
@@ -119,6 +121,8 @@ export class GameManager extends Component {
     }
 
     loadLevel(index: number) {
+        this.gateNode.length = 0;
+        this.blockNode.length = 0;
         const name = `Level ${index}`;
         resources.load(`level/${name}`, (err: Error, jsonAsset: JsonAsset) => {
             if (!err) {
@@ -145,6 +149,7 @@ export class GameManager extends Component {
                             block.blockType,
                             this.getMaterialByIndex(block.blockType)
                         );
+                    this.blockNode.push(legoClone);
                     this.node.addChild(legoClone);
                 });
 
@@ -185,6 +190,7 @@ export class GameManager extends Component {
                         door.blockType,
                         this.getMaterialByIndex(door.blockType)
                     );
+                    this.gateNode.push(gate);
                     this.node.addChild(gate);
                 });
 

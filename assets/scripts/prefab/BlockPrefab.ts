@@ -12,9 +12,11 @@ import {
     RigidBody,
     geometry,
     BoxCollider,
+    Rect,
 } from 'cc';
 import { ColorType } from '../GameConstant';
 import { GatePrefab } from './GatePrefab';
+import { GRID_SIZE } from '../GameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('BlockPrefab')
@@ -22,6 +24,7 @@ export class BlockPrefab extends Component {
     public color: ColorType = null;
     public blockGroupType: number = null;
     public hasPassedThroughGate: boolean = false;
+    public rect: Rect;
 
     setColorType(color: ColorType) {
         this.color = color;
@@ -47,18 +50,17 @@ export class BlockPrefab extends Component {
         //console.log('Đang va chạm với', event.otherCollider.node.name);
         const gateCmp = event.otherCollider.node.getComponent(GatePrefab);
         if (gateCmp) {
-            console.log(
-                `Gate color: ${ColorType[gateCmp.color]}, Block color: ${ColorType[this.color]}`
-            );
-            const blockAABB = this.getCombinedAABB();
-            console.log(blockAABB.halfExtents.x, blockAABB.halfExtents.y);
-            // Kiểm tra nếu màu giống nhau
-            if (
-                gateCmp.color === this.color &&
-                this.canPassThrough(gateCmp.node)
-            ) {
-                this.passThroughGate(gateCmp.node, gateCmp);
-            }
+            // console.log(
+            //     `Gate color: ${ColorType[gateCmp.color]}, Block color: ${ColorType[this.color]}`
+            // );
+            // const blockAABB = this.getCombinedAABB();
+            // // Kiểm tra nếu màu giống nhau
+            // if (
+            //     gateCmp.color === this.color &&
+            //     this.canPassThrough(gateCmp.node)
+            // ) {
+            //     this.passThroughGate(gateCmp.node, gateCmp);
+            // }
         }
     }
 
@@ -103,126 +105,247 @@ export class BlockPrefab extends Component {
         }
 
         // Set block type
+        this.setBlockRect(position, rotation, blockGroupType);
         this.setBlockGroupType(blockGroupType);
         this.setColorType(blockType);
     }
 
-    getCombinedAABB(): geometry.AABB | null {
-        // Mỗi Collider riêng lẻ đều có worldBounds của nó. Để lấy AABB của node -> Merge các AABB của từng collider
-        const colliders = this.node.getComponents(BoxCollider);
-        console.log(colliders);
-        if (colliders.length === 0) return null;
-
-        // Clone AABB đầu tiên
-        const totalAABB = colliders[0].worldBounds.clone();
-
-        // Gộp dần các AABB khác
-        for (let i = 1; i < colliders.length; i++) {
-            geometry.AABB.merge(totalAABB, totalAABB, colliders[i].worldBounds);
+    setBlockRect(
+        position: { x: number; y: number; z: number },
+        rotation: { x: number; y: number; z: number },
+        blockGroupType: number
+    ) {
+        let rect: Rect;
+        if (blockGroupType == 0) {
+            const width = GRID_SIZE;
+            const height = GRID_SIZE;
+            let x = Math.round(position.x * 2) / 2;
+            let y = Math.round(position.y * 2) / 2;
+            x -= width / 2;
+            y -= height / 2;
+            rect = new Rect(x, y, width, height);
         }
-
-        return totalAABB;
+        if (blockGroupType == 1) {
+            if (Math.round(rotation.z) == 0 || Math.round(rotation.z) == 180) {
+                const width = GRID_SIZE;
+                const height = GRID_SIZE * 2;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            } else {
+                const width = GRID_SIZE * 2;
+                const height = GRID_SIZE;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            }
+        }
+        if (blockGroupType == 2) {
+            if (Math.round(rotation.z) == 0 || Math.round(rotation.z) == 180) {
+                const width = GRID_SIZE;
+                const height = GRID_SIZE * 3;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            } else {
+                const width = GRID_SIZE * 3;
+                const height = GRID_SIZE;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            }
+        }
+        if (
+            blockGroupType == 3 ||
+            blockGroupType == 4 ||
+            blockGroupType == 11
+        ) {
+            if (Math.round(rotation.z) == 0 || Math.round(rotation.z) == 180) {
+                const width = GRID_SIZE * 2;
+                const height = GRID_SIZE * 3;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            } else {
+                const width = GRID_SIZE * 3;
+                const height = GRID_SIZE * 2;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            }
+        }
+        if (blockGroupType == 5 || blockGroupType == 7) {
+            const width = GRID_SIZE * 2;
+            const height = GRID_SIZE * 2;
+            let x = Math.round(position.x * 2) / 2;
+            let y = Math.round(position.y * 2) / 2;
+            x -= width / 2;
+            y -= height / 2;
+            rect = new Rect(x, y, width, height);
+        }
+        if (blockGroupType == 6) {
+            const width = GRID_SIZE * 3;
+            const height = GRID_SIZE * 3;
+            let x = Math.round(position.x * 2) / 2;
+            let y = Math.round(position.y * 2) / 2;
+            x -= width / 2;
+            y -= height / 2;
+            rect = new Rect(x, y, width, height);
+        }
+        if (
+            blockGroupType == 8 ||
+            blockGroupType == 9 ||
+            blockGroupType == 10
+        ) {
+            if (Math.round(rotation.z) == 0 || Math.round(rotation.z) == 180) {
+                const width = GRID_SIZE * 3;
+                const height = GRID_SIZE * 2;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            } else {
+                const width = GRID_SIZE * 2;
+                const height = GRID_SIZE * 3;
+                let x = Math.round(position.x * 2) / 2;
+                let y = Math.round(position.y * 2) / 2;
+                x -= width / 2;
+                y -= height / 2;
+                rect = new Rect(x, y, width, height);
+            }
+        }
+        this.rect = rect;
     }
 
-    canPassThrough(gate: Node): boolean {
-        const blockAABB = this.getCombinedAABB();
-        const gateAABB = gate.getComponent(GatePrefab).getCombinedAABB();
+    // getCombinedAABB(): geometry.AABB | null {
+    //     // Mỗi Collider riêng lẻ đều có worldBounds của nó. Để lấy AABB của node -> Merge các AABB của từng collider
+    //     const colliders = this.node.getComponents(BoxCollider);
+    //     console.log(colliders);
+    //     if (colliders.length === 0) return null;
 
-        if (!blockAABB || !gateAABB) return false;
-        console.log(blockAABB.halfExtents.x, blockAABB.halfExtents.y);
+    //     // Clone AABB đầu tiên
+    //     const totalAABB = colliders[0].worldBounds.clone();
 
-        if (gate.getComponent(GatePrefab).doorDir === 0) {
-            // Gate mở ngang
-            const alignedY =
-                blockAABB.center.y + blockAABB.halfExtents.y <=
-                    gateAABB.center.y + gateAABB.halfExtents.y &&
-                blockAABB.center.y - blockAABB.halfExtents.y >=
-                    gateAABB.center.y - gateAABB.halfExtents.y;
-            return alignedY;
-        } else {
-            // Gate mở dọc
-            const alignedX =
-                blockAABB.center.x + blockAABB.halfExtents.x <=
-                    gateAABB.center.x + gateAABB.halfExtents.x &&
-                blockAABB.center.x - blockAABB.halfExtents.x >=
-                    gateAABB.center.x - gateAABB.halfExtents.x;
-            return alignedX;
-        }
-    }
+    //     // Gộp dần các AABB khác
+    //     for (let i = 1; i < colliders.length; i++) {
+    //         geometry.AABB.merge(totalAABB, totalAABB, colliders[i].worldBounds);
+    //     }
 
-    passThroughGate(gateNode: Node, gatePrefab: GatePrefab) {
-        console.log('Block is passing through gate!');
+    //     return totalAABB;
+    // }
 
-        // Lấy vị trí hiện tại của block và gate
-        const blockPos = this.node.getWorldPosition();
-        const gatePos = gateNode.getWorldPosition();
+    // canPassThrough(gate: Node): boolean {
+    //     const blockAABB = this.getCombinedAABB();
+    //     const gateAABB = gate.getComponent(GatePrefab).getCombinedAABB();
 
-        // Sử dụng thuộc tính doorDir từ GatePrefab để xác định hướng
-        const gateDir = gatePrefab.doorDir;
+    //     if (!blockAABB || !gateAABB) return false;
+    //     console.log(blockAABB.halfExtents.x, blockAABB.halfExtents.y);
 
-        // Tính vector từ gate đến block
-        const offset = new Vec3();
-        Vec3.subtract(offset, blockPos, gatePos);
+    //     if (gate.getComponent(GatePrefab).doorDir === 0) {
+    //         // Gate mở ngang
+    //         const alignedY =
+    //             blockAABB.center.y + blockAABB.halfExtents.y <=
+    //                 gateAABB.center.y + gateAABB.halfExtents.y &&
+    //             blockAABB.center.y - blockAABB.halfExtents.y >=
+    //                 gateAABB.center.y - gateAABB.halfExtents.y;
+    //         return alignedY;
+    //     } else {
+    //         // Gate mở dọc
+    //         const alignedX =
+    //             blockAABB.center.x + blockAABB.halfExtents.x <=
+    //                 gateAABB.center.x + gateAABB.halfExtents.x &&
+    //             blockAABB.center.x - blockAABB.halfExtents.x >=
+    //                 gateAABB.center.x - gateAABB.halfExtents.x;
+    //         return alignedX;
+    //     }
+    // }
 
-        // Xác định hướng di chuyển dựa trên dir
-        let targetPos = new Vec3();
+    // passThroughGate(gateNode: Node, gatePrefab: GatePrefab) {
+    //     console.log('Block is passing through gate!');
 
-        if (gateDir === 1) {
-            // dir = 1: đối xứng theo trục Y (di chuyển dọc)
-            console.log('Gate dir = 1, mirroring across Y axis');
-            targetPos.set(
-                blockPos.x,
-                gatePos.y + (gatePos.y - blockPos.y), // Đối xứng qua trục Y
-                blockPos.z
-            );
-        } else {
-            // dir = 0: đối xứng theo trục X (di chuyển ngang)
-            console.log('Gate dir = 0, mirroring across X axis');
-            targetPos.set(
-                gatePos.x + (gatePos.x - blockPos.x), // Đối xứng qua trục X
-                blockPos.y,
-                blockPos.z
-            );
-        }
+    //     // Lấy vị trí hiện tại của block và gate
+    //     const blockPos = this.node.getWorldPosition();
+    //     const gatePos = gateNode.getWorldPosition();
 
-        // Đảm bảo vị trí đích hợp lý (cách gate ít nhất 2 units)
-        const minDistance = 2;
-        const distanceToGate = Vec3.distance(targetPos, gatePos);
-        if (distanceToGate < minDistance) {
-            const direction = new Vec3();
-            Vec3.subtract(direction, targetPos, gatePos);
-            direction.normalize();
-            Vec3.multiplyScalar(direction, direction, minDistance);
-            Vec3.add(targetPos, gatePos, direction);
-        }
+    //     // Sử dụng thuộc tính doorDir từ GatePrefab để xác định hướng
+    //     const gateDir = gatePrefab.doorDir;
 
-        // Đánh dấu block đã đi qua cổng
-        this.hasPassedThroughGate = true;
+    //     // Tính vector từ gate đến block
+    //     const offset = new Vec3();
+    //     Vec3.subtract(offset, blockPos, gatePos);
 
-        this.setCollidersEnabled(this.node, false);
-        // Tạo tween animation để di chuyển block
-        tween(this.node)
-            .to(
-                0.3,
-                {
-                    position: targetPos,
-                },
-                {
-                    easing: 'sineInOut',
-                }
-            )
-            .call(() => {
-                this.node.getComponent(RigidBody).linearFactor = new Vec3(
-                    0,
-                    0,
-                    0
-                );
-                this.node.getComponent(RigidBody).setLinearVelocity(Vec3.ZERO);
-                this.node.getComponent(RigidBody).setAngularVelocity(Vec3.ZERO);
-                console.log(
-                    'Block has passed through the gate and can no longer be moved!'
-                );
-            })
-            .start();
-    }
+    //     // Xác định hướng di chuyển dựa trên dir
+    //     let targetPos = new Vec3();
+
+    //     if (gateDir === 1) {
+    //         // dir = 1: đối xứng theo trục Y (di chuyển dọc)
+    //         console.log('Gate dir = 1, mirroring across Y axis');
+    //         targetPos.set(
+    //             blockPos.x,
+    //             gatePos.y + (gatePos.y - blockPos.y), // Đối xứng qua trục Y
+    //             blockPos.z
+    //         );
+    //     } else {
+    //         // dir = 0: đối xứng theo trục X (di chuyển ngang)
+    //         console.log('Gate dir = 0, mirroring across X axis');
+    //         targetPos.set(
+    //             gatePos.x + (gatePos.x - blockPos.x), // Đối xứng qua trục X
+    //             blockPos.y,
+    //             blockPos.z
+    //         );
+    //     }
+
+    //     // Đảm bảo vị trí đích hợp lý (cách gate ít nhất 2 units)
+    //     const minDistance = 2;
+    //     const distanceToGate = Vec3.distance(targetPos, gatePos);
+    //     if (distanceToGate < minDistance) {
+    //         const direction = new Vec3();
+    //         Vec3.subtract(direction, targetPos, gatePos);
+    //         direction.normalize();
+    //         Vec3.multiplyScalar(direction, direction, minDistance);
+    //         Vec3.add(targetPos, gatePos, direction);
+    //     }
+
+    //     // Đánh dấu block đã đi qua cổng
+    //     this.hasPassedThroughGate = true;
+
+    //     this.setCollidersEnabled(this.node, false);
+    //     // Tạo tween animation để di chuyển block
+    //     tween(this.node)
+    //         .to(
+    //             0.3,
+    //             {
+    //                 position: targetPos,
+    //             },
+    //             {
+    //                 easing: 'sineInOut',
+    //             }
+    //         )
+    //         .call(() => {
+    //             this.node.getComponent(RigidBody).linearFactor = new Vec3(
+    //                 0,
+    //                 0,
+    //                 0
+    //             );
+    //             this.node.getComponent(RigidBody).setLinearVelocity(Vec3.ZERO);
+    //             this.node.getComponent(RigidBody).setAngularVelocity(Vec3.ZERO);
+    //             console.log(
+    //                 'Block has passed through the gate and can no longer be moved!'
+    //             );
+    //         })
+    //         .start();
+    // }
 }

@@ -8,8 +8,10 @@ import {
     Material,
     MeshRenderer,
     Node,
+    Rect,
 } from 'cc';
 import { ColorType } from '../GameConstant';
+import { GRID_SIZE } from '../GameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GatePrefab')
@@ -17,6 +19,7 @@ export class GatePrefab extends Component {
     public color: ColorType;
     public doorPartCount: number = null;
     public doorDir: number = null; //0 = vertical; 1 = horizontal
+    public rect: Rect;
 
     setColorType(color: ColorType) {
         this.color = color;
@@ -31,36 +34,6 @@ export class GatePrefab extends Component {
         return collider.worldBounds as geometry.AABB;
     }
 
-    setDoorDir(index: number) {}
-
-    start() {
-        // const colliders = this.getComponents(Collider);
-        // for (const c of colliders) {
-        //     c.on('onCollisionEnter', this.onCollisionEnter, this);
-        //     c.on('onCollisionStay', this.onCollisionStay, this);
-        //     c.on('onCollisionExit', this.onCollisionExit, this);
-        // }
-    }
-
-    // onCollisionEnter(event: ICollisionEvent) {
-    //     console.log('Bắt đầu va chạm với', event.otherCollider.node.name);
-    // }
-
-    // onCollisionStay(event: ICollisionEvent) {
-    //     console.log('Đang va chạm với', event.otherCollider.node.name);
-    // }
-
-    // onCollisionExit(event: ICollisionEvent) {
-    //     console.log('Kết thúc va chạm với', event.otherCollider.node.name);
-    // }
-
-    // setCollidersEnabled(node: Node, enabled: boolean) {
-    //     const colliders = node.getComponents(Collider);
-    //     for (const c of colliders) {
-    //         c.enabled = enabled;
-    //     }
-    // }
-
     initializeBlock(
         position: { x: number; y: number; z: number },
         rotation: { x: number; y: number; z: number },
@@ -71,7 +44,6 @@ export class GatePrefab extends Component {
         // Set position
         this.node.setPosition(position.x, position.y, position.z);
         // Set rotation
-        console.log(this.node, rotation.z);
         if (Math.round(rotation.z) == 450 || Math.round(rotation.z) == 270)
             this.doorDir = 0;
         else this.doorDir = 1;
@@ -92,7 +64,34 @@ export class GatePrefab extends Component {
         mr = childUnder.getComponent(MeshRenderer);
         if (mr && material) mr.material = material;
 
+        this.setGateRect(position, doorPartCount);
         this.setDoorPartCount(doorPartCount);
         this.setColorType(blockType);
+    }
+
+    setGateRect(
+        position: { x: number; y: number; z: number },
+        doorPartCount: number
+    ) {
+        let rect: Rect;
+        if (this.doorDir == 1) {
+            const width = doorPartCount * GRID_SIZE;
+            const height = GRID_SIZE;
+            let x = Math.round(position.x * 2) / 2;
+            let y = Math.round(position.y * 2) / 2;
+            x -= width / 2;
+            y -= height / 2;
+            rect = new Rect(x, y, width, height);
+        } else {
+            // Provide a default value for rect in the else block
+            const width = GRID_SIZE;
+            const height = doorPartCount * GRID_SIZE;
+            let x = Math.round(position.x * 2) / 2;
+            let y = Math.round(position.y * 2) / 2;
+            x -= width / 2;
+            y -= height / 2;
+            rect = new Rect(x, y, width, height);
+        }
+        this.rect = rect;
     }
 }
