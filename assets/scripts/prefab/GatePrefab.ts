@@ -11,7 +11,7 @@ import {
     Rect,
 } from 'cc';
 import { ColorType } from '../GameConstant';
-import { GRID_SIZE } from '../GameManager';
+import { GRID_SIZE, GameManager } from '../GameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GatePrefab')
@@ -38,8 +38,7 @@ export class GatePrefab extends Component {
         position: { x: number; y: number; z: number },
         rotation: { x: number; y: number; z: number },
         doorPartCount: number,
-        blockType: number,
-        material: Material | null
+        blockType: number
     ) {
         // Set position
         this.node.setPosition(position.x, position.y, position.z);
@@ -54,7 +53,8 @@ export class GatePrefab extends Component {
             rotation.z
         );
 
-        // Set material
+        // Set material - tự lấy từ GameManager
+        const material = GameManager.instance?.getMaterialByIndex(blockType);
         const child = this.node.getChildByName('Block');
         const childUnder = this.node.getChildByName('Block_Under');
 

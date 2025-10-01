@@ -17,6 +17,7 @@ import {
     Intersection2D,
     Vec2,
     Rect,
+    instantiate,
 } from 'cc';
 import { GameManager } from './GameManager';
 import { BlockPrefab } from './prefab/BlockPrefab';
@@ -65,7 +66,6 @@ export class MouseJoint3D extends Component {
         if (PhysicsSystem.instance.raycastClosest(ray)) {
             const hit = PhysicsSystem.instance.raycastClosestResult;
             this.selectedBody = hit.collider.getComponent(RigidBody);
-            console.log(this.selectedBody.node.name);
             if (!this.selectedBody) return;
 
             if (
@@ -104,9 +104,6 @@ export class MouseJoint3D extends Component {
                 hit.hitPoint,
                 this.selectedNode.worldPosition
             );
-            console.log(
-                ColorType[this.selectedNode.getComponent(BlockPrefab).color]
-            );
             this.targetPos = new Vec3(this.selectedNode.worldPosition);
         }
     }
@@ -138,6 +135,9 @@ export class MouseJoint3D extends Component {
             // Cập nhật targetPos thay vì applyForce trực tiếp
             this.targetPos = new Vec3();
             Vec3.subtract(this.targetPos, hitPoint, this.offset);
+
+            // Giới hạn targetPos trong phạm vi grid
+            this.clampToGrid(this.targetPos);
         }
     }
 
@@ -172,108 +172,38 @@ export class MouseJoint3D extends Component {
     onMouseUp() {
         if (this.selectedBody) {
             this.snapBlockToGrid(this.selectedNode);
+
             this.selectedNode
                 .getComponent(BlockPrefab)
                 .setBlockRect(
                     this.selectedNode.position,
-                    this.selectedNode.rotation,
+                    this.selectedNode.eulerAngles,
                     this.selectedNode.getComponent(BlockPrefab).blockGroupType
                 );
 
-            console.log(this.isCanPass());
+            if (this.isCanPass()) console.log(this.isCanPass());
             this.selectedBody.linearFactor = new Vec3(0, 0, 0);
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.setAngularVelocity(Vec3.ZERO);
-            if (this.isCanPass()) {
-                // this.tweenBlockThroughGate(this.selectedNode);
-            } else {
-                // Nếu không thể đi qua cổng, dừng block tại vị trí hiện tại
-            }
         }
         this.selectedNode = null;
         this.selectedBody = null;
         this.targetPos = null;
     }
 
-    // tweenBlockThroughGate(block: Node) {
-    //     if (!block) return;
+    clampToGrid(targetPos: Vec3) {
+        if (!this.gm || !this.gm.gridSize) return;
+        const cols = (this.gm.gridSize.x - 1) / 2;
+        const rows = (this.gm.gridSize.y - 1) / 2;
+        const minX = -cols * GRID_SIZE;
+        const maxX = cols * GRID_SIZE;
 
-    //     const blockPrefab = block.getComponent(BlockPrefab);
-    //     if (!blockPrefab) return;
+        const minY = -rows * GRID_SIZE;
+        const maxY = rows * GRID_SIZE;
 
-    //     // Tìm cổng mà block đang tương tác
-    //     let targetGate: Node = null;
-    //     if (Array.isArray(this.gm.gateNode)) {
-    //         for (const gateNode of this.gm.gateNode) {
-    //             const gatePrefab = gateNode.getComponent(GatePrefab);
-    //             if (gatePrefab && gatePrefab.rect && blockPrefab.rect) {
-    //                 if (
-    //                     Intersection2D.rectRect(
-    //                         blockPrefab.rect,
-    //                         gatePrefab.rect
-    //                     )
-    //                 ) {
-    //                     targetGate = gateNode;
-    //                     break;
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     if (!targetGate) return;
-
-    //     const gatePrefab = targetGate.getComponent(GatePrefab);
-    //     if (!gatePrefab) return;
-
-    //     // Tính toán vị trí đích dựa trên doorDir
-    //     const gatePos = targetGate.getWorldPosition();
-    //     const blockPos = block.getWorldPosition();
-    //     let targetPosition: Vec3;
-
-    //     if (gatePrefab.doorDir === 1) {
-    //         // Horizontal door - di chuyển theo trục X
-    //         targetPosition = new Vec3(
-    //             gatePos.x + 6, // Di chuyển qua bên phải cổng
-    //             blockPos.y, // Giữ nguyên y
-    //             blockPos.z // Giữ nguyên z
-    //         );
-    //     } else {
-    //         // Vertical door (doorDir === 0) - di chuyển theo trục Y
-    //         targetPosition = new Vec3(
-    //             blockPos.x, // Giữ nguyên x
-    //             gatePos.y + 6, // Di chuyển lên trên cổng
-    //             blockPos.z // Giữ nguyên z
-    //         );
-    //     }
-
-    //     // Đánh dấu block đã đi qua cổng
-    //     blockPrefab.hasPassedThroughGate = true;
-
-    //     // Tạo tween animation
-    //     tween(block)
-    //         .to(
-    //             1.0,
-    //             {
-    //                 worldPosition: targetPosition,
-    //             },
-    //             {
-    //                 easing: 'quadOut',
-    //             }
-    //         )
-    //         .call(() => {
-    //             // Callback khi hoàn thành tween
-    //             console.log(`Block ${block.name} đã đi qua cổng thành công!`);
-
-    //             // Dừng hoàn toàn block sau khi đi qua cổng
-    //             const rigidBody = block.getComponent(RigidBody);
-    //             if (rigidBody) {
-    //                 rigidBody.linearFactor = new Vec3(0, 0, 0);
-    //                 rigidBody.setLinearVelocity(Vec3.ZERO);
-    //                 rigidBody.setAngularVelocity(Vec3.ZERO);
-    //             }
-    //         })
-    //         .start();
-    // }
+        targetPos.x = Math.max(minX, Math.min(maxX, targetPos.x));
+        targetPos.y = Math.max(minY, Math.min(maxY, targetPos.y));
+    }
 
     snapBlockToGrid(block: Node) {
         const worldPos: Vec3 = block.getWorldPosition();
@@ -394,38 +324,49 @@ export class MouseJoint3D extends Component {
         const blockPrefab = this.selectedNode.getComponent(BlockPrefab);
         if (!blockPrefab || !blockPrefab.rect) return false;
 
-        if (Array.isArray(this.gm.gateNode)) {
-            for (const gateNode of this.gm.gateNode) {
-                const gatePrefab = gateNode.getComponent(GatePrefab);
-                if (!gatePrefab || !gatePrefab.rect) continue;
+        for (const gateNode of this.gm.gateNode) {
+            const gatePrefab = gateNode.getComponent(GatePrefab);
+            if (!gatePrefab || !gatePrefab.rect) continue;
 
-                // Check if block is in contact with this gate
+            if (gatePrefab.color == blockPrefab.color) {
                 const isInContact = Intersection2D.rectRect(
                     blockPrefab.rect,
                     gatePrefab.rect
                 );
-                for (const blockNode of this.gm.blockNode) {
-                    const block = blockNode.getComponent(BlockPrefab);
-                    if (!block || !block.rect) continue;
+                if (isInContact) {
+                    let hasOverlap = false;
+                    for (const blockNode of this.gm.blockNode) {
+                        const block = blockNode.getComponent(BlockPrefab);
+                        if (!block || !block.rect) continue;
+                        if (blockNode === this.selectedNode) continue;
 
-                    const isOverLap = this.rectOverlapStrict(
-                        block.rect,
-                        blockPrefab.rect
-                    );
+                        // const isOverLap = this.rectOverlapStrict(
+                        //     block.rect,
+                        //     blockPrefab.rect
+                        // );
 
-                    if (isInContact && !isOverLap) {
-                        console.log(blockPrefab, gatePrefab);
-                        // Check if block has passed through the gate (block's right edge > gate's right edge)
+                        // if (isOverLap) {
+                        //     console.log(block, blockPrefab);
+                        //     hasOverlap = true;
+                        //     break;
+                        // }
+                    }
+
+                    if (!hasOverlap) {
+                        let canPassThroughThisGate = false;
                         if (gatePrefab.doorDir == 1) {
-                            return (
+                            canPassThroughThisGate =
                                 blockPrefab.rect.xMin >= gatePrefab.rect.xMin &&
-                                blockPrefab.rect.xMax <= gatePrefab.rect.xMax
-                            );
+                                blockPrefab.rect.xMax <= gatePrefab.rect.xMax;
                         } else {
-                            return (
+                            canPassThroughThisGate =
                                 blockPrefab.rect.yMin >= gatePrefab.rect.yMin &&
-                                blockPrefab.rect.yMax <= gatePrefab.rect.yMax
-                            );
+                                blockPrefab.rect.yMax <= gatePrefab.rect.yMax;
+                        }
+                        if (canPassThroughThisGate) {
+                            this.hasLayer();
+                            this.passThroughGate(gateNode, gatePrefab);
+                            return true;
                         }
                     }
                 }
@@ -438,5 +379,62 @@ export class MouseJoint3D extends Component {
         if (a.xMax <= b.xMin || a.xMin >= b.xMax) return false;
         if (a.yMax <= b.yMin || a.yMin >= b.yMax) return false;
         return true;
+    }
+
+    passThroughGate(gateNode: Node, gatePrefab: GatePrefab) {
+        const selectedNode = this.selectedNode;
+        const selectedBody = this.selectedBody;
+        if (!selectedNode || !selectedBody) return;
+
+        const blockPos = selectedNode.getWorldPosition();
+        const gatePos = gateNode.getWorldPosition();
+        const gateDir = gatePrefab.doorDir;
+        selectedNode.getComponent(BlockPrefab).hasPassedThroughGate = true;
+        let targetPos = new Vec3();
+
+        if (gateDir === 1) {
+            console.log(gatePos.y, blockPos.y);
+            targetPos.set(
+                blockPos.x,
+                gatePos.y + (gatePos.y - blockPos.y),
+                blockPos.z
+            );
+        } else {
+            targetPos.set(
+                gatePos.x + (gatePos.x - blockPos.x),
+                blockPos.y,
+                blockPos.z
+            );
+        }
+        tween(selectedNode)
+            .to(
+                0.3,
+                {
+                    position: targetPos,
+                },
+                {
+                    easing: 'sineInOut',
+                }
+            )
+            .call(() => {
+                selectedNode
+                    .getComponent(BlockPrefab)
+                    .setBlockRect(
+                        selectedNode.position,
+                        selectedNode.eulerAngles,
+                        selectedNode.getComponent(BlockPrefab).blockGroupType
+                    );
+                selectedBody.linearFactor = new Vec3(0, 0, 0);
+                selectedBody.setLinearVelocity(Vec3.ZERO);
+                selectedBody.setAngularVelocity(Vec3.ZERO);
+            })
+            .start();
+    }
+
+    hasLayer() {
+        if (this.selectedNode.getComponent(BlockPrefab).hasLayer) {
+            const layerNode: Node = instantiate(this.selectedNode);
+            layerNode.getComponent(BlockPrefab).hasLayer = false;
+        }
     }
 }
