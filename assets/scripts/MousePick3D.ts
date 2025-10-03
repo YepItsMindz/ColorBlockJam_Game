@@ -18,6 +18,7 @@ import {
     Vec2,
     Rect,
     instantiate,
+    EventTouch,
 } from 'cc';
 import { GameManager } from './GameManager';
 import { BlockPrefab } from './prefab/BlockPrefab';
@@ -53,12 +54,12 @@ export class MouseJoint3D extends Component {
     private gridPos: { x: number; y: number } = null;
 
     start() {
-        input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
-        input.on(Input.EventType.MOUSE_MOVE, this.onMouseMove, this);
-        input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        input.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
     }
 
-    onMouseDown(event: EventMouse) {
+    onTouchStart(event: EventMouse | EventTouch) {
         const ray = this.camera.screenPointToRay(
             event.getLocationX(),
             event.getLocationY()
@@ -66,6 +67,7 @@ export class MouseJoint3D extends Component {
         if (PhysicsSystem.instance.raycastClosest(ray)) {
             const hit = PhysicsSystem.instance.raycastClosestResult;
             this.selectedBody = hit.collider.getComponent(RigidBody);
+            this.selectedNode = hit.collider.node;
             if (!this.selectedBody) return;
 
             if (
@@ -90,11 +92,32 @@ export class MouseJoint3D extends Component {
             if (this.selectedBody) {
                 // this.selectedBody.type = RigidBody.Type.DYNAMIC;
                 // this.selectedBody.useGravity = false;
-                this.selectedBody.linearFactor = new Vec3(1, 1, 0);
+                if (
+                    this.selectedNode.getComponent(BlockPrefab)
+                        .isOneWayMovementActive
+                ) {
+                    if (
+                        this.selectedNode.getComponent(BlockPrefab)
+                            .wayDirection == 0
+                    ) {
+                        if (
+                            Math.round(this.selectedNode.eulerAngles.z) == 0 ||
+                            Math.round(this.selectedNode.eulerAngles.z) == 180
+                        )
+                            this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                        else this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                    } else {
+                        if (
+                            Math.round(this.selectedNode.eulerAngles.z) == 0 ||
+                            Math.round(this.selectedNode.eulerAngles.z) == 180
+                        )
+                            this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                        else this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                    }
+                } else this.selectedBody.linearFactor = new Vec3(1, 1, 0);
                 this.selectedBody.angularFactor = new Vec3(0, 0, 0);
             }
 
-            this.selectedNode = hit.collider.node;
             this.fixedZ = this.selectedNode.worldPosition.z;
 
             // offset từ hitpoint tới tâm node
@@ -108,7 +131,7 @@ export class MouseJoint3D extends Component {
         }
     }
 
-    onMouseMove(event: EventMouse) {
+    onTouchMove(event: EventMouse | EventTouch) {
         if (!this.selectedNode || !this.selectedBody) return;
 
         // Kiểm tra lại nếu block đã đi qua cổng
@@ -169,7 +192,7 @@ export class MouseJoint3D extends Component {
         }
     }
 
-    onMouseUp() {
+    onTouchEnd(event: EventMouse | EventTouch) {
         if (this.selectedBody) {
             this.snapBlockToGrid(this.selectedNode);
 
@@ -181,7 +204,7 @@ export class MouseJoint3D extends Component {
                     this.selectedNode.getComponent(BlockPrefab).blockGroupType
                 );
 
-            if (this.isCanPass()) console.log(this.isCanPass());
+            this.isCanPass();
             this.selectedBody.linearFactor = new Vec3(0, 0, 0);
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.setAngularVelocity(Vec3.ZERO);
@@ -318,7 +341,7 @@ export class MouseJoint3D extends Component {
         }
     }
 
-    isCanPass(): boolean {
+    isCanPass() {
         if (!this.selectedNode) return false;
 
         const blockPrefab = this.selectedNode.getComponent(BlockPrefab);
@@ -364,15 +387,17 @@ export class MouseJoint3D extends Component {
                                 blockPrefab.rect.yMax <= gatePrefab.rect.yMax;
                         }
                         if (canPassThroughThisGate) {
-                            this.hasLayer();
+                            this.cloneNode();
+                            this.selectedNode.getChildByName('Layer').active =
+                                false;
                             this.passThroughGate(gateNode, gatePrefab);
-                            return true;
+                            //return true;
                         }
                     }
                 }
             }
         }
-        return false;
+        //return false;
     }
 
     rectOverlapStrict(a: Rect, b: Rect): boolean {
@@ -393,7 +418,6 @@ export class MouseJoint3D extends Component {
         let targetPos = new Vec3();
 
         if (gateDir === 1) {
-            console.log(gatePos.y, blockPos.y);
             targetPos.set(
                 blockPos.x,
                 gatePos.y + (gatePos.y - blockPos.y),
@@ -431,10 +455,34 @@ export class MouseJoint3D extends Component {
             .start();
     }
 
-    hasLayer() {
+    cloneNode() {
         if (this.selectedNode.getComponent(BlockPrefab).hasLayer) {
             const layerNode: Node = instantiate(this.selectedNode);
+
+            const colliders = this.selectedBody.node.getComponents(Collider);
+            for (const collider of colliders) {
+                collider.enabled = false;
+            }
+
             layerNode.getComponent(BlockPrefab).hasLayer = false;
+            layerNode
+                .getComponent(BlockPrefab)
+                .initializeBlock(
+                    this.selectedNode.position,
+                    this.selectedNode.eulerAngles,
+                    null,
+                    null,
+                    null,
+                    this.selectedNode.getComponent(BlockPrefab).blockGroupType,
+                    this.selectedNode.getComponent(BlockPrefab).layerColor
+                );
+
+            layerNode.getComponent(RigidBody).linearFactor = new Vec3(0, 0, 0);
+            layerNode.getComponent(RigidBody).setLinearVelocity(Vec3.ZERO);
+            layerNode.getComponent(RigidBody).setAngularVelocity(Vec3.ZERO);
+            this.gm.blockNode.push(layerNode);
+            this.gm.node.addChild(layerNode);
+            this.snapBlockToGrid(layerNode);
         }
     }
 }

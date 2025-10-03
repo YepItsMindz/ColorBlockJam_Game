@@ -26,6 +26,8 @@ export class BlockPrefab extends Component {
     public hasLayer: boolean = false;
     public blockGroupType: number = null;
     public hasPassedThroughGate: boolean = false;
+    public wayDirection: number = null;
+    public isOneWayMovementActive: boolean = false;
     public rect: Rect;
 
     setLayerColor(color: ColorType) {
@@ -38,6 +40,17 @@ export class BlockPrefab extends Component {
 
     setBlockGroupType(index: number) {
         this.blockGroupType = index;
+    }
+
+    setIsOneWayMovementActive(index: number) {
+        if (index == 1) this.isOneWayMovementActive = true;
+        else this.isOneWayMovementActive = false;
+    }
+
+    setWayDiretion(index: number) {
+        if (this.isOneWayMovementActive) {
+            this.wayDirection = index;
+        }
     }
 
     start() {
@@ -81,10 +94,20 @@ export class BlockPrefab extends Component {
         }
     }
 
+    checkLayer() {
+        if (this.hasLayer) {
+            this.node.getChildByName('Layer').active = true;
+        } else {
+            this.node.getChildByName('Layer').active = false;
+        }
+    }
+
     initializeBlock(
         position: { x: number; y: number; z: number },
         rotation: { x: number; y: number; z: number },
-        layerData: { hasLayer: number; layerBlockType: number },
+        layerData: { hasLayer: number; blockType: number } | null,
+        isOneWayMovementActive: number | null,
+        wayDirection: number | null,
         blockGroupType: number,
         blockType: ColorType
     ) {
@@ -94,11 +117,15 @@ export class BlockPrefab extends Component {
         this.node.setPosition(position.x, position.y, position.z);
 
         // Set rotation
-        this.node.setRotationFromEuler(
-            rotation.x,
-            rotation.y + 180,
-            rotation.z
-        );
+        if (layerData) {
+            this.node.setRotationFromEuler(
+                rotation.x,
+                rotation.y + 180,
+                rotation.z
+            );
+        } else {
+            this.node.setRotationFromEuler(rotation.x, rotation.y, rotation.z);
+        }
 
         // Set material - tự lấy từ GameManager
         const material = GameManager.instance?.getMaterialByIndex(blockType);
@@ -113,16 +140,14 @@ export class BlockPrefab extends Component {
             }
         }
 
-        if (layerData.hasLayer == 1) {
-            console.log('YES');
+        if (layerData && layerData.hasLayer == 1) {
             this.hasLayer = true;
             const layerMaterial = GameManager.instance?.getMaterialByIndex(
-                layerData.layerBlockType
+                layerData.blockType
             );
             if (layerMaterial) {
                 const ll = this.node.getChildByName('Layer');
                 if (ll) {
-                    ll.active = true;
                     const mr = ll.getComponent(MeshRenderer);
                     if (mr) mr.material = layerMaterial;
                 } else {
@@ -130,10 +155,21 @@ export class BlockPrefab extends Component {
                     if (mr) mr.material = layerMaterial;
                 }
             }
+            this.setLayerColor(layerData.blockType);
+        }
+
+        this.checkLayer();
+
+        if (isOneWayMovementActive == 1) {
+            {
+                const a = this.node.getChildByName('Arrow' + wayDirection);
+                if (a) a.active = true;
+            }
         }
 
         // Set block type
-
+        this.setIsOneWayMovementActive(isOneWayMovementActive);
+        this.setWayDiretion(wayDirection);
         this.setBlockGroupType(blockGroupType);
         this.setColorType(blockType);
     }

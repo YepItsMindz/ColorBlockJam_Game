@@ -52,7 +52,7 @@ export class GameManager extends Component {
 
     start() {
         GameManager.instance = this;
-        this.loadLevel(1);
+        this.loadLevel(8);
         if (this.Edit) {
             this.Edit.node.on('editing-return', this.loadLevelFromEdit, this);
         }
@@ -154,6 +154,8 @@ export class GameManager extends Component {
                             block.position,
                             block.rotation,
                             block.layerData,
+                            block.isOneWayMovementActive,
+                            block.wayDirection,
                             block.blockGroupType,
                             block.blockType
                         );
