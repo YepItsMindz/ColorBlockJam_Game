@@ -28,7 +28,11 @@ export class BlockPrefab extends Component {
     public hasPassedThroughGate: boolean = false;
     public wayDirection: number = null;
     public isOneWayMovementActive: boolean = false;
+    public iceCount: number = 1;
     public rect: Rect;
+    public connectedBlock: Node | null;
+    public isConnectedMerged: boolean = false;
+    public groupIndex: number;
 
     setLayerColor(color: ColorType) {
         this.layerColor = color;
@@ -36,6 +40,17 @@ export class BlockPrefab extends Component {
 
     setColorType(color: ColorType) {
         this.color = color;
+        const material = GameManager.instance?.getMaterialByIndex(color);
+        if (material) {
+            const bl = this.node.getChildByName('Block');
+            if (bl) {
+                const mr = bl.getComponent(MeshRenderer);
+                if (mr) mr.material = material;
+            } else {
+                const mr = this.node.getComponent(MeshRenderer);
+                if (mr) mr.material = material;
+            }
+        }
     }
 
     setBlockGroupType(index: number) {
@@ -51,6 +66,10 @@ export class BlockPrefab extends Component {
         if (this.isOneWayMovementActive) {
             this.wayDirection = index;
         }
+    }
+
+    setIceCount(index: number) {
+        this.iceCount = index;
     }
 
     start() {
@@ -102,16 +121,21 @@ export class BlockPrefab extends Component {
         }
     }
 
+    setB;
+
     initializeBlock(
         position: { x: number; y: number; z: number },
         rotation: { x: number; y: number; z: number },
         layerData: { hasLayer: number; blockType: number } | null,
         isOneWayMovementActive: number | null,
         wayDirection: number | null,
+        blockGroupLevelElementData,
+        joinedGroupData,
         blockGroupType: number,
         blockType: ColorType
     ) {
         this.setBlockRect(position, rotation, blockGroupType);
+
         // Set position
 
         this.node.setPosition(position.x, position.y, position.z);
@@ -128,16 +152,23 @@ export class BlockPrefab extends Component {
         }
 
         // Set material - tự lấy từ GameManager
-        const material = GameManager.instance?.getMaterialByIndex(blockType);
-        if (material) {
+        this.setColorType(blockType);
+
+        if (blockGroupLevelElementData.iceCount > 1) {
+            this.setIceCount(blockGroupLevelElementData.iceCount + 1);
+            const iceMaterial = GameManager.instance?.getMaterialByIndex(10);
             const bl = this.node.getChildByName('Block');
             if (bl) {
                 const mr = bl.getComponent(MeshRenderer);
-                if (mr) mr.material = material;
+                if (mr) mr.material = iceMaterial;
             } else {
                 const mr = this.node.getComponent(MeshRenderer);
-                if (mr) mr.material = material;
+                if (mr) mr.material = iceMaterial;
             }
+            // const label = this.node.getChildByName('Label');
+            // label.active = true;
+        } else {
+            this.setIceCount(1);
         }
 
         if (layerData && layerData.hasLayer == 1) {
@@ -158,6 +189,17 @@ export class BlockPrefab extends Component {
             this.setLayerColor(layerData.blockType);
         }
 
+        if (joinedGroupData.isMemberOfJoinedGorup == 1) {
+            this.groupIndex = joinedGroupData.groupIndex;
+            for (const blockNode of GameManager.instance?.blockNode) {
+                const block = blockNode.getComponent(BlockPrefab);
+                if (block.groupIndex == this.groupIndex) {
+                    block.connectedBlock = this.node;
+                    this.connectedBlock = block.node;
+                }
+            }
+        }
+
         this.checkLayer();
 
         if (isOneWayMovementActive == 1) {
@@ -168,10 +210,10 @@ export class BlockPrefab extends Component {
         }
 
         // Set block type
+
         this.setIsOneWayMovementActive(isOneWayMovementActive);
         this.setWayDiretion(wayDirection);
         this.setBlockGroupType(blockGroupType);
-        this.setColorType(blockType);
     }
 
     setBlockRect(

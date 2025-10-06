@@ -1,0 +1,87 @@
+{
+  "__type__": "cc.Material",
+  "_name": "",
+  "_objFlags": 0,
+  "__editorExtras__": {},
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+    "__expectedType__": "cc.EffectAsset"
+  },
+  "_techIdx": 1,
+  "_defines": [
+    {
+      "USE_ALBEDO_MAP": true,
+      "TRANSPARENCY_MAP_CHANNEL": "b"
+    },
+    {},
+    {},
+    {}
+  ],
+  "_states": [
+    {
+      "priority": 129,
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    },
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    },
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    },
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    }
+  ],
+  "_props": [
+    {
+      "mainTexture": {
+        "__uuid__": "d68dbac1-48c7-43d2-b574-37ad7488a1ca@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      "emissive": {
+        "__type__": "cc.Color",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+      },
+      "emissiveScale": 0,
+      "specularColor": {
+        "__type__": "cc.Color",
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 0
+      },
+      "specularFactor": 0
+    },
+    {},
+    {},
+    {}
+  ]
+}

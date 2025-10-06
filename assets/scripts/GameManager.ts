@@ -156,6 +156,8 @@ export class GameManager extends Component {
                             block.layerData,
                             block.isOneWayMovementActive,
                             block.wayDirection,
+                            block.blockGroupLevelElementData,
+                            block.joinedGroupData,
                             block.blockGroupType,
                             block.blockType
                         );

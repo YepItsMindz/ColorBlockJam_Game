@@ -442,6 +442,10 @@
       {
         "__uuid__": "ad67ef32-ac72-4989-baea-352a539c175a",
         "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "463f11e9-f3b9-462a-816d-c1f83099f72d",
+        "__expectedType__": "cc.Material"
       }
     ],
     "Edit": {
@@ -659,7 +663,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 819.1387559808613,
+    "_orthoHeight": 360,
     "_near": 1,
     "_far": 2000,
     "_color": {

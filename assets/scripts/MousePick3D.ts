@@ -92,7 +92,9 @@ export class MouseJoint3D extends Component {
             if (this.selectedBody) {
                 // this.selectedBody.type = RigidBody.Type.DYNAMIC;
                 // this.selectedBody.useGravity = false;
-                if (
+                if (this.selectedNode.getComponent(BlockPrefab).iceCount > 1) {
+                    this.selectedBody.linearFactor = new Vec3(0, 0, 0);
+                } else if (
                     this.selectedNode.getComponent(BlockPrefab)
                         .isOneWayMovementActive
                 ) {
@@ -115,6 +117,7 @@ export class MouseJoint3D extends Component {
                         else this.selectedBody.linearFactor = new Vec3(1, 0, 0);
                     }
                 } else this.selectedBody.linearFactor = new Vec3(1, 1, 0);
+
                 this.selectedBody.angularFactor = new Vec3(0, 0, 0);
             }
 
@@ -407,6 +410,12 @@ export class MouseJoint3D extends Component {
     }
 
     passThroughGate(gateNode: Node, gatePrefab: GatePrefab) {
+        for (const blockNode of this.gm.blockNode) {
+            const block = blockNode.getComponent(BlockPrefab);
+            if (block.iceCount > 1) block.iceCount -= 1;
+            if (block.iceCount == 1) block.setColorType(block.color);
+        }
+
         const selectedNode = this.selectedNode;
         const selectedBody = this.selectedBody;
         if (!selectedNode || !selectedBody) return;
@@ -470,6 +479,8 @@ export class MouseJoint3D extends Component {
                 .initializeBlock(
                     this.selectedNode.position,
                     this.selectedNode.eulerAngles,
+                    null,
+                    null,
                     null,
                     null,
                     null,
