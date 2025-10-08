@@ -113,6 +113,52 @@ export class BlockPrefab extends Component {
         }
     }
 
+    mergeConnectedColliders() {
+        if (!this.connectedBlock || this.isConnectedMerged) return;
+
+        const connectedColliders =
+            this.connectedBlock.getComponents(BoxCollider);
+        if (connectedColliders.length === 0) return;
+
+        // World positions
+        const thisWorld = this.node.worldPosition.clone();
+        const connectedWorld = this.connectedBlock.worldPosition.clone();
+
+        // offset trong world space
+        const offsetWorld = connectedWorld.subtract(thisWorld);
+
+        // 🔹 Chuyển offset sang local space của this.node
+        const offsetLocal = this.node.inverseTransformPoint(
+            new Vec3(),
+            offsetWorld
+        );
+
+        // Duyệt qua từng collider của connected block
+        for (const col of connectedColliders) {
+            const newCol = this.node.addComponent(BoxCollider);
+            newCol.size = col.size.clone();
+
+            // ✅ Lấy center world của collider gốc
+            const worldCenter = new Vec3();
+            Vec3.transformMat4(
+                worldCenter,
+                col.center,
+                this.connectedBlock.getWorldMatrix()
+            );
+
+            // ✅ Chuyển worldCenter về local của node chính
+            const localCenter = new Vec3();
+            this.node.inverseTransformPoint(localCenter, worldCenter);
+
+            newCol.center = localCenter;
+            newCol.isTrigger = col.isTrigger;
+            newCol.material = col.material;
+            newCol.enabled = true;
+        }
+
+        this.isConnectedMerged = true;
+    }
+
     checkLayer() {
         if (this.hasLayer) {
             this.node.getChildByName('Layer').active = true;
@@ -196,6 +242,12 @@ export class BlockPrefab extends Component {
                 if (block.groupIndex == this.groupIndex) {
                     block.connectedBlock = this.node;
                     this.connectedBlock = block.node;
+                    if (this.connectedBlock) {
+                        this.mergeConnectedColliders();
+                        this.createConnectedBlockMesh();
+                        block.mergeConnectedColliders();
+                        block.createConnectedBlockMesh();
+                    }
                 }
             }
         }
@@ -333,6 +385,60 @@ export class BlockPrefab extends Component {
                 this.rect = new Rect(x, y, width, height);
             }
         }
+    }
+
+    /**
+     * Tạo node con có mesh của connected block và đặt vị trí tương ứng
+     */
+    createConnectedBlockMesh() {
+        if (!this.connectedBlock) return;
+
+        // Tìm node Block hoặc lấy mesh renderer chính
+        let sourceMeshRenderer: MeshRenderer | null = null;
+        const connectedBlockChild = this.connectedBlock.getChildByName('Block');
+
+        if (connectedBlockChild) {
+            sourceMeshRenderer = connectedBlockChild.getComponent(MeshRenderer);
+        } else {
+            sourceMeshRenderer = this.connectedBlock.getComponent(MeshRenderer);
+        }
+
+        if (!sourceMeshRenderer || !sourceMeshRenderer.mesh) {
+            console.warn(
+                'Không tìm thấy mesh renderer hoặc mesh từ connected block'
+            );
+            return;
+        }
+
+        // Tạo node con mới
+        const connectedMeshNode = new Node('ConnectedBlockMesh');
+
+        // Thêm MeshRenderer component
+        const meshRenderer = connectedMeshNode.addComponent(MeshRenderer);
+        meshRenderer.mesh = sourceMeshRenderer.mesh;
+        meshRenderer.material = sourceMeshRenderer.material;
+
+        // Tính toán vị trí local từ world position của connected block
+        const connectedWorldPos = this.connectedBlock.worldPosition;
+        const localPos = new Vec3();
+        this.node.inverseTransformPoint(localPos, connectedWorldPos);
+
+        // Đặt vị trí và rotation cho node con
+        connectedMeshNode.setPosition(localPos);
+        connectedMeshNode.setRotation(this.connectedBlock.rotation);
+        connectedMeshNode.setScale(this.connectedBlock.scale);
+
+        // Thêm node con vào block chính
+        connectedMeshNode.setRotationFromEuler(
+            connectedMeshNode.eulerAngles.x,
+            connectedMeshNode.eulerAngles.y + 180,
+            connectedMeshNode.eulerAngles.z
+        );
+        this.node.addChild(connectedMeshNode);
+
+        console.log(
+            `Đã tạo connected block mesh tại vị trí local: ${localPos.toString()}`
+        );
     }
 
     // getCombinedAABB(): geometry.AABB | null {

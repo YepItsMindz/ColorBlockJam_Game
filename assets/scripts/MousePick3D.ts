@@ -92,6 +92,10 @@ export class MouseJoint3D extends Component {
             if (this.selectedBody) {
                 // this.selectedBody.type = RigidBody.Type.DYNAMIC;
                 // this.selectedBody.useGravity = false;
+                
+                // Tắt collider của connectedBlock khi nhấn
+                this.disableConnectedBlockColliders();
+                
                 if (this.selectedNode.getComponent(BlockPrefab).iceCount > 1) {
                     this.selectedBody.linearFactor = new Vec3(0, 0, 0);
                 } else if (
@@ -211,6 +215,9 @@ export class MouseJoint3D extends Component {
             this.selectedBody.linearFactor = new Vec3(0, 0, 0);
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.setAngularVelocity(Vec3.ZERO);
+            
+            // Bật lại collider của connectedBlock khi thả ra
+            this.enableConnectedBlockColliders();
         }
         this.selectedNode = null;
         this.selectedBody = null;
@@ -495,5 +502,39 @@ export class MouseJoint3D extends Component {
             this.gm.node.addChild(layerNode);
             this.snapBlockToGrid(layerNode);
         }
+    }
+
+    /**
+     * Tắt tất cả collider của connectedBlock khi block chính được nhấn
+     */
+    private disableConnectedBlockColliders() {
+        if (!this.selectedNode) return;
+        
+        const blockPrefab = this.selectedNode.getComponent(BlockPrefab);
+        if (!blockPrefab || !blockPrefab.connectedBlock) return;
+        
+        const connectedColliders = blockPrefab.connectedBlock.getComponents(Collider);
+        for (const collider of connectedColliders) {
+            collider.enabled = false;
+        }
+        
+        console.log(`Tắt ${connectedColliders.length} colliders của connected block`);
+    }
+
+    /**
+     * Bật lại tất cả collider của connectedBlock khi block chính được thả
+     */
+    private enableConnectedBlockColliders() {
+        if (!this.selectedNode) return;
+        
+        const blockPrefab = this.selectedNode.getComponent(BlockPrefab);
+        if (!blockPrefab || !blockPrefab.connectedBlock) return;
+        
+        const connectedColliders = blockPrefab.connectedBlock.getComponents(Collider);
+        for (const collider of connectedColliders) {
+            collider.enabled = true;
+        }
+        
+        console.log(`Bật lại ${connectedColliders.length} colliders của connected block`);
     }
 }
