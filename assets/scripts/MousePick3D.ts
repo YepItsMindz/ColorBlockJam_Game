@@ -53,6 +53,10 @@ export class MouseJoint3D extends Component {
     private fixedZ = 0;
     private gridPos: { x: number; y: number } = null;
 
+    // Biến lưu trạng thái connected blocks
+    private connectedBlockOffset: Vec3 | null = null;
+    private connectedBlockWasVisible: boolean = false;
+
     start() {
         input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
         input.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
@@ -119,11 +123,30 @@ export class MouseJoint3D extends Component {
                 } else this.selectedBody.linearFactor = new Vec3(1, 1, 0);
 
                 this.selectedBody.angularFactor = new Vec3(0, 0, 0);
+
+                // Xử lý connected block
+                const connectedBlock =
+                    this.selectedNode.getComponent(BlockPrefab).connectedBlock;
+                if (connectedBlock) {
+                    // Lưu khoảng cách tương đối giữa block chính và connected block
+                    this.connectedBlockOffset = new Vec3();
+                    Vec3.subtract(
+                        this.connectedBlockOffset,
+                        connectedBlock.worldPosition,
+                        this.selectedNode.worldPosition
+                    );
+
+                    // Lưu trạng thái hiển thị ban đầu và ẩn connected block
+                    this.connectedBlockWasVisible = connectedBlock.active;
+                    connectedBlock.active = false;
+
+                    // Set linear factor cho connected block
+                    connectedBlock.getComponent(RigidBody).linearFactor =
+                        new Vec3(1, 1, 0);
+                }
             }
 
-            this.fixedZ = this.selectedNode.worldPosition.z;
-
-            // offset từ hitpoint tới tâm node
+            this.fixedZ = this.selectedNode.worldPosition.z; // offset từ hitpoint tới tâm node
             this.offset = new Vec3();
             Vec3.subtract(
                 this.offset,
@@ -179,6 +202,9 @@ export class MouseJoint3D extends Component {
             // gần target thì snap
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.node.setWorldPosition(this.targetPos);
+
+            // Cập nhật connected block nếu có
+            this.updateConnectedBlockPosition();
         } else {
             dir.normalize();
             dir.multiplyScalar(this.speed);
@@ -192,6 +218,39 @@ export class MouseJoint3D extends Component {
             force.add(dampingForce);
 
             this.selectedBody.applyForce(force);
+
+            // Cập nhật connected block nếu có
+            this.updateConnectedBlockPosition();
+        }
+    }
+
+    updateConnectedBlockPosition() {
+        const connectedBlock =
+            this.selectedNode?.getComponent(BlockPrefab)?.connectedBlock;
+        if (
+            connectedBlock &&
+            this.connectedBlockOffset &&
+            !connectedBlock.active
+        ) {
+            // Chỉ cập nhật khi connected block đang bị ẩn (trong lúc drag)
+            const newConnectedPos = new Vec3();
+            Vec3.add(
+                newConnectedPos,
+                this.selectedNode.worldPosition,
+                this.connectedBlockOffset
+            );
+
+            // Cập nhật vị trí connected block (dù nó đang bị ẩn)
+            connectedBlock.setWorldPosition(newConnectedPos);
+
+            // Cập nhật rect cho connected block
+            connectedBlock
+                .getComponent(BlockPrefab)
+                .setBlockRect(
+                    connectedBlock.position,
+                    connectedBlock.eulerAngles,
+                    connectedBlock.getComponent(BlockPrefab).blockGroupType
+                );
         }
     }
 
@@ -207,14 +266,72 @@ export class MouseJoint3D extends Component {
                     this.selectedNode.getComponent(BlockPrefab).blockGroupType
                 );
 
+            // Xử lý connected block khi thả
+            const connectedBlock =
+                this.selectedNode.getComponent(BlockPrefab).connectedBlock;
+            if (connectedBlock && this.connectedBlockOffset) {
+                // Hiện lại connected block
+                connectedBlock.active = this.connectedBlockWasVisible;
+
+                // Tìm ConnectedBlockClone để lấy vị trí
+                const connectedBlockClone = this.selectedNode.getChildByName(
+                    'ConnectedBlockClone'
+                );
+                let newConnectedPos = new Vec3();
+
+                if (connectedBlockClone) {
+                    // Set vị trí theo ConnectedBlockClone
+                    newConnectedPos = connectedBlockClone.getWorldPosition();
+                } else {
+                    // Fallback: tính vị trí dựa trên offset như cũ
+                    Vec3.add(
+                        newConnectedPos,
+                        this.selectedNode.worldPosition,
+                        this.connectedBlockOffset
+                    );
+                }
+
+                // Đặt connected block ở vị trí mới
+                connectedBlock.setWorldPosition(newConnectedPos);
+
+                // Snap connected block to grid
+                this.snapBlockToGrid(connectedBlock);
+
+                // Cập nhật rect cho connected block
+                connectedBlock
+                    .getComponent(BlockPrefab)
+                    .setBlockRect(
+                        connectedBlock.position,
+                        connectedBlock.eulerAngles,
+                        connectedBlock.getComponent(BlockPrefab).blockGroupType
+                    );
+
+                // Set linear factor về 0
+                connectedBlock.getComponent(RigidBody).linearFactor = new Vec3(
+                    0,
+                    0,
+                    0
+                );
+                connectedBlock
+                    .getComponent(RigidBody)
+                    .setLinearVelocity(Vec3.ZERO);
+                connectedBlock
+                    .getComponent(RigidBody)
+                    .setAngularVelocity(Vec3.ZERO);
+            }
+
             this.isCanPass();
             this.selectedBody.linearFactor = new Vec3(0, 0, 0);
             this.selectedBody.setLinearVelocity(Vec3.ZERO);
             this.selectedBody.setAngularVelocity(Vec3.ZERO);
         }
+
+        // Reset các biến trạng thái
         this.selectedNode = null;
         this.selectedBody = null;
         this.targetPos = null;
+        this.connectedBlockOffset = null;
+        this.connectedBlockWasVisible = false;
     }
 
     clampToGrid(targetPos: Vec3) {
@@ -350,53 +467,107 @@ export class MouseJoint3D extends Component {
         const blockPrefab = this.selectedNode.getComponent(BlockPrefab);
         if (!blockPrefab || !blockPrefab.rect) return false;
 
+        // Kiểm tra từng cổng
         for (const gateNode of this.gm.gateNode) {
             const gatePrefab = gateNode.getComponent(GatePrefab);
             if (!gatePrefab || !gatePrefab.rect) continue;
 
+            let mainBlockCanPass = false;
+            let connectedCanPass = false;
+            let mainBlockInContact = false;
+            let connectedBlockInContact = false;
+
+            // Kiểm tra block chính
             if (gatePrefab.color == blockPrefab.color) {
-                const isInContact = Intersection2D.rectRect(
+                mainBlockInContact = Intersection2D.rectRect(
                     blockPrefab.rect,
                     gatePrefab.rect
                 );
-                if (isInContact) {
-                    let hasOverlap = false;
-                    for (const blockNode of this.gm.blockNode) {
-                        const block = blockNode.getComponent(BlockPrefab);
-                        if (!block || !block.rect) continue;
-                        if (blockNode === this.selectedNode) continue;
 
-                        // const isOverLap = this.rectOverlapStrict(
-                        //     block.rect,
-                        //     blockPrefab.rect
-                        // );
-
-                        // if (isOverLap) {
-                        //     console.log(block, blockPrefab);
-                        //     hasOverlap = true;
-                        //     break;
-                        // }
+                if (mainBlockInContact) {
+                    if (gatePrefab.doorDir == 1) {
+                        mainBlockCanPass =
+                            blockPrefab.rect.xMin >= gatePrefab.rect.xMin &&
+                            blockPrefab.rect.xMax <= gatePrefab.rect.xMax;
+                    } else {
+                        mainBlockCanPass =
+                            blockPrefab.rect.yMin >= gatePrefab.rect.yMin &&
+                            blockPrefab.rect.yMax <= gatePrefab.rect.yMax;
                     }
+                }
+            }
 
-                    if (!hasOverlap) {
-                        let canPassThroughThisGate = false;
-                        if (gatePrefab.doorDir == 1) {
-                            canPassThroughThisGate =
-                                blockPrefab.rect.xMin >= gatePrefab.rect.xMin &&
-                                blockPrefab.rect.xMax <= gatePrefab.rect.xMax;
-                        } else {
-                            canPassThroughThisGate =
-                                blockPrefab.rect.yMin >= gatePrefab.rect.yMin &&
-                                blockPrefab.rect.yMax <= gatePrefab.rect.yMax;
-                        }
-                        if (canPassThroughThisGate) {
-                            this.cloneNode();
-                            this.selectedNode.getChildByName('Layer').active =
-                                false;
-                            this.passThroughGate(gateNode, gatePrefab);
-                            //return true;
+            // Kiểm tra connected block độc lập
+            const connectedBlock = blockPrefab.connectedBlock;
+            if (connectedBlock) {
+                const connectedBlockPrefab =
+                    connectedBlock.getComponent(BlockPrefab);
+                if (connectedBlockPrefab && connectedBlockPrefab.rect) {
+                    // Kiểm tra connected block với cổng hiện tại
+                    if (gatePrefab.color === connectedBlockPrefab.color) {
+                        connectedBlockInContact = Intersection2D.rectRect(
+                            connectedBlockPrefab.rect,
+                            gatePrefab.rect
+                        );
+
+                        if (connectedBlockInContact) {
+                            if (gatePrefab.doorDir == 1) {
+                                connectedCanPass =
+                                    connectedBlockPrefab.rect.xMin >=
+                                        gatePrefab.rect.xMin &&
+                                    connectedBlockPrefab.rect.xMax <=
+                                        gatePrefab.rect.xMax;
+                            } else {
+                                connectedCanPass =
+                                    connectedBlockPrefab.rect.yMin >=
+                                        gatePrefab.rect.yMin &&
+                                    connectedBlockPrefab.rect.yMax <=
+                                        gatePrefab.rect.yMax;
+                            }
                         }
                     }
+                }
+            }
+
+            // Nếu có block nào đó contact với cổng thì xử lý
+            if (mainBlockInContact || connectedBlockInContact) {
+                let hasOverlap = false;
+
+                for (const blockNode of this.gm.blockNode) {
+                    const block = blockNode.getComponent(BlockPrefab);
+                    if (!block || !block.rect) continue;
+                    if (blockNode === this.selectedNode) continue;
+                    if (blockNode === connectedBlock) continue; // Bỏ qua connected block
+
+                    // Kiểm tra overlap nếu cần
+                }
+
+                if (!hasOverlap) {
+                    // Xử lý các trường hợp khác nhau
+                    if (mainBlockCanPass && connectedCanPass) {
+                        // Cả hai đều qua được - cả hai đi qua
+                        console.log('Both blocks can pass through gate');
+                        this.cloneNode();
+                        this.selectedNode.getChildByName('Layer').active =
+                            false;
+                        this.passThroughGate(gateNode, gatePrefab, true, true);
+                    } else if (mainBlockCanPass && !connectedCanPass) {
+                        // Chỉ block chính qua được - block chính đi qua, connected block bị ẩn
+                        console.log(
+                            'Only main block can pass, connected block will be hidden'
+                        );
+                        this.cloneNode();
+                        this.selectedNode.getChildByName('Layer').active =
+                            false;
+                        this.passThroughGate(gateNode, gatePrefab, true, false);
+                    } else if (!mainBlockCanPass && connectedCanPass) {
+                        // Chỉ connected block qua được - connected block đi qua, block chính bị ẩn
+                        console.log(
+                            'Only connected block can pass, main block will be hidden'
+                        );
+                        this.passThroughGate(gateNode, gatePrefab, false, true);
+                    }
+                    // Nếu cả hai đều không qua được thì không làm gì cả
                 }
             }
         }
@@ -409,7 +580,12 @@ export class MouseJoint3D extends Component {
         return true;
     }
 
-    passThroughGate(gateNode: Node, gatePrefab: GatePrefab) {
+    passThroughGate(
+        gateNode: Node,
+        gatePrefab: GatePrefab,
+        mainBlockPasses: boolean = true,
+        connectedBlockPasses: boolean = true
+    ) {
         for (const blockNode of this.gm.blockNode) {
             const block = blockNode.getComponent(BlockPrefab);
             if (block.iceCount > 1) block.iceCount -= 1;
@@ -423,45 +599,181 @@ export class MouseJoint3D extends Component {
         const blockPos = selectedNode.getWorldPosition();
         const gatePos = gateNode.getWorldPosition();
         const gateDir = gatePrefab.doorDir;
-        selectedNode.getComponent(BlockPrefab).hasPassedThroughGate = true;
-        let targetPos = new Vec3();
 
-        if (gateDir === 1) {
-            targetPos.set(
-                blockPos.x,
-                gatePos.y + (gatePos.y - blockPos.y),
-                blockPos.z
-            );
-        } else {
-            targetPos.set(
-                gatePos.x + (gatePos.x - blockPos.x),
-                blockPos.y,
-                blockPos.z
-            );
-        }
-        tween(selectedNode)
-            .to(
-                0.3,
-                {
-                    position: targetPos,
-                },
-                {
-                    easing: 'sineInOut',
-                }
-            )
-            .call(() => {
-                selectedNode
-                    .getComponent(BlockPrefab)
-                    .setBlockRect(
-                        selectedNode.position,
-                        selectedNode.eulerAngles,
-                        selectedNode.getComponent(BlockPrefab).blockGroupType
+        // Xử lý block chính
+        if (mainBlockPasses) {
+            selectedNode.getComponent(BlockPrefab).hasPassedThroughGate = true;
+            let targetPos = new Vec3();
+
+            if (gateDir === 1) {
+                targetPos.set(
+                    blockPos.x,
+                    gatePos.y + (gatePos.y - blockPos.y),
+                    blockPos.z
+                );
+            } else {
+                targetPos.set(
+                    gatePos.x + (gatePos.x - blockPos.x),
+                    blockPos.y,
+                    blockPos.z
+                );
+            }
+
+            // Nếu block chính qua cổng và có connected block, hiện connected block
+            const connectedBlock =
+                selectedNode.getComponent(BlockPrefab).connectedBlock;
+            if (connectedBlock && !connectedBlockPasses) {
+                // Hiện connected block khi block chính qua cổng
+                connectedBlock.active = true;
+
+                // Ẩn ConnectedBlockClone
+                const connectedBlockClone = selectedNode.getChildByName(
+                    'ConnectedBlockClone'
+                );
+                if (connectedBlockClone) {
+                    connectedBlock.setWorldPosition(
+                        connectedBlockClone.getWorldPosition()
                     );
-                selectedBody.linearFactor = new Vec3(0, 0, 0);
-                selectedBody.setLinearVelocity(Vec3.ZERO);
-                selectedBody.setAngularVelocity(Vec3.ZERO);
-            })
-            .start();
+                    // Ẩn ConnectedBlockClone
+                    connectedBlockClone.active = false;
+
+                    // Snap connected block to grid
+                    this.snapBlockToGrid(connectedBlock);
+                    // Cập nhật rect
+                    connectedBlock
+                        .getComponent(BlockPrefab)
+                        .setBlockRect(
+                            connectedBlock.position,
+                            connectedBlock.eulerAngles,
+                            connectedBlock.getComponent(BlockPrefab)
+                                .blockGroupType
+                        );
+                }
+
+                // Bật lại collider cho connected block
+                const connectedColliders =
+                    connectedBlock.getComponents(Collider);
+                for (const collider of connectedColliders) {
+                    collider.enabled = true;
+                }
+
+                // Ngắt kết nối
+                selectedNode.getComponent(BlockPrefab).connectedBlock = null;
+                if (connectedBlock.getComponent(BlockPrefab)) {
+                    connectedBlock.getComponent(BlockPrefab).connectedBlock =
+                        null;
+                }
+            }
+
+            // Tween cho block chính
+            tween(selectedNode)
+                .to(
+                    0.3,
+                    {
+                        position: targetPos,
+                    },
+                    {
+                        easing: 'sineInOut',
+                    }
+                )
+                .call(() => {
+                    selectedNode
+                        .getComponent(BlockPrefab)
+                        .setBlockRect(
+                            selectedNode.position,
+                            selectedNode.eulerAngles,
+                            selectedNode.getComponent(BlockPrefab)
+                                .blockGroupType
+                        );
+                    selectedBody.linearFactor = new Vec3(0, 0, 0);
+                    selectedBody.setLinearVelocity(Vec3.ZERO);
+                    selectedBody.setAngularVelocity(Vec3.ZERO);
+                })
+                .start();
+        } else {
+            // Nếu block chính không qua được thì giữ nguyên vị trí và reset physics
+            selectedBody.linearFactor = new Vec3(0, 0, 0);
+            selectedBody.setLinearVelocity(Vec3.ZERO);
+            selectedBody.setAngularVelocity(Vec3.ZERO);
+        }
+
+        // Xử lý connected block
+        const connectedBlock =
+            selectedNode.getComponent(BlockPrefab).connectedBlock;
+        if (connectedBlock) {
+            if (connectedBlockPasses) {
+                // Connected block đi qua cổng
+                const connectedBlockPos = connectedBlock.getWorldPosition();
+                connectedBlock.getComponent(BlockPrefab).hasPassedThroughGate =
+                    true;
+                let connectedTargetPos = new Vec3();
+
+                if (gateDir === 1) {
+                    connectedTargetPos.set(
+                        connectedBlockPos.x,
+                        gatePos.y + (gatePos.y - connectedBlockPos.y),
+                        connectedBlockPos.z
+                    );
+                } else {
+                    connectedTargetPos.set(
+                        gatePos.x + (gatePos.x - connectedBlockPos.x),
+                        connectedBlockPos.y,
+                        connectedBlockPos.z
+                    );
+                }
+
+                // Tắt ConnectedBlockClone là con của block chính
+                const connectedBlockClone = selectedNode.getChildByName(
+                    'ConnectedBlockClone'
+                );
+                if (connectedBlockClone) {
+                    connectedBlockClone.active = false;
+                }
+
+                // Ngắt kết nối trước khi connected block đi qua cổng
+                selectedNode.getComponent(BlockPrefab).connectedBlock = null;
+                if (connectedBlock.getComponent(BlockPrefab)) {
+                    connectedBlock.getComponent(BlockPrefab).connectedBlock =
+                        null;
+                }
+
+                const connectedBody = connectedBlock.getComponent(RigidBody);
+                tween(connectedBlock)
+                    .to(
+                        0.3,
+                        {
+                            position: connectedTargetPos,
+                        },
+                        {
+                            easing: 'sineInOut',
+                        }
+                    )
+                    .call(() => {
+                        connectedBlock
+                            .getComponent(BlockPrefab)
+                            .setBlockRect(
+                                connectedBlock.position,
+                                connectedBlock.eulerAngles,
+                                connectedBlock.getComponent(BlockPrefab)
+                                    .blockGroupType
+                            );
+                        if (connectedBody) {
+                            connectedBody.linearFactor = new Vec3(0, 0, 0);
+                            connectedBody.setLinearVelocity(Vec3.ZERO);
+                            connectedBody.setAngularVelocity(Vec3.ZERO);
+                        }
+                    })
+                    .start();
+            } else {
+                // Connected block không qua được thì ẩn nó và ngắt kết nối
+                connectedBlock.active = false;
+                selectedNode.getComponent(BlockPrefab).connectedBlock = null;
+                if (connectedBlock.getComponent(BlockPrefab)) {
+                    connectedBlock.getComponent(BlockPrefab).connectedBlock =
+                        null;
+                }
+            }
+        }
     }
 
     cloneNode() {

@@ -13,6 +13,7 @@ import {
     geometry,
     BoxCollider,
     Rect,
+    instantiate,
 } from 'cc';
 import { ColorType } from '../GameConstant';
 import { GatePrefab } from './GatePrefab';
@@ -113,6 +114,92 @@ export class BlockPrefab extends Component {
         }
     }
 
+    addConnectedBlockColliders(connectedBlockNode: Node) {
+        // Lấy tất cả collider từ connected block
+        const connectedColliders = connectedBlockNode.getComponents(Collider);
+
+        for (const connectedCollider of connectedColliders) {
+            // Tạo collider mới cho block chính
+            const newCollider = this.node.addComponent(BoxCollider);
+
+            // Copy các thuộc tính từ collider gốc
+            if (connectedCollider instanceof BoxCollider) {
+                const boxCollider = connectedCollider as BoxCollider;
+
+                // Lấy rotation của connected block
+                const connectedRotation = connectedBlockNode.eulerAngles;
+                const mainRotation = this.node.eulerAngles;
+
+                // Tính góc quay tương đối
+                const relativeRotation = new Vec3();
+                Vec3.subtract(
+                    relativeRotation,
+                    connectedRotation,
+                    mainRotation
+                );
+
+                // Xét góc quay để điều chỉnh size của collider
+                let adjustedSize = boxCollider.size.clone();
+
+                // Nếu có sự khác biệt về góc quay Z (90 độ hoặc 270 độ)
+                const rotationDiff = Math.abs(relativeRotation.z);
+                if (
+                    Math.abs(rotationDiff - 90) < 10 ||
+                    Math.abs(rotationDiff - 270) < 10
+                ) {
+                    // Hoán đổi x và y của size
+                    const temp = adjustedSize.x;
+                    adjustedSize.x = adjustedSize.y;
+                    adjustedSize.y = temp;
+                }
+
+                (newCollider as BoxCollider).size = adjustedSize;
+
+                // Tính toán center mới với xét góc quay
+                // Transform center của collider trong local space của connected block thành world space
+                const worldCenter = new Vec3();
+                Vec3.transformMat4(
+                    worldCenter,
+                    boxCollider.center,
+                    connectedBlockNode.getWorldMatrix()
+                );
+
+                // Chuyển đổi world position thành local position của block chính
+                const localCenter = new Vec3();
+                this.node.inverseTransformPoint(localCenter, worldCenter);
+
+                (newCollider as BoxCollider).center = localCenter;
+            }
+
+            // Copy material và các thuộc tính khác
+            newCollider.material = connectedCollider.material;
+            newCollider.isTrigger = connectedCollider.isTrigger;
+
+            // Thêm event listener cho collider mới
+            newCollider.on('onCollisionEnter', this.onCollisionEnter, this);
+            newCollider.on('onCollisionStay', this.onCollisionStay, this);
+            newCollider.on('onCollisionExit', this.onCollisionExit, this);
+        }
+    }
+
+    removeConnectedBlockColliders() {
+        // Lấy tất cả collider hiện tại của block chính
+        const allColliders = this.node.getComponents(Collider);
+
+        // Giả sử collider gốc là collider đầu tiên, các collider sau là từ connected block
+        // Có thể cần logic phức tạp hơn tùy vào cách implementation
+        if (allColliders.length > 1) {
+            for (let i = 1; i < allColliders.length; i++) {
+                this.node.removeComponent(allColliders[i]);
+            }
+        }
+
+        // Re-enable collider của connected block nếu cần
+        if (this.connectedBlock) {
+            this.setCollidersEnabled(this.connectedBlock, true);
+        }
+    }
+
     checkLayer() {
         if (this.hasLayer) {
             this.node.getChildByName('Layer').active = true;
@@ -194,8 +281,38 @@ export class BlockPrefab extends Component {
             for (const blockNode of GameManager.instance?.blockNode) {
                 const block = blockNode.getComponent(BlockPrefab);
                 if (block.groupIndex == this.groupIndex) {
-                    block.connectedBlock = this.node;
                     this.connectedBlock = block.node;
+
+                    this.addConnectedBlockColliders(this.connectedBlock);
+                    // Disable collider gốc của connected block để tránh duplicate collision
+                    this.setCollidersEnabled(this.connectedBlock, false);
+                    const cloneConnected = instantiate(this.connectedBlock);
+                    cloneConnected.name = 'ConnectedBlockClone';
+                    cloneConnected.getComponent(RigidBody).enabled = false;
+                    const pos = new Vec3();
+                    this.node.inverseTransformPoint(
+                        pos,
+                        cloneConnected.getWorldPosition()
+                    );
+                    cloneConnected.setPosition(pos);
+                    if (
+                        this.node.eulerAngles.z == 90 ||
+                        this.node.eulerAngles.z == 270
+                    ) {
+                        cloneConnected.eulerAngles = new Vec3(
+                            cloneConnected.eulerAngles.x,
+                            cloneConnected.eulerAngles.y + 180,
+                            cloneConnected.eulerAngles.z + 90
+                        );
+                    } else {
+                        cloneConnected.eulerAngles = new Vec3(
+                            cloneConnected.eulerAngles.x,
+                            cloneConnected.eulerAngles.y + 180,
+                            cloneConnected.eulerAngles.z
+                        );
+                    }
+
+                    this.node.addChild(cloneConnected);
                 }
             }
         }
@@ -265,7 +382,6 @@ export class BlockPrefab extends Component {
                 let y = Math.round(position.y * 2) / 2;
                 x -= width / 2;
                 y -= height / 2;
-                console.log(x, y, width, height);
                 this.rect = new Rect(x, y, width, height);
             }
         }
