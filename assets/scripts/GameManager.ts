@@ -52,7 +52,7 @@ export class GameManager extends Component {
 
     start() {
         GameManager.instance = this;
-        this.loadLevel(8);
+        this.loadLevel(117);
         if (this.Edit) {
             this.Edit.node.on('editing-return', this.loadLevelFromEdit, this);
         }

@@ -35,6 +35,9 @@ export class BlockPrefab extends Component {
     public isConnectedMerged: boolean = false;
     public groupIndex: number;
 
+    // Lưu trữ các collider của connected block đã được thêm vào block chính
+    private connectedBlockColliders: Collider[] = [];
+
     setLayerColor(color: ColorType) {
         this.layerColor = color;
     }
@@ -115,6 +118,9 @@ export class BlockPrefab extends Component {
     }
 
     addConnectedBlockColliders(connectedBlockNode: Node) {
+        // Xóa các collider cũ nếu có
+        this.removeConnectedBlockColliders();
+
         // Lấy tất cả collider từ connected block
         const connectedColliders = connectedBlockNode.getComponents(Collider);
 
@@ -179,24 +185,35 @@ export class BlockPrefab extends Component {
             newCollider.on('onCollisionEnter', this.onCollisionEnter, this);
             newCollider.on('onCollisionStay', this.onCollisionStay, this);
             newCollider.on('onCollisionExit', this.onCollisionExit, this);
+
+            // Lưu reference của collider mới
+            this.connectedBlockColliders.push(newCollider);
         }
     }
 
     removeConnectedBlockColliders() {
-        // Lấy tất cả collider hiện tại của block chính
-        const allColliders = this.node.getComponents(Collider);
-
-        // Giả sử collider gốc là collider đầu tiên, các collider sau là từ connected block
-        // Có thể cần logic phức tạp hơn tùy vào cách implementation
-        if (allColliders.length > 1) {
-            for (let i = 1; i < allColliders.length; i++) {
-                this.node.removeComponent(allColliders[i]);
+        // Xóa các collider của connected block đã được lưu
+        for (const collider of this.connectedBlockColliders) {
+            if (collider && collider.isValid) {
+                this.node.removeComponent(collider);
             }
         }
+
+        // Xóa array
+        this.connectedBlockColliders = [];
 
         // Re-enable collider của connected block nếu cần
         if (this.connectedBlock) {
             this.setCollidersEnabled(this.connectedBlock, true);
+        }
+    }
+
+    // Hàm để tắt các collider của connected block mà không xóa chúng
+    disableConnectedBlockColliders() {
+        for (const collider of this.connectedBlockColliders) {
+            if (collider && collider.isValid) {
+                collider.enabled = false;
+            }
         }
     }
 
@@ -216,8 +233,11 @@ export class BlockPrefab extends Component {
         layerData: { hasLayer: number; blockType: number } | null,
         isOneWayMovementActive: number | null,
         wayDirection: number | null,
-        blockGroupLevelElementData,
-        joinedGroupData,
+        blockGroupLevelElementData: { iceCount: number } | null,
+        joinedGroupData: {
+            isMemberOfJoinedGorup: number;
+            groupIndex: number;
+        } | null,
         blockGroupType: number,
         blockType: ColorType
     ) {
@@ -241,7 +261,10 @@ export class BlockPrefab extends Component {
         // Set material - tự lấy từ GameManager
         this.setColorType(blockType);
 
-        if (blockGroupLevelElementData.iceCount > 1) {
+        if (
+            blockGroupLevelElementData &&
+            blockGroupLevelElementData.iceCount > 1
+        ) {
             this.setIceCount(blockGroupLevelElementData.iceCount + 1);
             const iceMaterial = GameManager.instance?.getMaterialByIndex(10);
             const bl = this.node.getChildByName('Block');
@@ -276,7 +299,7 @@ export class BlockPrefab extends Component {
             this.setLayerColor(layerData.blockType);
         }
 
-        if (joinedGroupData.isMemberOfJoinedGorup == 1) {
+        if (joinedGroupData && joinedGroupData.isMemberOfJoinedGorup == 1) {
             this.groupIndex = joinedGroupData.groupIndex;
             for (const blockNode of GameManager.instance?.blockNode) {
                 const block = blockNode.getComponent(BlockPrefab);
@@ -319,7 +342,7 @@ export class BlockPrefab extends Component {
 
         this.checkLayer();
 
-        if (isOneWayMovementActive == 1) {
+        if (isOneWayMovementActive && isOneWayMovementActive == 1) {
             {
                 const a = this.node.getChildByName('Arrow' + wayDirection);
                 if (a) a.active = true;

@@ -129,6 +129,12 @@ export class MouseJoint3D extends Component {
                     this.selectedNode.getComponent(BlockPrefab).connectedBlock;
                 if (connectedBlock) {
                     // Lưu khoảng cách tương đối giữa block chính và connected block
+                    console.log(
+                        Intersection2D.rectRect(
+                            this.selectedNode.getComponent(BlockPrefab).rect,
+                            connectedBlock.getComponent(BlockPrefab).rect
+                        )
+                    );
                     this.connectedBlockOffset = new Vec3();
                     Vec3.subtract(
                         this.connectedBlockOffset,
@@ -728,6 +734,18 @@ export class MouseJoint3D extends Component {
                 );
                 if (connectedBlockClone) {
                     connectedBlockClone.active = false;
+                }
+
+                // Tắt collider của connected block trên block chính
+                selectedNode
+                    .getComponent(BlockPrefab)
+                    .disableConnectedBlockColliders();
+
+                // Bật lại collider cho connected block
+                const connectedColliders =
+                    connectedBlock.getComponents(Collider);
+                for (const collider of connectedColliders) {
+                    collider.enabled = true;
                 }
 
                 // Ngắt kết nối trước khi connected block đi qua cổng
