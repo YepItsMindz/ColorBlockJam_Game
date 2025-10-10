@@ -52,7 +52,7 @@ export class GameManager extends Component {
 
     start() {
         GameManager.instance = this;
-        this.loadLevel(117);
+        this.loadLevel(6);
         if (this.Edit) {
             this.Edit.node.on('editing-return', this.loadLevelFromEdit, this);
         }
@@ -142,12 +142,7 @@ export class GameManager extends Component {
                     if (!pf) return;
 
                     const legoClone = instantiate(pf);
-                    if (
-                        block.blockGroupType === 5 ||
-                        block.blockGroupType === 11
-                    ) {
-                        block.rotation.y += 180;
-                    }
+
                     legoClone
                         .getComponent(BlockPrefab)
                         .initializeBlock(

@@ -34,6 +34,7 @@ export class BlockPrefab extends Component {
     public connectedBlock: Node | null;
     public isConnectedMerged: boolean = false;
     public groupIndex: number;
+    public isLayer: boolean = false;
 
     // Lưu trữ các collider của connected block đã được thêm vào block chính
     private connectedBlockColliders: Collider[] = [];
@@ -233,7 +234,10 @@ export class BlockPrefab extends Component {
         layerData: { hasLayer: number; blockType: number } | null,
         isOneWayMovementActive: number | null,
         wayDirection: number | null,
-        blockGroupLevelElementData: { iceCount: number } | null,
+        blockGroupLevelElementData: {
+            levelElementType: number;
+            iceCount: number;
+        } | null,
         joinedGroupData: {
             isMemberOfJoinedGorup: number;
             groupIndex: number;
@@ -242,17 +246,20 @@ export class BlockPrefab extends Component {
         blockType: ColorType
     ) {
         this.setBlockRect(position, rotation, blockGroupType);
+        this.setBlockGroupType(blockGroupType);
 
         // Set position
 
         this.node.setPosition(position.x, position.y, position.z);
-
+        if (this.blockGroupType == 5 && !this.isLayer) {
+            rotation.z += 90;
+        }
         // Set rotation
         if (layerData) {
             this.node.setRotationFromEuler(
                 rotation.x,
                 rotation.y + 180,
-                rotation.z
+                rotation.z * -1
             );
         } else {
             this.node.setRotationFromEuler(rotation.x, rotation.y, rotation.z);
@@ -263,9 +270,9 @@ export class BlockPrefab extends Component {
 
         if (
             blockGroupLevelElementData &&
-            blockGroupLevelElementData.iceCount > 1
+            blockGroupLevelElementData.levelElementType
         ) {
-            this.setIceCount(blockGroupLevelElementData.iceCount + 1);
+            this.setIceCount(blockGroupLevelElementData.iceCount);
             const iceMaterial = GameManager.instance?.getMaterialByIndex(10);
             const bl = this.node.getChildByName('Block');
             if (bl) {
@@ -277,8 +284,6 @@ export class BlockPrefab extends Component {
             }
             // const label = this.node.getChildByName('Label');
             // label.active = true;
-        } else {
-            this.setIceCount(1);
         }
 
         if (layerData && layerData.hasLayer == 1) {
@@ -353,7 +358,6 @@ export class BlockPrefab extends Component {
 
         this.setIsOneWayMovementActive(isOneWayMovementActive);
         this.setWayDiretion(wayDirection);
-        this.setBlockGroupType(blockGroupType);
     }
 
     setBlockRect(

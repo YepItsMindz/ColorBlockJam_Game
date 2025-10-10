@@ -110,15 +110,37 @@ export class MouseJoint3D extends Component {
                             Math.round(this.selectedNode.eulerAngles.z) == 0 ||
                             Math.round(this.selectedNode.eulerAngles.z) == 180
                         )
-                            this.selectedBody.linearFactor = new Vec3(1, 0, 0);
-                        else this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                        {
+                            if (this.selectedNode.getComponent(BlockPrefab).blockGroupType == 5) {
+                                this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                            } else {
+                                this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                            }
+                        } else {
+                            if (this.selectedNode.getComponent(BlockPrefab).blockGroupType == 5) {
+                                this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                            } else {
+                                this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                            }
+                            
+                        }
                     } else {
                         if (
                             Math.round(this.selectedNode.eulerAngles.z) == 0 ||
                             Math.round(this.selectedNode.eulerAngles.z) == 180
-                        )
-                            this.selectedBody.linearFactor = new Vec3(0, 1, 0);
-                        else this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                        ){
+                            if (this.selectedNode.getComponent(BlockPrefab).blockGroupType == 5) {
+                                this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                            } else {
+                                this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                            }
+                        } else {
+                            if (this.selectedNode.getComponent(BlockPrefab).blockGroupType == 5) {
+                                this.selectedBody.linearFactor = new Vec3(0, 1, 0);
+                            } else {
+                                this.selectedBody.linearFactor = new Vec3(1, 0, 0);
+                            }
+                        }
                     }
                 } else this.selectedBody.linearFactor = new Vec3(1, 1, 0);
 
@@ -129,12 +151,6 @@ export class MouseJoint3D extends Component {
                     this.selectedNode.getComponent(BlockPrefab).connectedBlock;
                 if (connectedBlock) {
                     // Lưu khoảng cách tương đối giữa block chính và connected block
-                    console.log(
-                        Intersection2D.rectRect(
-                            this.selectedNode.getComponent(BlockPrefab).rect,
-                            connectedBlock.getComponent(BlockPrefab).rect
-                        )
-                    );
                     this.connectedBlockOffset = new Vec3();
                     Vec3.subtract(
                         this.connectedBlockOffset,
@@ -594,8 +610,8 @@ export class MouseJoint3D extends Component {
     ) {
         for (const blockNode of this.gm.blockNode) {
             const block = blockNode.getComponent(BlockPrefab);
-            if (block.iceCount > 1) block.iceCount -= 1;
-            if (block.iceCount == 1) block.setColorType(block.color);
+            if (block.iceCount >= 1) block.iceCount -= 1;
+            if (block.iceCount == 0) block.setColorType(block.color);
         }
 
         const selectedNode = this.selectedNode;
@@ -736,18 +752,6 @@ export class MouseJoint3D extends Component {
                     connectedBlockClone.active = false;
                 }
 
-                // Tắt collider của connected block trên block chính
-                selectedNode
-                    .getComponent(BlockPrefab)
-                    .disableConnectedBlockColliders();
-
-                // Bật lại collider cho connected block
-                const connectedColliders =
-                    connectedBlock.getComponents(Collider);
-                for (const collider of connectedColliders) {
-                    collider.enabled = true;
-                }
-
                 // Ngắt kết nối trước khi connected block đi qua cổng
                 selectedNode.getComponent(BlockPrefab).connectedBlock = null;
                 if (connectedBlock.getComponent(BlockPrefab)) {
@@ -804,6 +808,7 @@ export class MouseJoint3D extends Component {
             }
 
             layerNode.getComponent(BlockPrefab).hasLayer = false;
+            layerNode.getComponent(BlockPrefab).isLayer = true;
             layerNode
                 .getComponent(BlockPrefab)
                 .initializeBlock(
